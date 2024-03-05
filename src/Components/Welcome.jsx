@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 const Welcome = () => {
   return (
     <motion.h2
+      key="welcome"
       className="welcome"
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}

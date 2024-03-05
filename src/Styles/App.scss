@@ -58,14 +58,31 @@
   top: 275px;
   width: 900px;
 }
+.projects {
+  position: absolute;
+  font-family: "Pexel";
+  font-size: 82px;
+  color: white;
+  z-index: 0;
+  left: 200px;
+  top: 275px;
+  width: 900px;
+}
 
-ul {
+.nav {
   position: absolute;
   list-style-type: none;
   color: black;
-  right: 0;
+  right: 50px;
+  top: 40vh;
   text-align: right;
   font-family: "Pexel";
+  font-size: 24px;
+  z-index: 999;
+  li {
+    width: 200px;
+    padding: 10px;
+  }
 }
 /* FONTS */
 
