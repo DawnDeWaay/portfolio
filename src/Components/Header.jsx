@@ -9,7 +9,7 @@ const Header = () => {
           animate={{ y: 0 }}
           transition={{ type: "Spring", delay: 0.5, duration: 0.5 }}
         >
-          Don DeWaay III
+          <a href="/">Don DeWaay III</a>
         </motion.h1>
         <motion.h1
           initial={{ y: -100 }}

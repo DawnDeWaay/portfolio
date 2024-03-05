@@ -30,7 +30,7 @@
   top: 0;
   z-index: 999;
   .inner-header {
-    width: 75%;
+    width: 90%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -40,10 +40,6 @@
       color: black;
       font-family: "Pexel";
       font-size: 28px;
-      a {
-        text-decoration: none;
-        color: black;
-      }
     }
   }
 }
@@ -55,8 +51,8 @@
   color: white;
   z-index: 0;
   width: 900px;
-  top: 30%;
-  left: 100px;
+  top: 25%;
+  left: 65px;
 }
 
 .work {
@@ -66,8 +62,8 @@
   color: white;
   z-index: 0;
   width: 900px;
-  top: 30%;
-  left: 100px;
+  top: 25%;
+  left: 65px;
 }
 
 .education {
@@ -77,8 +73,8 @@
   color: white;
   z-index: 0;
   width: 900px;
-  top: 30%;
-  left: 100px;
+  top: 25%;
+  left: 65px;
 }
 
 .passions {
@@ -88,8 +84,8 @@
   color: white;
   z-index: 0;
   width: 900px;
-  top: 30%;
-  left: 100px;
+  top: 25%;
+  left: 65px;
 }
 
 .nav {
@@ -105,8 +101,17 @@
   li {
     width: 200px;
     padding: 10px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 /* FONTS */
 
 @font-face {
