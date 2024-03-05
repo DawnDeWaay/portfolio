@@ -30,7 +30,7 @@
   top: 0;
   z-index: 999;
   .inner-header {
-    width: 80%;
+    width: 75%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -54,26 +54,49 @@
   font-size: 82px;
   color: white;
   z-index: 0;
-  left: 200px;
-  top: 275px;
   width: 900px;
+  top: 30%;
+  left: 100px;
 }
-.projects {
+
+.work {
   position: absolute;
   font-family: "Pexel";
   font-size: 82px;
   color: white;
   z-index: 0;
-  left: 200px;
-  top: 275px;
   width: 900px;
+  top: 30%;
+  left: 100px;
+}
+
+.education {
+  position: absolute;
+  font-family: "Pexel";
+  font-size: 82px;
+  color: white;
+  z-index: 0;
+  width: 900px;
+  top: 30%;
+  left: 100px;
+}
+
+.passions {
+  position: absolute;
+  font-family: "Pexel";
+  font-size: 82px;
+  color: white;
+  z-index: 0;
+  width: 900px;
+  top: 30%;
+  left: 100px;
 }
 
 .nav {
   position: absolute;
   list-style-type: none;
   color: black;
-  right: 50px;
+  right: 25px;
   top: 40vh;
   text-align: right;
   font-family: "Pexel";

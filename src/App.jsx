@@ -1,6 +1,10 @@
 import Header from "./Components/Header";
 import Background from "/img/1C.png";
+import Nav from "./Components/Nav";
 import Welcome from "./Components/Welcome";
+import Work from "./Components/Work";
+import Education from "./Components/Education";
+import Passions from "./Components/Passions";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import "./Styles/App.scss";
@@ -19,59 +23,65 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.1, duration: 1 }}
           />
+        </AnimatePresence>
+        <AnimatePresence>
           {section == 1 ? (
-            <Welcome />
+            <motion.div
+              key="work"
+              className="welcome"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 100, opacity: 0 }}
+              transition={{ type: "spring", duration: 1 }}
+            >
+              <Work />
+            </motion.div>
           ) : section == 2 ? (
-            <Welcome />
+            <motion.div
+              key="education"
+              className="welcome"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 100, opacity: 0 }}
+              transition={{ type: "spring", duration: 1 }}
+            >
+              <Education />
+            </motion.div>
           ) : section == 3 ? (
-            <Welcome />
+            <motion.div
+              key="passions"
+              className="welcome"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 100, opacity: 0 }}
+              transition={{ type: "spring", duration: 1 }}
+            >
+              <Passions />
+            </motion.div>
           ) : (
-            <Welcome />
+            <motion.div
+              key="welcome"
+              className="welcome"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 100, opacity: 0 }}
+              transition={{ type: "spring", duration: 1 }}
+            >
+              <Welcome />
+            </motion.div>
           )}
         </AnimatePresence>
-        <ul className="nav">
-          <AnimatePresence>
-            <motion.li
-              onClick={() => setSection(0)}
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: "Spring", delay: 1.1, duration: 1 }}
-            >
-              Welcome{section == 0 ? " ✦" : null}
-            </motion.li>
-            <motion.li
-              onClick={() => setSection(1)}
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: "Spring", delay: 1.2, duration: 1 }}
-            >
-              Work{section == 1 ? " ✦" : null}
-            </motion.li>
-            <motion.li
-              onClick={() => setSection(2)}
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: "Spring", delay: 1.3, duration: 1 }}
-            >
-              Education{section == 2 ? " ✦" : null}
-            </motion.li>
-            <motion.li
-              onClick={() => setSection(3)}
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: "Spring", delay: 1.4, duration: 1 }}
-            >
-              Passions{section == 3 ? " ✦" : null}
-            </motion.li>
-          </AnimatePresence>
-        </ul>
+        <Nav sec={section} switchSection={setSection} />
       </div>
     </>
   );
 }
 
 export default App;
+
+/*    key="welcome"
+      className="welcome"
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 100, opacity: 0 }}
+      transition={{ type: "spring", duration: 1 }} */
