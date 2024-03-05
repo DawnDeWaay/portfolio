@@ -16,7 +16,7 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    z-index: 0;
+    z-index: 1;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -26,9 +26,9 @@
     font-family: "Pexel";
     font-size: 82px;
     color: white;
-    z-index: 1;
+    z-index: 0;
     left: 100px;
-    top: 300px;
+    top: 275px;
     width: 900px;
   }
 }
