@@ -21,16 +21,6 @@
     -ms-user-select: none;
     user-select: none;
   }
-  h2 {
-    position: absolute;
-    font-family: "Pexel";
-    font-size: 82px;
-    color: white;
-    z-index: 0;
-    left: 100px;
-    top: 275px;
-    width: 900px;
-  }
 }
 
 .header {
@@ -58,6 +48,25 @@
   }
 }
 
+.welcome {
+  position: absolute;
+  font-family: "Pexel";
+  font-size: 82px;
+  color: white;
+  z-index: 0;
+  left: 100px;
+  top: 275px;
+  width: 900px;
+}
+
+ul {
+  position: absolute;
+  list-style-type: none;
+  color: black;
+  right: 0;
+  text-align: right;
+  font-family: "Pexel";
+}
 /* FONTS */
 
 @font-face {
