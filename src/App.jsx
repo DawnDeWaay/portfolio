@@ -2,7 +2,7 @@ import Header from "./Components/Header";
 import Background from "/img/1C.png";
 import Nav from "./Components/Nav";
 import Welcome from "./Components/Welcome";
-import Work from "./Components/Work";
+import Projects from "./Components/Projects";
 import Education from "./Components/Education";
 import Passions from "./Components/Passions";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,20 +27,20 @@ function App() {
         <AnimatePresence>
           {section == 1 ? (
             <motion.div
-              key="work"
+              key="projects"
               className="welcome"
-              initial={{ x: -100, opacity: 0 }}
+              initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ type: "spring", duration: 1 }}
             >
-              <Work />
+              <Projects />
             </motion.div>
           ) : section == 2 ? (
             <motion.div
               key="education"
-              className="welcome"
-              initial={{ x: -100, opacity: 0 }}
+              className="page"
+              initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ type: "spring", duration: 1 }}
@@ -50,8 +50,8 @@ function App() {
           ) : section == 3 ? (
             <motion.div
               key="passions"
-              className="welcome"
-              initial={{ x: -100, opacity: 0 }}
+              className="page"
+              initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ type: "spring", duration: 1 }}
@@ -61,8 +61,8 @@ function App() {
           ) : (
             <motion.div
               key="welcome"
-              className="welcome"
-              initial={{ x: -100, opacity: 0 }}
+              className="page"
+              initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ type: "spring", duration: 1 }}
@@ -78,10 +78,3 @@ function App() {
 }
 
 export default App;
-
-/*    key="welcome"
-      className="welcome"
-      initial={{ x: -100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: 100, opacity: 0 }}
-      transition={{ type: "spring", duration: 1 }} */

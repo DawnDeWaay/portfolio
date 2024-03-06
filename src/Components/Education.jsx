@@ -1,5 +1,5 @@
 const Education = () => {
-  return <div className="education">Education</div>;
+  return <div className="page">Education</div>;
 };
 
 export default Education;

@@ -7,7 +7,7 @@ const Nav = ({ sec, switchSection }) => {
         <motion.li
           key={"0"}
           onClick={() => switchSection(0)}
-          initial={{ x: 100, opacity: 0 }}
+          initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ type: "Spring", delay: 1.1, duration: 0.5 }}
@@ -17,7 +17,7 @@ const Nav = ({ sec, switchSection }) => {
         <motion.li
           key={"1"}
           onClick={() => switchSection(1)}
-          initial={{ x: 100, opacity: 0 }}
+          initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ type: "Spring", delay: 1.2, duration: 0.5 }}
@@ -27,7 +27,7 @@ const Nav = ({ sec, switchSection }) => {
         <motion.li
           key={"2"}
           onClick={() => switchSection(2)}
-          initial={{ x: 100, opacity: 0 }}
+          initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ type: "Spring", delay: 1.3, duration: 0.5 }}
@@ -37,7 +37,7 @@ const Nav = ({ sec, switchSection }) => {
         <motion.li
           key={"3"}
           onClick={() => switchSection(3)}
-          initial={{ x: 100, opacity: 0 }}
+          initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ type: "Spring", delay: 1.4, duration: 0.5 }}
