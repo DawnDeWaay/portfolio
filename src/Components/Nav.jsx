@@ -12,7 +12,16 @@ const Nav = ({ sec, switchSection }) => {
           exit={{ opacity: 0 }}
           transition={{ type: "Spring", delay: 1.1, duration: 0.5 }}
         >
-          Welcome{sec == 0 ? " ✦" : null}
+          Welcome
+          {sec == 0 ? (
+            <motion.span
+              key="star0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
         </motion.li>
         <motion.li
           key={"1"}
@@ -22,7 +31,16 @@ const Nav = ({ sec, switchSection }) => {
           exit={{ opacity: 0 }}
           transition={{ type: "Spring", delay: 1.2, duration: 0.5 }}
         >
-          Work{sec == 1 ? " ✦" : null}
+          Projects
+          {sec == 1 ? (
+            <motion.span
+              key="star1"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
         </motion.li>
         <motion.li
           key={"2"}
@@ -32,7 +50,16 @@ const Nav = ({ sec, switchSection }) => {
           exit={{ opacity: 0 }}
           transition={{ type: "Spring", delay: 1.3, duration: 0.5 }}
         >
-          Education{sec == 2 ? " ✦" : null}
+          Education
+          {sec == 2 ? (
+            <motion.span
+              key="star2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
         </motion.li>
         <motion.li
           key={"3"}
@@ -42,7 +69,16 @@ const Nav = ({ sec, switchSection }) => {
           exit={{ opacity: 0 }}
           transition={{ type: "Spring", delay: 1.4, duration: 0.5 }}
         >
-          Passions{sec == 3 ? " ✦" : null}
+          Passions
+          {sec == 3 ? (
+            <motion.span
+              key="star3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
         </motion.li>
       </AnimatePresence>
     </ul>
