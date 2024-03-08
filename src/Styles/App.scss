@@ -50,15 +50,25 @@
 .page {
   color: white;
   width: 100%;
-  h2 {
-    white-space: nowrap;
-    font-size: 82px;
-    z-index: 0;
-    width: 70vw;
-    height: auto;
-    top: 28vh;
-    left: 65px;
-    position: absolute;
+  .hero {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    h2 {
+      white-space: nowrap;
+      font-size: 82px;
+      z-index: 0;
+      width: 70vw;
+      height: auto;
+      top: 28vh;
+      left: 65px;
+      position: absolute;
+    }
+    .learn-more {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+    }
   }
   p {
     font-size: 24px;

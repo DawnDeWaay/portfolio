@@ -25,7 +25,7 @@ function App() {
             transition={{ delay: 0.1, duration: 1 }}
           />
         </AnimatePresence>
-        <AnimatePresence>
+        <AnimatePresence wait>
           {section == 1 ? (
             <motion.div
               key="projects"
