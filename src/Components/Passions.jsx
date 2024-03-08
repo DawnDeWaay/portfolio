@@ -1,5 +1,15 @@
 const Passions = () => {
-  return <div>Don Loves Fashion, Design, Fighting Games, and Cooking</div>;
+  return (
+    <>
+      <h2>
+        Don Loves Fashion,
+        <br />
+        Design, Fighting Games,
+        <br />
+        and Cooking
+      </h2>
+    </>
+  );
 };
 
 export default Passions;

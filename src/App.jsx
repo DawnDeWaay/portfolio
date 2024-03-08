@@ -5,7 +5,6 @@ import Welcome from "./Components/Welcome";
 import Projects from "./Components/Projects";
 import Education from "./Components/Education";
 import Passions from "./Components/Passions";
-import Screenshot from "/img/MultiRoll.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import "./Styles/App.scss";
@@ -30,19 +29,18 @@ function App() {
           {section == 1 ? (
             <motion.div
               key="projects"
-              className="projects"
+              className="page"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ type: "spring", duration: 1 }}
             >
               <Projects />
-              <motion.img key="img" src={Screenshot} className="screenshot" />
             </motion.div>
           ) : section == 2 ? (
             <motion.div
               key="education"
-              className="education"
+              className="page"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
@@ -53,7 +51,7 @@ function App() {
           ) : section == 3 ? (
             <motion.div
               key="passions"
-              className="passions"
+              className="page"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
@@ -64,7 +62,7 @@ function App() {
           ) : (
             <motion.div
               key="welcome"
-              className="welcome"
+              className="page"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
