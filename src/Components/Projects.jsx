@@ -10,11 +10,23 @@ const Projects = () => {
           <br />
           Dragons Companion
         </h2>
-        <p className="learn-more">Learn More Below </p>
+        <p className="learn-more">Check it Out Below vVv</p>
       </div>
-      <p>A tool to streamline combat encounters and dice rolling in D&D</p>
-      <img src={Screenshot} />
-      <img src={Character} />
+      <div className="info-container">
+        <p>
+          MultiRoll is a slick web tool created to streamline encounters and
+          dice rolling in D&D
+        </p>
+        <img src={Screenshot} />
+      </div>
+      <div className="info-container">
+        <img src={Character} />
+        <p>
+          Features include a character creator with dynamic personalization
+          options, a quick roller for non-combat scenarios, and motion graphics
+          utilizing Three.js and Framer Motion React libraries
+        </p>
+      </div>
     </>
   );
 };

@@ -7,9 +7,9 @@ const Passions = () => {
           <br />
           Design, Fighting Games,
           <br />
-          and Cooking
+          and Food
         </h2>
-        <p className="learn-more">Learn More Below </p>
+        <p className="learn-more">Learn More Below</p>
       </div>
     </>
   );

@@ -29,8 +29,8 @@ function App() {
           {section == 1 ? (
             <motion.div
               key="projects"
-              className="page"
-              initial={{ x: 100, opacity: 0 }}
+              className="projects"
+              initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ type: "spring", duration: 1 }}
@@ -40,8 +40,8 @@ function App() {
           ) : section == 2 ? (
             <motion.div
               key="education"
-              className="page"
-              initial={{ x: 100, opacity: 0 }}
+              className="education"
+              initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ type: "spring", duration: 1 }}
@@ -51,8 +51,8 @@ function App() {
           ) : section == 3 ? (
             <motion.div
               key="passions"
-              className="page"
-              initial={{ x: 100, opacity: 0 }}
+              className="passions"
+              initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ type: "spring", duration: 1 }}
@@ -62,8 +62,8 @@ function App() {
           ) : (
             <motion.div
               key="welcome"
-              className="page"
-              initial={{ x: 100, opacity: 0 }}
+              className="welcome"
+              initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 100, opacity: 0 }}
               transition={{ type: "spring", duration: 1 }}
