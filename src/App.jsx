@@ -25,51 +25,15 @@ function App() {
             transition={{ delay: 0.1, duration: 1 }}
           />
         </AnimatePresence>
-        <AnimatePresence wait>
+        <AnimatePresence mode="wait">
           {section == 1 ? (
-            <motion.div
-              key="projects"
-              className="projects"
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 100, opacity: 0 }}
-              transition={{ type: "spring", duration: 1 }}
-            >
-              <Projects />
-            </motion.div>
+            <Projects key="1" />
           ) : section == 2 ? (
-            <motion.div
-              key="education"
-              className="education"
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 100, opacity: 0 }}
-              transition={{ type: "spring", duration: 1 }}
-            >
-              <Education />
-            </motion.div>
+            <Education key="2" />
           ) : section == 3 ? (
-            <motion.div
-              key="passions"
-              className="passions"
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 100, opacity: 0 }}
-              transition={{ type: "spring", duration: 1 }}
-            >
-              <Passions />
-            </motion.div>
+            <Passions key="3" />
           ) : (
-            <motion.div
-              key="welcome"
-              className="welcome"
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 100, opacity: 0 }}
-              transition={{ type: "spring", duration: 1 }}
-            >
-              <Welcome />
-            </motion.div>
+            <Welcome key="0" />
           )}
         </AnimatePresence>
         <Nav sec={section} switchSection={setSection} />

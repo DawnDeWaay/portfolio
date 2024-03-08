@@ -1,9 +1,16 @@
 import Screenshot from "/img/MultiRoll.jpeg";
 import Character from "/img/Character.jpeg";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <>
+    <motion.div
+      className="projects"
+      initial={{ x: -50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 50, opacity: 0 }}
+      transition={{ type: "spring", duration: 0.5 }}
+    >
       <div className="hero">
         <h2>
           No.1: MultiRoll, <br />a Dungeons and
@@ -27,7 +34,7 @@ const Projects = () => {
           utilizing Three.js and Framer Motion React libraries
         </p>
       </div>
-    </>
+    </motion.div>
   );
 };
 
