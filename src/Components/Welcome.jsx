@@ -1,9 +1,13 @@
 const Welcome = () => {
   return (
-    <h2 className="page">
+    <div>
       Don is a <br />
-      Frontend Designer & Dev Based in Des Moines, Iowa
-    </h2>
+      Frontend Designer & Dev
+      <br />
+      Based in
+      <br />
+      Des Moines, Iowa
+    </div>
   );
 };
 

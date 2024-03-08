@@ -1,6 +1,6 @@
 const Education = () => {
   return (
-    <div className="page">
+    <div>
       Don Studied Computer Science and Psychology at the University of Iowa
     </div>
   );

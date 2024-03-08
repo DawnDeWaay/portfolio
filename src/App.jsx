@@ -5,6 +5,7 @@ import Welcome from "./Components/Welcome";
 import Projects from "./Components/Projects";
 import Education from "./Components/Education";
 import Passions from "./Components/Passions";
+import Screenshot from "/img/MultiRoll.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import "./Styles/App.scss";
@@ -18,6 +19,7 @@ function App() {
       <div className="content">
         <AnimatePresence>
           <motion.img
+            className="bg"
             src={Background}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -35,6 +37,7 @@ function App() {
               transition={{ type: "spring", duration: 1 }}
             >
               <Projects />
+              <motion.img key="img" src={Screenshot} className="screenshot" />
             </motion.div>
           ) : section == 2 ? (
             <motion.div
