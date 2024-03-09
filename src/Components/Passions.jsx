@@ -11,11 +11,11 @@ const Passions = () => {
     >
       <div className="hero">
         <h2>
-          Don Loves Fashion,
+          Don Love Fashion,
           <br />
           Design, Fighting Games,
           <br />
-          and Food
+          Jazz, and Food
         </h2>
         <AnimatePresence>
           <div className="scroll">
@@ -32,6 +32,15 @@ const Passions = () => {
             </motion.p>
           </div>
         </AnimatePresence>
+      </div>
+      <div className="info-container">
+        <p></p>
+      </div>
+      <div className="info-container">
+        <p></p>
+      </div>
+      <div className="info-container">
+        <p></p>
       </div>
     </motion.div>
   );

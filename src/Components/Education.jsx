@@ -1,3 +1,5 @@
+import Don from "/img/don.jpeg";
+import Workin from "/img/workin.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Education = () => {
@@ -15,7 +17,7 @@ const Education = () => {
           <br />
           Computer Science
           <br />
-          and Psychology @<br />
+          & Psychology @<br />
           the University of Iowa
         </h2>
         <AnimatePresence>
@@ -38,6 +40,23 @@ const Education = () => {
             </motion.p>
           </motion.div>
         </AnimatePresence>
+      </div>
+      <div className="info-container">
+        <img src={Don} className="edu" />
+        <p>
+          I participated in several extracirricular activities while keeping up
+          with schoolwork, such as the Hawkeye Sunset Club, Uiowa Alliance
+          Center, Badminton Club, Campus Symphony Orchestra, as well as
+          competing in events at the Esports Arcade
+        </p>
+      </div>
+      <div className="info-container">
+        <p>
+          While I wasn't studying for Algorithms at the Main Library, you could
+          find me working late into the night patrolling campus for DPS Student
+          Security
+        </p>
+        <img src={Workin} className="edu" />
       </div>
     </motion.div>
   );

@@ -96,17 +96,19 @@
 }
 
 .info-container {
-  width: 85vw;
+  width: 80vw;
   height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin: 60px 0px 60px 0px;
+  padding: 20px;
   p {
     white-space: wrap;
     width: 35vw;
     margin: 24px;
     font-size: 28px;
+    padding-top: 30px;
   }
   img {
     width: 50%;
@@ -115,6 +117,9 @@
     border: 2px solid white;
     margin: 24px;
     box-shadow: 0px 0px 20px 10px white;
+  }
+  .edu {
+    border-radius: 0px;
   }
 }
 

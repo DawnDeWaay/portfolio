@@ -13,7 +13,7 @@ const Projects = () => {
     >
       <div className="hero">
         <h2>
-          No.1: MultiRoll, <br />a Dungeons and
+          No.1: MultiRoll, <br />a Dungeons &
           <br />
           Dragons Companion
         </h2>
@@ -40,8 +40,8 @@ const Projects = () => {
       </div>
       <div className="info-container">
         <p>
-          MultiRoll is a slick web tool created to streamline encounters and
-          dice rolling in D&D
+          MultiRoll is a slick web tool I created to streamline encounters and
+          monotonous dice rolling in D&D
         </p>
         <img src={Screenshot} />
       </div>

@@ -14,7 +14,7 @@ const Welcome = () => {
           Don is a <br />
           Frontend Dev with a<br />
           Knack for Design
-          <p>Based in Des Moines, Iowa</p>
+          <p>- Based in Des Moines, Iowa -</p>
         </h2>
       </div>
     </motion.div>
