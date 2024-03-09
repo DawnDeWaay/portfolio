@@ -21,7 +21,7 @@ const Projects = () => {
           <p>Check it Out Below&nbsp;</p>
           <motion.p
             animate={{ y: [-5, 5, -5] }}
-            transition={{ repeat: Infinity }}
+            transition={{ repeat: Infinity, type: "Spring", duration: 2 }}
           >
             vVv
           </motion.p>
