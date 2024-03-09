@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Education = () => {
   return (
@@ -18,7 +18,26 @@ const Education = () => {
           and Psychology @<br />
           the University of Iowa
         </h2>
-        <p className="learn-more">Learn More Below</p>
+        <AnimatePresence>
+          <motion.div
+            className="learn-more"
+            key="learn"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <p>Check it Out Below&nbsp;</p>
+            <motion.p
+              animate={{ y: [0, 0, -5, 5, 0, 0] }}
+              transition={{
+                repeat: Infinity,
+                type: "Spring",
+                duration: 1.5,
+              }}
+            >
+              vVv
+            </motion.p>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </motion.div>
   );

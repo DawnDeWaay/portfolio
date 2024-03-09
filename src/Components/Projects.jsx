@@ -1,8 +1,9 @@
 import Screenshot from "/img/MultiRoll.jpeg";
 import Character from "/img/Character.jpeg";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
 
 const Projects = () => {
+  const { scrollYProgress } = useScroll();
   return (
     <motion.div
       className="projects"
@@ -17,15 +18,26 @@ const Projects = () => {
           <br />
           Dragons Companion
         </h2>
-        <div className="learn-more">
-          <p>Check it Out Below&nbsp;</p>
-          <motion.p
-            animate={{ y: [-5, 5, -5] }}
-            transition={{ repeat: Infinity, type: "Spring", duration: 2 }}
+        <AnimatePresence>
+          <motion.div
+            className="learn-more"
+            key="learn"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            vVv
-          </motion.p>
-        </div>
+            <p>Check it Out Below&nbsp;</p>
+            <motion.p
+              animate={{ y: [0, 0, -5, 5, 0, 0] }}
+              transition={{
+                repeat: Infinity,
+                type: "Spring",
+                duration: 1.5,
+              }}
+            >
+              vVv
+            </motion.p>
+          </motion.div>
+        </AnimatePresence>
       </div>
       <div className="info-container">
         <p>
