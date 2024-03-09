@@ -25,7 +25,7 @@ const Education = () => {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <p>Check it Out Below&nbsp;</p>
+            <p>Scroll for Memories&nbsp;</p>
             <motion.p
               animate={{ y: [0, 0, -5, 5, 0, 0] }}
               transition={{
