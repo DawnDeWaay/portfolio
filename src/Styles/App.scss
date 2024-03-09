@@ -47,11 +47,7 @@
   }
 }
 
-.page,
-.welcome,
-.projects,
-.education,
-.passions {
+.page {
   color: white;
   width: 100%;
   .hero {
@@ -63,14 +59,14 @@
       font-size: 82px;
       z-index: 0;
       width: 70vw;
-      top: 28vh;
-      left: 65px;
+      top: 27vh;
+      left: 100px;
       position: absolute;
     }
     p {
       font-size: 24px;
     }
-    .learn-more {
+    .scroll {
       position: absolute;
       bottom: 30px;
       left: 30px;
@@ -100,17 +96,17 @@
 }
 
 .info-container {
-  width: 75vw;
+  width: 85vw;
   height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 40px 0px 40px 0px;
+  margin: 60px 0px 60px 0px;
   p {
     white-space: wrap;
-    width: 25vw;
+    width: 35vw;
     margin: 24px;
-    font-size: 24px;
+    font-size: 28px;
   }
   img {
     width: 50%;

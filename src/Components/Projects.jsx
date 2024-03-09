@@ -1,12 +1,11 @@
 import Screenshot from "/img/MultiRoll.jpeg";
 import Character from "/img/Character.jpeg";
-import { motion, AnimatePresence, useScroll } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
-  const { scrollYProgress } = useScroll();
   return (
     <motion.div
-      className="projects"
+      className="page"
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: 50, opacity: 0 }}
@@ -20,7 +19,7 @@ const Projects = () => {
         </h2>
         <AnimatePresence>
           <motion.div
-            className="learn-more"
+            className="scroll"
             key="learn"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}

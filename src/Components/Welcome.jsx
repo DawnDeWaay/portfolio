@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const Welcome = () => {
   return (
     <motion.div
-      className="welcome"
+      className="page"
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: 50, opacity: 0 }}

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const Passions = () => {
   return (
     <motion.div
-      className="passions"
+      className="page"
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: 50, opacity: 0 }}
@@ -18,13 +18,8 @@ const Passions = () => {
           and Food
         </h2>
         <AnimatePresence>
-          <motion.div
-            className="learn-more"
-            key="learn"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <p>Check it Out Below&nbsp;</p>
+          <div className="scroll">
+            <p>Rate my Style&nbsp;</p>
             <motion.p
               animate={{ y: [0, 0, -5, 5, 0, 0] }}
               transition={{
@@ -35,7 +30,7 @@ const Passions = () => {
             >
               vVv
             </motion.p>
-          </motion.div>
+          </div>
         </AnimatePresence>
       </div>
     </motion.div>

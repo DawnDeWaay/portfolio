@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const Education = () => {
   return (
     <motion.div
-      className="education"
+      className="page"
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: 50, opacity: 0 }}
@@ -20,7 +20,7 @@ const Education = () => {
         </h2>
         <AnimatePresence>
           <motion.div
-            className="learn-more"
+            className="scroll"
             key="learn"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
