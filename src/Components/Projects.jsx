@@ -17,7 +17,15 @@ const Projects = () => {
           <br />
           Dragons Companion
         </h2>
-        <p className="learn-more">Check it Out Below vVv</p>
+        <div className="learn-more">
+          <p>Check it Out Below&nbsp;</p>
+          <motion.p
+            animate={{ y: [-5, 5, -5] }}
+            transition={{ repeat: Infinity }}
+          >
+            vVv
+          </motion.p>
+        </div>
       </div>
       <div className="info-container">
         <p>

@@ -36,7 +36,7 @@ function App() {
             <Welcome key="0" />
           )}
         </AnimatePresence>
-        <Nav sec={section} switchSection={setSection} />
+        <Nav sec={section} switchSection={setSection} key="nav" />
       </div>
     </>
   );
