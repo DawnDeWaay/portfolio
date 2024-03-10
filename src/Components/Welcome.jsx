@@ -12,8 +12,9 @@ const Welcome = () => {
       <div className="hero">
         <h2>
           Don DeWaay is a <br />
-          <span style={{ color: "#308ef1" }}>Frontend Dev</span> with a<br />
-          Knack for Design
+          <span style={{ color: "#308ef1" }}>Frontend Developer</span>
+          <br />
+          With a Knack for Design
           <p>- Based in Des Moines, Iowa -</p>
         </h2>
       </div>
