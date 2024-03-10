@@ -1,3 +1,6 @@
+import Cake from "/img/cake.jpeg";
+import Reina from "/img/reina.png";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 const Passions = () => {
@@ -11,11 +14,13 @@ const Passions = () => {
     >
       <div className="hero">
         <h2>
-          Don Love Fashion,
+          Don Loves Fashion,
           <br />
-          Design, Fighting Games,
+          Fitness, Design,
           <br />
-          Jazz, and Food
+          Fighting Games, Jazz,
+          <br />
+          and Food
         </h2>
         <AnimatePresence>
           <div className="scroll">
@@ -34,13 +39,21 @@ const Passions = () => {
         </AnimatePresence>
       </div>
       <div className="info-container">
-        <p></p>
+        <img src={Cake} />
+        <p>Tres leches cake! My favorite dessert</p>
       </div>
       <div className="info-container">
-        <p></p>
+        <p>
+          I've successfully lost over 60lbs over the course of 2023, and now I'm
+          working on building muscle
+        </p>
       </div>
       <div className="info-container">
-        <p></p>
+        <p>
+          I play multiple fighting games, including Smash Ultimate, Tekken 8,
+          and Guilty Gear Strive
+        </p>
+        <img src={Reina} />
       </div>
     </motion.div>
   );

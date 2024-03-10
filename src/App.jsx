@@ -1,5 +1,5 @@
 import Header from "./Components/Header";
-import Background from "/img/1CLittleCropped.png";
+import Background from "/img/1C.png";
 import Nav from "./Components/Nav";
 import Welcome from "./Components/Welcome";
 import Projects from "./Components/Projects";

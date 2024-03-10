@@ -1,5 +1,6 @@
 import Screenshot from "/img/MultiRoll.jpeg";
 import Character from "/img/Character.jpeg";
+import Preset from "/img/preset.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
@@ -52,6 +53,13 @@ const Projects = () => {
           options, a quick roller for non-combat scenarios, and motion graphics
           utilizing Three.js and Framer Motion React libraries
         </p>
+      </div>
+      <div className="info-container">
+        <p>
+          Characters and presets are stored in the browser's localstorage for
+          user convenience
+        </p>
+        <img src={Preset} />
       </div>
     </motion.div>
   );

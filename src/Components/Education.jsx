@@ -1,5 +1,7 @@
 import Don from "/img/don.jpeg";
 import Workin from "/img/workin.jpeg";
+import Uiowa from "/img/uiowa.jpeg";
+import River from "/img/hanginout.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Education = () => {
@@ -51,12 +53,20 @@ const Education = () => {
         </p>
       </div>
       <div className="info-container">
+        <p>Beautiful University of Iowa campus</p>
+        <img src={Uiowa} className="edu" />
+      </div>
+      <div className="info-container">
+        <img src={Workin} className="edu" />
         <p>
           While I wasn't studying for Algorithms at the Main Library, you could
           find me working late into the night patrolling campus for DPS Student
           Security
         </p>
-        <img src={Workin} className="edu" />
+      </div>
+      <div className="info-container">
+        <p>Hangin out by the Iowa River</p>
+        <img src={River} className="edu" />
       </div>
     </motion.div>
   );
