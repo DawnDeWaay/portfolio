@@ -2,6 +2,15 @@ import SketchItem from "./SketchItem";
 import { motion } from "framer-motion";
 
 const DailySketch = () => {
+  class Sketch {
+    constructor(name, id) {
+      this.name;
+      this.id;
+    }
+  }
+
+  const listOfSketches = [];
+
   return (
     <motion.div
       className="daily"
@@ -9,7 +18,6 @@ const DailySketch = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="bg" />
       <div className="top">
         <h1>Welcome to my Daily Journal, where I leave it all on the page</h1>
         <h2 style={{ fontSize: "32px" }}>Explore</h2>

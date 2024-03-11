@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const Header = () => {
+const Header = (color) => {
   return (
     <div className="header">
       <div className="inner-header">

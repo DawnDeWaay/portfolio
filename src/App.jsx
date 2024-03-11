@@ -14,13 +14,6 @@ function App() {
   const [section, setSection] = useState(0);
   const [textColor, setTextColor] = useState("white");
 
-  class Sketch {
-    constructor(name, id) {
-      this.name;
-      this.id;
-    }
-  }
-
   return (
     <>
       <Header textColor="white" />
