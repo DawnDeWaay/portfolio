@@ -1,12 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-const Nav = ({ sec, switchSection }) => {
+const Nav = ({ sec, switchSection, setColor }) => {
   return (
     <ul className="nav">
       <AnimatePresence>
         <motion.li
           key={"0"}
-          onClick={() => switchSection(0)}
+          onClick={() => {
+            switchSection(0);
+            setColor("black");
+          }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -25,7 +28,10 @@ const Nav = ({ sec, switchSection }) => {
         </motion.li>
         <motion.li
           key={"1"}
-          onClick={() => switchSection(1)}
+          onClick={() => {
+            switchSection(1);
+            setColor("black");
+          }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -44,7 +50,10 @@ const Nav = ({ sec, switchSection }) => {
         </motion.li>
         <motion.li
           key={"2"}
-          onClick={() => switchSection(2)}
+          onClick={() => {
+            switchSection(2);
+            setColor("black");
+          }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -63,7 +72,10 @@ const Nav = ({ sec, switchSection }) => {
         </motion.li>
         <motion.li
           key={"3"}
-          onClick={() => switchSection(3)}
+          onClick={() => {
+            switchSection(3);
+            setColor("black");
+          }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -73,6 +85,28 @@ const Nav = ({ sec, switchSection }) => {
           {sec == 3 ? (
             <motion.span
               key="star3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
+        </motion.li>
+        <motion.li
+          key={"4"}
+          onClick={() => {
+            switchSection(4);
+            setColor("white");
+          }}
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ type: "Spring", delay: 1.5, duration: 0.5 }}
+        >
+          Daily Sketch
+          {sec == 4 ? (
+            <motion.span
+              key="star4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >

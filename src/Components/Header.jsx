@@ -16,7 +16,7 @@ const Header = () => {
           animate={{ y: 0 }}
           transition={{ type: "Spring", delay: 0.7, duration: 0.5 }}
         >
-          <a href="https://twitter.com/DonaldDeWaay">Contact</a>
+          <a href="mailto:dondewaay@gmail.com">Contact</a>
         </motion.h1>
       </div>
     </div>

@@ -5,16 +5,25 @@ import Welcome from "./Components/Welcome";
 import Projects from "./Components/Projects";
 import Education from "./Components/Education";
 import Passions from "./Components/Passions";
+import DailySketch from "./Components/DailySketch";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import "./Styles/App.scss";
 
 function App() {
   const [section, setSection] = useState(0);
+  const [textColor, setTextColor] = useState("white");
+
+  class Sketch {
+    constructor(name, id) {
+      this.name;
+      this.id;
+    }
+  }
 
   return (
     <>
-      <Header />
+      <Header textColor="white" />
       <div className="content">
         <AnimatePresence>
           <motion.img
@@ -32,11 +41,18 @@ function App() {
             <Education key="2" />
           ) : section == 3 ? (
             <Passions key="3" />
+          ) : section == 4 ? (
+            <DailySketch key="4" />
           ) : (
             <Welcome key="0" />
           )}
         </AnimatePresence>
-        <Nav sec={section} switchSection={setSection} key="nav" />
+        <Nav
+          sec={section}
+          switchSection={setSection}
+          key="nav"
+          setColor={setTextColor}
+        />
       </div>
     </>
   );
