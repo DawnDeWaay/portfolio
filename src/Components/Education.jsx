@@ -44,16 +44,41 @@ const Education = () => {
         </AnimatePresence>
       </div>
       <div className="info-container">
-        <img src={Don} className="edu" />
+        <div>
+          <p>
+            I have extensive experience in many programming languages and
+            popular libraries for both frontend and backend development:
+          </p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <ul>
+              <li>JavaScript</li>
+              <li>HTML/CSS</li>
+              <li>Python</li>
+              <li>Java</li>
+              <li>C</li>
+              <li>Haskell</li>
+            </ul>
+            <ul>
+              <li>React.JS</li>
+              <li>Three.JS</li>
+              <li>Framer Motion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="info-container">
         <p>
           I participated in several extracirricular activities while keeping up
           with schoolwork, such as the Hawkeye Sunset Club, Uiowa Alliance
           Center, Badminton Club, Campus Symphony Orchestra, as well as
           competing in events at the Esports Arcade
         </p>
-      </div>
-      <div className="info-container">
-        <p>Beautiful University of Iowa campus</p>
         <img src={Uiowa} className="edu" />
       </div>
       <div className="info-container">
@@ -67,6 +92,9 @@ const Education = () => {
       <div className="info-container">
         <p>Hangin out by the Iowa River</p>
         <img src={River} className="edu" />
+      </div>
+      <div className="info-container">
+        <img src={Don} className="edu" />
       </div>
     </motion.div>
   );
