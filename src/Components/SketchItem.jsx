@@ -7,9 +7,11 @@ const SketchItem = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
+      hover={{}}
     >
       <div className="name">Name</div>
       <div className="id">ID</div>
+      <div className="drawing"></div>
     </motion.div>
   );
 };

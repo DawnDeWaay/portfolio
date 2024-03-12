@@ -20,7 +20,7 @@ function App() {
       <div className="content">
         <AnimatePresence>
           <motion.img
-            className="bg"
+            className="background"
             src={Background}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
