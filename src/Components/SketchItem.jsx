@@ -10,16 +10,12 @@ const SketchItem = ({ name, id, date, popDelay }) => {
         y: 0,
         transition: {
           duration: 0.3,
-          delay: parseFloat(popDelay),
         },
       }}
       whileHover={{
         opacity: 0.9,
-        scale: 1.005,
-        transition: { duration: 0.3, delay: 0 },
+        transition: { duration: 0.7 },
       }}
-      onHoverStart={(e) => {}}
-      onHoverEnd={(e) => {}}
       whileTap={{ scale: 0.98 }}
     >
       <div className="name">{name}</div>
