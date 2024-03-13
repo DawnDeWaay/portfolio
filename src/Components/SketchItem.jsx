@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const SketchItem = ({ name, id }) => {
+const SketchItem = ({ name, id, date }) => {
   return (
     <motion.div
       className="item"
@@ -10,8 +10,9 @@ const SketchItem = ({ name, id }) => {
       whileHover={{ opacity: 0.9 }}
     >
       <div className="name">{name}</div>
-      <div className="id">{id}</div>
-      <div className="drawing"></div>
+      <div className="id">No.{id}</div>
+      <div className="drawing">{/* <img src={path} /> */}</div>
+      <div className="date">{date}</div>
     </motion.div>
   );
 };

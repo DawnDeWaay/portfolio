@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 
 const DailySketch = () => {
   const sketches = [
-    { name: "Sketch 1", id: 1, path: "/sketches/1" },
-    { name: "Sketch 2", id: 2, path: "/sketches/2" },
-    { name: "Sketch 3", id: 3, path: "/sketches/3" },
-    { name: "Sketch 4", id: 4, path: "/sketches/4" },
-    { name: "Sketch 5", id: 5, path: "/sketches/5" },
-    { name: "Sketch 6", id: 6, path: "/sketches/6" },
+    { name: "Sketch 1", id: 1, date: "3/08/2024", path: "/sketches/1" },
+    { name: "Sketch 2", id: 2, date: "3/09/2024", path: "/sketches/2" },
+    { name: "Sketch 3", id: 3, date: "3/10/2024", path: "/sketches/3" },
+    { name: "Sketch 4", id: 4, date: "3/11/2024", path: "/sketches/4" },
+    { name: "Sketch 5", id: 5, date: "3/12/2024", path: "/sketches/5" },
+    { name: "Sketch 6", id: 6, date: "3/13/2024", path: "/sketches/6" },
   ];
 
   return (
@@ -34,7 +34,7 @@ const DailySketch = () => {
       </div>
       <div className="grid">
         {sketches.reverse().map((item) => (
-          <SketchItem name={item.name} id={item.id} />
+          <SketchItem name={item.name} id={item.id} date={item.date}/>
         ))}
       </div>
     </motion.div>

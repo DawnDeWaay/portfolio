@@ -169,17 +169,22 @@
   z-index: 999;
   .name {
     position: absolute;
-    top: 16px;
-    left: 16px;
+    top: 18px;
+    left: 18px;
   }
   .id {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 18px;
+    right: 18px;
   }
   .drawing {
     width: 100%;
     aspect-ratio: 1;
+  }
+  .date {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
   }
 }
 
