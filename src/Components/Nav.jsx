@@ -5,7 +5,7 @@ const Nav = ({ sec, setSection, journal }) => {
     <ul className="nav">
       <AnimatePresence type="wait">
         <motion.li
-          key={"0"}
+          key={"zero"}
           onClick={() => {
             setSection(0);
           }}
@@ -26,7 +26,7 @@ const Nav = ({ sec, setSection, journal }) => {
           ) : null}
         </motion.li>
         <motion.li
-          key={"1"}
+          key={"one"}
           onClick={() => {
             setSection(1);
           }}
@@ -47,7 +47,7 @@ const Nav = ({ sec, setSection, journal }) => {
           ) : null}
         </motion.li>
         <motion.li
-          key={"2"}
+          key={"two"}
           onClick={() => {
             setSection(2);
           }}
@@ -68,7 +68,7 @@ const Nav = ({ sec, setSection, journal }) => {
           ) : null}
         </motion.li>
         <motion.li
-          key={"3"}
+          key={"three"}
           onClick={() => {
             setSection(3);
           }}
@@ -89,7 +89,7 @@ const Nav = ({ sec, setSection, journal }) => {
           ) : null}
         </motion.li>
         <motion.li
-          key={"4"}
+          key={"four"}
           onClick={() => {
             setSection(4);
             journal(true);
