@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-const Header = ({ journalOpen }) => {
+const Header = ({ journalOpen, setSection, sec }) => {
   return (
     <div className="header">
       <div className="inner-header">
@@ -10,10 +10,14 @@ const Header = ({ journalOpen }) => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ type: "Spring", delay: 0.5, duration: 0.5 }}
+            href="/"
+            style={{ color: journalOpen ? "white" : "black" }}
+            onClick={() => {
+              setSection(0);
+              setjournalOpen(false);
+            }}
           >
-            <a href="/" style={{ color: journalOpen ? "white" : "black" }}>
-              Don DeWaay III
-            </a>
+            Don DeWaay III
           </motion.h1>
         </AnimatePresence>
         <AnimatePresence>

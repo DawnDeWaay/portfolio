@@ -16,7 +16,7 @@ const SketchItem = ({ name, id, date, popDelay }) => {
         opacity: 0.9,
         transition: { duration: 0.7 },
       }}
-      whileTap={{ scale: 0.98 }}
+      whileTap={{ scale: 0.99 }}
     >
       <div className="name">{name}</div>
       <div className="id">No.{id}</div>

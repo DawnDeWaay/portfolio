@@ -18,7 +18,12 @@ function App() {
 
   return (
     <>
-      <Header textColor="white" journalOpen={journalOpen} />
+      <Header
+        textColor="white"
+        journalOpen={journalOpen}
+        setSection={setSection}
+        sec={section}
+      />
       <div className="content">
         <AnimatePresence>
           (
