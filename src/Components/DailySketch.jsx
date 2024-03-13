@@ -8,56 +8,48 @@ const DailySketch = () => {
       id: 1,
       date: "3/08/2024",
       path: "/sketches/1",
-      delay: "0.1",
     },
     {
       name: "Sketch 2",
       id: 2,
       date: "3/09/2024",
       path: "/sketches/2",
-      delay: "0.2",
     },
     {
       name: "Sketch 3",
       id: 3,
       date: "3/10/2024",
       path: "/sketches/3",
-      delay: "0.3",
     },
     {
       name: "Sketch 4",
       id: 4,
       date: "3/11/2024",
       path: "/sketches/4",
-      delay: "0.4",
     },
     {
       name: "Sketch 5",
       id: 5,
       date: "3/12/2024",
       path: "/sketches/5",
-      delay: "0.5",
     },
     {
       name: "Sketch 6",
       id: 6,
       date: "3/13/2024",
       path: "/sketches/6",
-      delay: "0.6",
     },
     {
       name: "Sketch 7",
       id: 7,
       date: "3/14/2024",
       path: "/sketches/7",
-      delay: "0.7",
     },
     {
       name: "Sketch 8",
       id: 8,
       date: "3/15/2024",
       path: "/sketches/8",
-      delay: "0.8",
     },
   ];
 
@@ -90,7 +82,7 @@ const DailySketch = () => {
               name={item.name}
               id={item.id}
               date={item.date}
-              popDelay={item.delay}
+              popDelay={item.id * 0.1}
             />
           ))}
         </AnimatePresence>
