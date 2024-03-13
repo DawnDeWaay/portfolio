@@ -64,7 +64,7 @@ function App() {
           className="back-btn"
           onClick={() => {
             setSection(0);
-            setjournalOpen(true);
+            setjournalOpen(false);
           }}
         >
           Back
