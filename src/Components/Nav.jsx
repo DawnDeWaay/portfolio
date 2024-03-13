@@ -1,18 +1,18 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-const Nav = ({ sec, switchSection, setColor, journal }) => {
+const Nav = ({ sec, setSection, setColor, journal }) => {
   return (
     <ul className="nav">
-      <AnimatePresence>
+      <AnimatePresence type="wait">
         <motion.li
           key={"0"}
           onClick={() => {
-            switchSection(0);
+            setSection(0);
             setColor("black");
           }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ x: -100, opacity: 0 }}
           transition={{ type: "Spring", delay: 1.1, duration: 0.5 }}
         >
           Welcome
@@ -29,12 +29,12 @@ const Nav = ({ sec, switchSection, setColor, journal }) => {
         <motion.li
           key={"1"}
           onClick={() => {
-            switchSection(1);
+            setSection(1);
             setColor("black");
           }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ x: -100, opacity: 0 }}
           transition={{ type: "Spring", delay: 1.2, duration: 0.5 }}
         >
           Projects
@@ -51,12 +51,12 @@ const Nav = ({ sec, switchSection, setColor, journal }) => {
         <motion.li
           key={"2"}
           onClick={() => {
-            switchSection(2);
+            setSection(2);
             setColor("black");
           }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ x: -100, opacity: 0 }}
           transition={{ type: "Spring", delay: 1.3, duration: 0.5 }}
         >
           Education
@@ -73,12 +73,12 @@ const Nav = ({ sec, switchSection, setColor, journal }) => {
         <motion.li
           key={"3"}
           onClick={() => {
-            switchSection(3);
+            setSection(3);
             setColor("black");
           }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ x: -100, opacity: 0 }}
           transition={{ type: "Spring", delay: 1.4, duration: 0.5 }}
         >
           Passions
@@ -95,12 +95,12 @@ const Nav = ({ sec, switchSection, setColor, journal }) => {
         <motion.li
           key={"4"}
           onClick={() => {
-            switchSection(4);
+            setSection(4);
             journal(true);
           }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ x: -100, opacity: 0 }}
           transition={{ type: "Spring", delay: 1.5, duration: 0.5 }}
         >
           Daily Sketch

@@ -51,7 +51,7 @@ function App() {
         {!journalOpen ? (
           <Nav
             sec={section}
-            switchSection={setSection}
+            setSection={setSection}
             key="nav"
             journal={setjournalOpen}
           />
@@ -59,6 +59,17 @@ function App() {
           ""
         )}
       </div>
+      {journalOpen && (
+        <div
+          className="back-btn"
+          onClick={() => {
+            setSection(0);
+            setjournalOpen(true);
+          }}
+        >
+          Back
+        </div>
+      )}
     </>
   );
 }
