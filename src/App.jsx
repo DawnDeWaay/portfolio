@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <Header textColor="white" journal={journalOpen} />
+      <Header textColor="white" journalOpen={journalOpen} />
       <div className="content">
         <AnimatePresence>
           (
