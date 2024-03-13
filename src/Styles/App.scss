@@ -179,7 +179,7 @@
   }
   .drawing {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1;
   }
 }
 
@@ -198,6 +198,17 @@ a {
 }
 
 /* FONTS */
+
+@media (max-width: 600px) {
+  .daily {
+    .grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .backrgound {
+    width: 400vw;
+  }
+}
 
 @font-face {
   font-family: Pexel;

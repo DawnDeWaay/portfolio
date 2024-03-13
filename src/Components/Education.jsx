@@ -46,8 +46,8 @@ const Education = () => {
       <div className="info-container">
         <div>
           <p>
-            I have extensive experience in many programming languages and
-            popular libraries for both frontend and backend development:
+            I have extensive experience in many popular programming languages
+            and libraries for both frontend and backend development:
           </p>
           <div
             style={{
@@ -65,7 +65,8 @@ const Education = () => {
               <li>Haskell</li>
             </ul>
             <ul>
-              <li>React.JS</li>
+              <li>React</li>
+              <li>Node.JS</li>
               <li>Three.JS</li>
               <li>Framer Motion</li>
             </ul>
