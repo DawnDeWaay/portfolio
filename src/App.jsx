@@ -1,12 +1,13 @@
 import Header from "./Components/Header";
 import Background from "/img/1C.png";
+import BackgroundMobile from "/img/1CMobile.png";
 import Nav from "./Components/Nav";
 import Welcome from "./Components/Welcome";
 import Projects from "./Components/Projects";
 import Education from "./Components/Education";
 import Passions from "./Components/Passions";
 import DailySketch from "./Components/DailySketch";
-import { useMediaQuery } from "react-responsive";
+import MediaQuery from "react-responsive";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import "./Styles/App.scss";
@@ -15,8 +16,6 @@ function App() {
   const [section, setSection] = useState(0);
   const [journalOpen, setjournalOpen] = useState(false);
 
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-
   return (
     <>
       <Header textColor="white" journalOpen={journalOpen} />
@@ -24,15 +23,28 @@ function App() {
         <AnimatePresence>
           (
           {!journalOpen ? (
-            <motion.img
-              className="background"
-              key="graphic"
-              src={Background}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1, duration: 1 }}
-              exit={{ opacity: 0 }}
-            />
+            <MediaQuery minWidth={0}>
+              <motion.img
+                className="background"
+                key="graphic"
+                src={BackgroundMobile}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1, duration: 1 }}
+                exit={{ opacity: 0 }}
+              />
+              <MediaQuery minWidth={768}>
+                <motion.img
+                  className="background"
+                  key="graphic"
+                  src={Background}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.1, duration: 1 }}
+                  exit={{ opacity: 0 }}
+                />
+              </MediaQuery>
+            </MediaQuery>
           ) : (
             ""
           )}
