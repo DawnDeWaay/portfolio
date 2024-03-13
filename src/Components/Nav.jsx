@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-const Nav = ({ sec, switchSection, setColor }) => {
+const Nav = ({ sec, switchSection, setColor, journal }) => {
   return (
     <ul className="nav">
       <AnimatePresence>
@@ -96,7 +96,7 @@ const Nav = ({ sec, switchSection, setColor }) => {
           key={"4"}
           onClick={() => {
             switchSection(4);
-            setColor("white");
+            journal(true);
           }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}

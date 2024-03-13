@@ -12,8 +12,6 @@ const DailySketch = () => {
   const listOfSketches = [];
 
   return (
-
-    // TODO: make bg graphic unrender instead of making an overlay
       <motion.div
         className="daily"
         initial={{ opacity: 0 }}

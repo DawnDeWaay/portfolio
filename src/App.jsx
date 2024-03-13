@@ -12,20 +12,28 @@ import "./Styles/App.scss";
 
 function App() {
   const [section, setSection] = useState(0);
-  const [textColor, setTextColor] = useState("white");
+  const [journalOpen, setjournalOpen] = useState(false);
 
   return (
     <>
-      <Header textColor="white" />
+      <Header textColor="white" journal={journalOpen} />
       <div className="content">
         <AnimatePresence>
-          <motion.img
-            className="background"
-            src={Background}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.1, duration: 1 }}
-          />
+          (
+          {!journalOpen ? (
+            <motion.img
+              className="background"
+              key="graphic"
+              src={Background}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1, duration: 1 }}
+              exit={{ opacity: 0 }}
+            />
+          ) : (
+            ""
+          )}
+          )
         </AnimatePresence>
         <AnimatePresence mode="wait">
           {section == 1 ? (
@@ -40,12 +48,16 @@ function App() {
             <Welcome key="0" />
           )}
         </AnimatePresence>
-        <Nav
-          sec={section}
-          switchSection={setSection}
-          key="nav"
-          setColor={setTextColor}
-        />
+        {!journalOpen ? (
+          <Nav
+            sec={section}
+            switchSection={setSection}
+            key="nav"
+            journal={setjournalOpen}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </>
   );

@@ -5,9 +5,9 @@ const SketchItem = () => {
     <motion.div
       className="item"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: 0.7 }}
       transition={{ duration: 0.3 }}
-      hover={{}}
+      whileHover={{ opacity: 0.9 }}
     >
       <div className="name">Name</div>
       <div className="id">ID</div>
