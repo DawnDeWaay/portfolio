@@ -223,10 +223,11 @@ a {
   .page {
     .hero {
       h2 {
-        font-size: 40px;
-        left: 10px;
+        font-size: 36px;
         white-space: wrap;
+        left: 0;
         width: 100vw;
+        text-align: center;
       }
     }
   }

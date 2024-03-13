@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-const Nav = ({ sec, setSection, setColor, journal }) => {
+const Nav = ({ sec, setSection, journal }) => {
   return (
     <ul className="nav">
       <AnimatePresence type="wait">
@@ -8,7 +8,6 @@ const Nav = ({ sec, setSection, setColor, journal }) => {
           key={"0"}
           onClick={() => {
             setSection(0);
-            setColor("black");
           }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -30,7 +29,6 @@ const Nav = ({ sec, setSection, setColor, journal }) => {
           key={"1"}
           onClick={() => {
             setSection(1);
-            setColor("black");
           }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -52,7 +50,6 @@ const Nav = ({ sec, setSection, setColor, journal }) => {
           key={"2"}
           onClick={() => {
             setSection(2);
-            setColor("black");
           }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -74,7 +71,6 @@ const Nav = ({ sec, setSection, setColor, journal }) => {
           key={"3"}
           onClick={() => {
             setSection(3);
-            setColor("black");
           }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
