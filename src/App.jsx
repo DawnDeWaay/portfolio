@@ -6,6 +6,7 @@ import Projects from "./Components/Projects";
 import Education from "./Components/Education";
 import Passions from "./Components/Passions";
 import DailySketch from "./Components/DailySketch";
+import { useMediaQuery } from "react-responsive";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import "./Styles/App.scss";
@@ -13,6 +14,8 @@ import "./Styles/App.scss";
 function App() {
   const [section, setSection] = useState(0);
   const [journalOpen, setjournalOpen] = useState(false);
+
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
     <>

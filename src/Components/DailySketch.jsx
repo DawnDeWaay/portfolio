@@ -9,6 +9,8 @@ const DailySketch = () => {
     { name: "Sketch 4", id: 4, date: "3/11/2024", path: "/sketches/4" },
     { name: "Sketch 5", id: 5, date: "3/12/2024", path: "/sketches/5" },
     { name: "Sketch 6", id: 6, date: "3/13/2024", path: "/sketches/6" },
+    { name: "Sketch 7", id: 7, date: "3/14/2024", path: "/sketches/7" },
+    { name: "Sketch 8", id: 8, date: "3/15/2024", path: "/sketches/8" },
   ];
 
   return (
@@ -34,7 +36,7 @@ const DailySketch = () => {
       </div>
       <div className="grid">
         {sketches.reverse().map((item) => (
-          <SketchItem name={item.name} id={item.id} date={item.date}/>
+          <SketchItem name={item.name} id={item.id} date={item.date} />
         ))}
       </div>
     </motion.div>

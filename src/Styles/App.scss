@@ -204,14 +204,34 @@ a {
 
 /* FONTS */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .daily {
+    .top {
+      h1 {
+        font-size: 40px;
+        padding: 0;
+        width: 90%;
+      }
+    }
     .grid {
       grid-template-columns: repeat(1, 1fr);
     }
   }
   .backrgound {
     width: 400vw;
+  }
+  .page {
+    .hero {
+      h2 {
+        font-size: 40px;
+        left: 10px;
+        white-space: wrap;
+        width: 80vw;
+      }
+    }
+  }
+  .info-container {
+    flex-direction: column;
   }
 }
 
