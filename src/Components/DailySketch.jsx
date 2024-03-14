@@ -2,20 +2,27 @@ import SketchItem from "./SketchItem";
 import { motion, AnimatePresence } from "framer-motion";
 import one from "/sketches/1.png";
 import two from "/sketches/2.png";
+import three from "/sketches/3.png";
 
 const DailySketch = () => {
   const sketches = [
     {
-      name: "Roadside",
+      name: "Shuffle",
       id: 1,
       date: "3/08/2024",
       img: one,
     },
     {
-      name: "Dreary",
+      name: "Roadside",
       id: 2,
       date: "3/09/2024",
       img: two,
+    },
+    {
+      name: "Moonlight",
+      id: 3,
+      date: "3/10/2024",
+      img: three,
     },
   ];
 
