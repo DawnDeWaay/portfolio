@@ -205,6 +205,12 @@ a {
   cursor: pointer;
 }
 
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
 .contact {
   color: white;
   .top {
@@ -222,9 +228,9 @@ a {
     }
   }
   .grid {
-    padding-left: 20vw;
-    padding-right: 20vw;
-    width: 60vw;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    width: 70vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-items: center;

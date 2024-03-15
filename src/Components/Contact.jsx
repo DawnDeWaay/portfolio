@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import iglogo from "/logos/instagram.svg";
 import li from "/logos/linkedin.svg";
 import twitter from "/logos/twitter.svg";
-import github from "/logos/github.svg";
+import github from "/logos/github.png";
 import email from "/logos/email.svg";
 
 const Contact = () => {
