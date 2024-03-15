@@ -291,8 +291,10 @@ a {
     flex-direction: column;
   }
   .contact {
-    text-align: center;
-    font-size: 28px;
+    h1 {
+      text-align: center;
+      font-size: 28px;
+    }
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }

@@ -20,7 +20,7 @@ const ContactItem = ({ color, service, delay, img, url }) => {
           transition: { duration: 0.3 },
           exit: { duration: 0.3 },
         }}
-        whileTap={{ scale: 0.97 }}
+        whileTap={{ scale: 0.98 }}
         exit={{ opacity: 0, y: 20 }}
         style={{ backgroundColor: color }}
         href={url}

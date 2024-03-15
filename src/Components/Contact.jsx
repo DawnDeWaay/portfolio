@@ -30,28 +30,28 @@ const Contact = () => {
           color="#2b3137"
           img={github}
           url="https://github.com/dondewaay"
-          delay="0.2"
+          delay="0.1"
         />
         <ContactItem
           service="LinkedIn"
           color="#0077b5"
           img={li}
           url="www.linkedin.com/in/dondewaay~"
-          delay="0.4"
+          delay="0.2"
         />
         <ContactItem
           service="Twitter"
           color="#1DA1F2"
           img={twitter}
           url="https://twitter.com/DonaldDeWaay"
-          delay="0.6"
+          delay="0.3"
         />
         <ContactItem
           service="Instagram"
           color="#dd2a7b"
           img={iglogo}
           url="https://www.instagram.com/dondewaay/"
-          delay="0.8"
+          delay="0.4"
         />
       </div>
     </motion.div>
