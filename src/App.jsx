@@ -7,6 +7,7 @@ import Projects from "./Components/Projects";
 import Education from "./Components/Education";
 import Passions from "./Components/Passions";
 import DailySketch from "./Components/DailySketch";
+import Contact from "./Components/Contact";
 import MediaQuery from "react-responsive";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -64,6 +65,8 @@ function App() {
             <Passions key="3" />
           ) : section == 4 ? (
             <DailySketch key="4" />
+          ) : section == 5 ? (
+            <Contact key="5" />
           ) : (
             <Welcome key="0" />
           )}

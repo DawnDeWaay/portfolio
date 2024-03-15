@@ -22,7 +22,7 @@ const DailySketch = () => {
       img: two,
     },
     {
-      name: "Moonlight",
+      name: "Greatsword",
       id: 3,
       date: "3/12/2024",
       img: three,
@@ -77,7 +77,6 @@ const DailySketch = () => {
               id={item.id}
               date={item.date}
               img={item.img}
-              popDelay={item.id * 0.1}
             />
           ))}
         </AnimatePresence>

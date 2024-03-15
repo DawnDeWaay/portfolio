@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 
 const Nav = ({ sec, setSection, journal }) => {
+
   return (
     <ul className="nav">
       <AnimatePresence type="wait">

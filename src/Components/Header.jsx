@@ -25,13 +25,12 @@ const Header = ({ journalOpen, setJournalOpen, setSection }) => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ type: "Spring", delay: 0.7, duration: 0.5 }}
+            onClick={() => {
+              setSection(5);
+              setJournalOpen(true);
+            }}
           >
-            <a
-              href="mailto:dondewaay@gmail.com"
-              style={{ color: journalOpen ? "white" : "black" }}
-            >
-              Contact
-            </a>
+            Contact
           </motion.h1>
         </AnimatePresence>
       </div>
