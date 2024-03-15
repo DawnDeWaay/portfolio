@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
 const Nav = ({ sec, setSection, journal }) => {
-
   return (
     <ul className="nav">
       <AnimatePresence type="wait">
@@ -34,7 +33,7 @@ const Nav = ({ sec, setSection, journal }) => {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -100, opacity: 0 }}
-          transition={{ type: "Spring", delay: 1.2, duration: 0.5 }}
+          transition={{ type: "Spring", delay: 1.15, duration: 0.5 }}
         >
           Projects
           {sec == 1 ? (
@@ -55,7 +54,7 @@ const Nav = ({ sec, setSection, journal }) => {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -100, opacity: 0 }}
-          transition={{ type: "Spring", delay: 1.3, duration: 0.5 }}
+          transition={{ type: "Spring", delay: 1.2, duration: 0.5 }}
         >
           Education
           {sec == 2 ? (
@@ -76,7 +75,7 @@ const Nav = ({ sec, setSection, journal }) => {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -100, opacity: 0 }}
-          transition={{ type: "Spring", delay: 1.4, duration: 0.5 }}
+          transition={{ type: "Spring", delay: 1.25, duration: 0.5 }}
         >
           Passions
           {sec == 3 ? (
@@ -98,7 +97,7 @@ const Nav = ({ sec, setSection, journal }) => {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -100, opacity: 0 }}
-          transition={{ type: "Spring", delay: 1.5, duration: 0.5 }}
+          transition={{ type: "Spring", delay: 1.3, duration: 0.5 }}
         >
           Daily Sketch
           {sec == 4 ? (

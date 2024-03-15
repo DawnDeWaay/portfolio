@@ -43,8 +43,8 @@ const Passions = () => {
       </div>
       <div className="info-container">
         <p>
-          I've successfully lost over 60lbs over the course of 2023, and now I'm
-          working on building muscle
+          I've lost over 60lbs over the course of 2023, and now I'm working on
+          building muscle 💪
         </p>
       </div>
       <div className="info-container">
