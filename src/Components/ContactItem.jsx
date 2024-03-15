@@ -16,11 +16,9 @@ const ContactItem = ({ color, service, delay, img, url }) => {
           },
         }}
         whileHover={{
-          boxShadow: `0px 0px 20px 5px ${color}`,
-          y: -5,
-          transition: { duration: 0.3, delay: 0 },
-          delay: 0,
-          exit: { duration: 0.3, delay: 0 },
+          boxShadow: `0px 3px 20px 5px ${color}`,
+          transition: { duration: 0.3 },
+          exit: { duration: 0.3 },
         }}
         whileTap={{ scale: 0.97 }}
         exit={{ opacity: 0, y: 20 }}

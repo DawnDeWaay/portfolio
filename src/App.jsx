@@ -16,6 +16,7 @@ import "./Styles/App.scss";
 function App() {
   const [section, setSection] = useState(0);
   const [journalOpen, setJournalOpen] = useState(false);
+  const [inContact, setInContact] = useState(false);
 
   return (
     <>
@@ -24,6 +25,8 @@ function App() {
         journalOpen={journalOpen}
         setJournalOpen={setJournalOpen}
         setSection={setSection}
+        inContact={inContact}
+        setInContact={setInContact}
       />
       <div className="content">
         <AnimatePresence>
@@ -88,6 +91,7 @@ function App() {
           onClick={() => {
             setSection(0);
             setJournalOpen(false);
+            setInContact(false);
           }}
         >
           Back

@@ -223,7 +223,7 @@ a {
     text-align: center;
     h1 {
       width: 60vw;
-      font-size: 60px;
+      font-size: 80px;
       margin: 50px;
     }
   }
@@ -291,6 +291,8 @@ a {
     flex-direction: column;
   }
   .contact {
+    text-align: center;
+    font-size: 28px;
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }
