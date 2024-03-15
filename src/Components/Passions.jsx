@@ -1,5 +1,4 @@
 import Cake from "/img/cake.jpeg";
-import Reina from "/img/reina.png";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -53,8 +52,16 @@ const Passions = () => {
           I play multiple fighting games, including Smash Ultimate, Tekken 8,
           and Guilty Gear Strive
         </p>
-        <img src={Reina} />
       </div>
+      <iframe
+        src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
+        width="70%"
+        height="352"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        className="spotify"
+      ></iframe>
     </motion.div>
   );
 };

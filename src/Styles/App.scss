@@ -235,32 +235,46 @@ a {
     grid-template-columns: repeat(5, 1fr);
     justify-items: center;
     grid-gap: 18px;
-    .contact-item {
-      width: 100%;
-      aspect-ratio: 1;
-      border-radius: 16px;
-      padding: 40px;
-      position: relative;
-      font-size: 14px;
-      box-sizing: border-box;
-      display: flex;
-      z-index: 999;
-      cursor: pointer;
-      .name {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-      }
-      .logo {
-        width: 100%;
-        aspect-ratio: 1;
-        color: white;
-      }
-    }
   }
 }
 
+.contact-item {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  padding: 40px;
+  position: relative;
+  font-size: 14px;
+  box-sizing: border-box;
+  display: flex;
+  z-index: 999;
+  cursor: pointer;
+  .name {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
+  .logo {
+    width: 100%;
+    aspect-ratio: 1;
+    color: white;
+  }
+}
+
+.spotify {
+  margin-bottom: 50px;
+  margin-left: 5vw;
+  border: none;
+}
+
 @media (max-width: 768px) {
+  .header {
+    .inner-header {
+      .h1 {
+        font-size: 24px;
+      }
+    }
+  }
   .daily {
     .top {
       h1 {
