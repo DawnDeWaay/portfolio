@@ -3,26 +3,47 @@ import { motion, AnimatePresence } from "framer-motion";
 import one from "/sketches/1.png";
 import two from "/sketches/2.png";
 import three from "/sketches/3.png";
+import four from "/sketches/4.png";
+import five from "/sketches/5.png";
+import six from "/sketches/6.png";
 
 const DailySketch = () => {
   const sketches = [
     {
-      name: "Shuffle",
+      name: "Aardvark",
       id: 1,
-      date: "3/08/2024",
+      date: "3/10/2024",
       img: one,
     },
     {
-      name: "Roadside",
+      name: "Trickle",
       id: 2,
-      date: "3/09/2024",
+      date: "3/11/2024",
       img: two,
     },
     {
       name: "Moonlight",
       id: 3,
-      date: "3/10/2024",
+      date: "3/12/2024",
       img: three,
+    },
+    {
+      name: "Marsh",
+      id: 4,
+      date: "3/13/2024",
+      img: four,
+    },
+    {
+      name: "Warble",
+      id: 5,
+      date: "3/14/2024",
+      img: five,
+    },
+    {
+      name: "Chicanery",
+      id: 6,
+      date: "3/15/2024",
+      img: six,
     },
   ];
 

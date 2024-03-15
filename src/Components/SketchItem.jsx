@@ -13,7 +13,7 @@ const SketchItem = ({ name, id, date, img }) => {
         },
       }}
       whileHover={{
-        opacity: 0.9,
+        opacity: 1,
         transition: { duration: 0.7 },
       }}
       whileTap={{ scale: 0.99 }}
@@ -21,11 +21,7 @@ const SketchItem = ({ name, id, date, img }) => {
     >
       <div className="name">{name}</div>
       <div className="id">No.{id}</div>
-      <img
-        src={img}
-        alt={id}
-        className="drawing"
-      />
+      <img src={img} alt={id} className="drawing" />
       <div className="date">{date}</div>
     </motion.div>
   );

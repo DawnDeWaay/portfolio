@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-const Header = ({ journalOpen, setSection, sec }) => {
+const Header = ({ journalOpen, setJournalOpen, setSection }) => {
   return (
     <div className="header">
       <div className="inner-header">
@@ -10,11 +10,10 @@ const Header = ({ journalOpen, setSection, sec }) => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ type: "Spring", delay: 0.5, duration: 0.5 }}
-            href="/"
             style={{ color: journalOpen ? "white" : "black" }}
             onClick={() => {
               setSection(0);
-              setjournalOpen(false);
+              setJournalOpen(false);
             }}
           >
             Don DeWaay III

@@ -14,15 +14,15 @@ import "./Styles/App.scss";
 
 function App() {
   const [section, setSection] = useState(0);
-  const [journalOpen, setjournalOpen] = useState(false);
+  const [journalOpen, setJournalOpen] = useState(false);
 
   return (
     <>
       <Header
         textColor="white"
         journalOpen={journalOpen}
+        setJournalOpen={setJournalOpen}
         setSection={setSection}
-        sec={section}
       />
       <div className="content">
         <AnimatePresence>
@@ -73,7 +73,7 @@ function App() {
             sec={section}
             setSection={setSection}
             key="nav"
-            journal={setjournalOpen}
+            journal={setJournalOpen}
           />
         ) : (
           ""
@@ -84,7 +84,7 @@ function App() {
           className="back-btn"
           onClick={() => {
             setSection(0);
-            setjournalOpen(false);
+            setJournalOpen(false);
           }}
         >
           Back

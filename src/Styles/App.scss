@@ -182,6 +182,7 @@
   .drawing {
     width: 100%;
     aspect-ratio: 1;
+    //-webkit-filter: invert(1);
   }
   .date {
     position: absolute;
