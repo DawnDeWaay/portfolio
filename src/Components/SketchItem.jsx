@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 
 const SketchItem = ({ name, id, date, img }) => {
+  const delayTime = Math.random() / 3;
+
   return (
     <motion.div
       className="item"
@@ -10,6 +12,7 @@ const SketchItem = ({ name, id, date, img }) => {
         y: 0,
         transition: {
           duration: 0.3,
+          delay: delayTime,
         },
       }}
       whileHover={{
