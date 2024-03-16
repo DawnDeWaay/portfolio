@@ -8,6 +8,7 @@ import Education from "./Components/Education";
 import Passions from "./Components/Passions";
 import DailySketch from "./Components/DailySketch";
 import Contact from "./Components/Contact";
+import Dropdown from "./Components/Dropdown";
 import MediaQuery from "react-responsive";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -17,9 +18,26 @@ function App() {
   const [section, setSection] = useState(0);
   const [journalOpen, setJournalOpen] = useState(false);
   const [inContact, setInContact] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
+  function toggleDropdown() {
+    setDropdown(!dropdown);
+  }
 
   return (
     <>
+      <AnimatePresence>
+        {dropdown && (
+          <Dropdown
+            key="drop"
+            sec={section}
+            setSection={setSection}
+            journal={setJournalOpen}
+            setInContact={setInContact}
+            toggleDropdown={toggleDropdown}
+          />
+        )}
+      </AnimatePresence>
       <Header
         textColor="white"
         journalOpen={journalOpen}
@@ -27,6 +45,9 @@ function App() {
         setSection={setSection}
         inContact={inContact}
         setInContact={setInContact}
+        dropdown={dropdown}
+        toggleDropdown={toggleDropdown}
+        setDropdown={setDropdown}
       />
       <div className="content">
         <AnimatePresence>
@@ -74,16 +95,20 @@ function App() {
             <Welcome key="0" />
           )}
         </AnimatePresence>
-        {!journalOpen ? (
-          <Nav
-            sec={section}
-            setSection={setSection}
-            key="nav"
-            journal={setJournalOpen}
-          />
-        ) : (
-          ""
-        )}
+        <MediaQuery minWidth={0}>
+          <MediaQuery minWidth={768}>
+            {!journalOpen ? (
+              <Nav
+                key="nav"
+                sec={section}
+                setSection={setSection}
+                journal={setJournalOpen}
+              />
+            ) : (
+              ""
+            )}
+          </MediaQuery>
+        </MediaQuery>
       </div>
       {journalOpen && (
         <div

@@ -1,4 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { useState, useEffect } from "react";
+import MediaQuery from "react-responsive";
 
 const Header = ({
   journalOpen,
@@ -6,44 +8,95 @@ const Header = ({
   setSection,
   inContact,
   setInContact,
+  dropdown,
+  toggleDropdown,
+  setDropdown,
 }) => {
+  const controls = useAnimation();
+  useEffect(() => {
+    if (!dropdown) {
+      controls.start("closed");
+    } else {
+      controls.start("open");
+    }
+  }, [dropdown, controls]);
+
   return (
     <div className="header">
       <div className="inner-header">
-        <AnimatePresence>
+        <MediaQuery maxWidth={767}>
           <motion.h1
             key="ddewaay"
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ type: "Spring", delay: 0.5, duration: 0.5 }}
-            style={{ color: journalOpen ? "white" : "black" }}
+            className="left-item"
+            style={{ color: journalOpen || dropdown ? "white" : "black" }}
             onClick={() => {
               setSection(0);
               setJournalOpen(false);
               setInContact(false);
+              setDropdown(false);
             }}
           >
             Don DeWaay III
           </motion.h1>
-        </AnimatePresence>
-        <AnimatePresence>
-          {!inContact && (
+        </MediaQuery>
+        <MediaQuery minWidth={768}>
+          <AnimatePresence>
             <motion.h1
-              key="contact"
+              key="ddewaay"
+              className="left-item"
               initial={{ y: -100 }}
               animate={{ y: 0 }}
-              transition={{ type: "Spring", delay: 0.7, duration: 0.5 }}
+              transition={{ type: "Spring", delay: 0.5, duration: 0.5 }}
               style={{ color: journalOpen ? "white" : "black" }}
               onClick={() => {
-                setSection(5);
-                setJournalOpen(true);
-                setInContact(true);
+                setSection(0);
+                setJournalOpen(false);
+                setInContact(false);
               }}
             >
-              Contact
+              Don DeWaay III
             </motion.h1>
-          )}
-        </AnimatePresence>
+          </AnimatePresence>
+        </MediaQuery>
+        <MediaQuery maxWidth={767}>
+          <motion.h1
+            className="right-item"
+            initial="closed"
+            variants={{
+              closed: { rotate: 0 },
+              open: { rotate: 45, color: "white" },
+            }}
+            style={{
+              color: journalOpen || dropdown ? "white" : "black",
+              fontSize: "70px",
+              fontWeight: "lighter",
+            }}
+            onClick={toggleDropdown}
+          >
+            +
+          </motion.h1>
+        </MediaQuery>
+        <MediaQuery minWidth={768}>
+          <AnimatePresence>
+            {!inContact && (
+              <motion.h1
+                key="contact"
+                className="right-item"
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ type: "Spring", delay: 0.7, duration: 0.5 }}
+                style={{ color: journalOpen ? "white" : "black" }}
+                onClick={() => {
+                  setSection(5);
+                  setJournalOpen(true);
+                  setInContact(true);
+                }}
+              >
+                Contact
+              </motion.h1>
+            )}
+          </AnimatePresence>
+        </MediaQuery>
       </div>
     </div>
   );

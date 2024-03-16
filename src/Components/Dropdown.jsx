@@ -1,0 +1,158 @@
+import { motion } from "framer-motion";
+
+const Dropdown = (sec, setSection, journal, setInContact, toggleDropdown) => {
+  return (
+    <motion.div
+      className="dropdown"
+      initial={{ height: 0 }}
+      animate={{ height: "100vh" }}
+      exit={{ height: 0 }}
+      transition={{ type: "Spring", duration: 0.6 }}
+    >
+      <div className="drop-container">
+        <motion.h2
+          key={"zero"}
+          onClick={() => {
+            setSection(0);
+            toggleDropdown;
+          }}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 50, opacity: 0 }}
+          transition={{ type: "Spring", delay: 0.5, duration: 0.5 }}
+          style={{ color: "white" }}
+        >
+          Welcome
+          {sec == 0 ? (
+            <motion.span
+              key="star0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
+        </motion.h2>
+        <motion.h2
+          key={"one"}
+          onClick={() => {
+            setSection(1);
+            toggleDropdown;
+          }}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 50, opacity: 0 }}
+          transition={{ type: "Spring", delay: 0.55, duration: 0.5 }}
+          style={{ color: "white" }}
+        >
+          Projects
+          {sec == 1 ? (
+            <motion.span
+              key="star1"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
+        </motion.h2>
+        <motion.h2
+          key={"two"}
+          onClick={() => {
+            setSection(2);
+            toggleDropdown;
+          }}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 50, opacity: 0 }}
+          transition={{ type: "Spring", delay: 0.6, duration: 0.5 }}
+          style={{ color: "white" }}
+        >
+          Education
+          {sec == 2 ? (
+            <motion.span
+              key="star2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
+        </motion.h2>
+        <motion.h2
+          key={"three"}
+          onClick={() => {
+            setSection(3);
+            toggleDropdown;
+          }}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 50, opacity: 0 }}
+          transition={{ type: "Spring", delay: 0.65, duration: 0.5 }}
+          style={{ color: "white" }}
+        >
+          Passions
+          {sec == 3 ? (
+            <motion.span
+              key="star3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
+        </motion.h2>
+        <motion.h2
+          key={"four"}
+          onClick={() => {
+            setSection(4);
+            journal(true);
+            toggleDropdown;
+          }}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 50, opacity: 0 }}
+          transition={{ type: "Spring", delay: 0.7, duration: 0.5 }}
+          style={{ color: "white" }}
+        >
+          Daily Sketch
+          {sec == 4 ? (
+            <motion.span
+              key="star4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
+        </motion.h2>
+        <motion.h2
+          key={"five"}
+          onClick={() => {
+            setSection(5);
+            setInContact(true);
+            toggleDropdown;
+          }}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 50, opacity: 0 }}
+          transition={{ type: "Spring", delay: 0.75, duration: 0.5 }}
+          style={{ color: "white" }}
+        >
+          Contact
+          {sec == 5 ? (
+            <motion.span
+              key="star5"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              &nbsp;✦
+            </motion.span>
+          ) : null}
+        </motion.h2>
+      </div>
+    </motion.div>
+  );
+};
+
+export default Dropdown;
