@@ -277,7 +277,9 @@ a {
   align-items: center;
   overflow: hidden;
   z-index: 9998;
-  background-color: #6dbdf1;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  border-bottom: 4px solid white;
   .drop-container {
     width: 90vw;
     height: 60vw;
@@ -342,6 +344,9 @@ a {
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+  .spotify {
+    width: 90vw;
   }
 }
 

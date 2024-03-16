@@ -57,7 +57,6 @@ const Passions = () => {
         src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
         width="70%"
         height="352"
-        allowfullscreen=""
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
         className="spotify"

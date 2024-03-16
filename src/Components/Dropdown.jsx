@@ -6,8 +6,8 @@ const Dropdown = ({ sec, setSection, journal, setInContact, setDropdown }) => {
       className="dropdown"
       initial={{ height: 0 }}
       animate={{ height: "100vh" }}
-      exit={{ height: 0 }}
-      transition={{ type: "Spring", duration: 0.3 }}
+      exit={{ opacity: 0 }}
+      transition={{ type: "Linear", duration: 0.3 }}
     >
       <div className="drop-container">
         <motion.h2

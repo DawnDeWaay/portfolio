@@ -26,19 +26,20 @@ const Contact = () => {
           delay="0"
         />
         <ContactItem
-          service="GitHub"
-          color="#2b3137"
-          img={github}
-          url="https://github.com/dondewaay"
-          delay="0.1"
-        />
-        <ContactItem
           service="LinkedIn"
           color="#0077b5"
           img={li}
           url="www.linkedin.com/in/dondewaay~"
+          delay="0.1"
+        />
+        <ContactItem
+          service="GitHub"
+          color="#2b3137"
+          img={github}
+          url="https://github.com/dondewaay"
           delay="0.2"
         />
+
         <ContactItem
           service="Twitter"
           color="#1DA1F2"
