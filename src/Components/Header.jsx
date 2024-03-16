@@ -59,22 +59,24 @@ const Header = ({
           </AnimatePresence>
         </MediaQuery>
         <MediaQuery maxWidth={767}>
-          <motion.h1
-            className="right-item"
-            initial="closed"
-            variants={{
-              closed: { rotate: 0 },
-              open: { rotate: 45, color: "white" },
-            }}
-            style={{
-              color: journalOpen || dropdown ? "white" : "black",
-              fontSize: "70px",
-              fontWeight: "lighter",
-            }}
-            onClick={toggleDropdown}
-          >
-            +
-          </motion.h1>
+          {!journalOpen && (
+            <motion.h1
+              className="right-item"
+              initial="closed"
+              variants={{
+                closed: { rotate: 0 },
+                open: { rotate: 45, color: "white" },
+              }}
+              style={{
+                color: journalOpen || dropdown ? "white" : "black",
+                fontSize: "70px",
+                fontWeight: "lighter",
+              }}
+              onClick={toggleDropdown}
+            >
+              +
+            </motion.h1>
+          )}
         </MediaQuery>
         <MediaQuery minWidth={768}>
           <AnimatePresence>

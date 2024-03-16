@@ -1,20 +1,20 @@
 import { motion } from "framer-motion";
 
-const Dropdown = (sec, setSection, journal, setInContact, toggleDropdown) => {
+const Dropdown = ({ sec, setSection, journal, setInContact, setDropdown }) => {
   return (
     <motion.div
       className="dropdown"
       initial={{ height: 0 }}
       animate={{ height: "100vh" }}
       exit={{ height: 0 }}
-      transition={{ type: "Spring", duration: 0.6 }}
+      transition={{ type: "Spring", duration: 0.3 }}
     >
       <div className="drop-container">
         <motion.h2
           key={"zero"}
           onClick={() => {
             setSection(0);
-            toggleDropdown;
+            setDropdown(false);
           }}
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -37,7 +37,7 @@ const Dropdown = (sec, setSection, journal, setInContact, toggleDropdown) => {
           key={"one"}
           onClick={() => {
             setSection(1);
-            toggleDropdown;
+            setDropdown(false);
           }}
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -60,7 +60,7 @@ const Dropdown = (sec, setSection, journal, setInContact, toggleDropdown) => {
           key={"two"}
           onClick={() => {
             setSection(2);
-            toggleDropdown;
+            setDropdown(false);
           }}
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -83,7 +83,7 @@ const Dropdown = (sec, setSection, journal, setInContact, toggleDropdown) => {
           key={"three"}
           onClick={() => {
             setSection(3);
-            toggleDropdown;
+            setDropdown(false);
           }}
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -107,7 +107,7 @@ const Dropdown = (sec, setSection, journal, setInContact, toggleDropdown) => {
           onClick={() => {
             setSection(4);
             journal(true);
-            toggleDropdown;
+            setDropdown(false);
           }}
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -131,7 +131,7 @@ const Dropdown = (sec, setSection, journal, setInContact, toggleDropdown) => {
           onClick={() => {
             setSection(5);
             setInContact(true);
-            toggleDropdown;
+            setDropdown(false);
           }}
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

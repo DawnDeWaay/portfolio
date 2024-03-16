@@ -33,8 +33,9 @@ function App() {
             sec={section}
             setSection={setSection}
             journal={setJournalOpen}
+            journalOpen={journalOpen}
             setInContact={setInContact}
-            toggleDropdown={toggleDropdown}
+            setDropdown={setDropdown}
           />
         )}
       </AnimatePresence>
