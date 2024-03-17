@@ -20,7 +20,7 @@ const Contact = () => {
       <div className="grid">
         <ContactItem
           service="Email"
-          color="lightblue"
+          color="#54d4ff"
           img={email}
           url="mailto:dondewaay@gmail.com"
           delay="0"
