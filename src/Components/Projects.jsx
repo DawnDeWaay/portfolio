@@ -39,27 +39,29 @@ const Projects = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="info-container">
-        <p>
-          MultiRoll is a slick web tool I created to streamline encounters and
-          monotonous dice rolling in D&D
-        </p>
-        <img src={Screenshot} />
-      </div>
-      <div className="info-container">
-        <img src={Character} />
-        <p>
-          Features include a character creator with dynamic personalization
-          options, a quick roller for non-combat scenarios, and motion graphics
-          utilizing Three.js and Framer Motion React libraries
-        </p>
-      </div>
-      <div className="info-container">
-        <p>
-          Characters and presets are stored in the browser's localstorage for
-          user convenience
-        </p>
-        <img src={Preset} />
+      <div className="content-contain">
+        <div className="info-container">
+          <p>
+            MultiRoll is a slick web tool I created to streamline encounters and
+            monotonous dice rolling in D&D
+          </p>
+          <img src={Screenshot} />
+        </div>
+        <div className="info-container">
+          <img src={Character} />
+          <p>
+            Features include a character creator with dynamic personalization
+            options, a quick roller for non-combat scenarios, and motion
+            graphics utilizing Three.js and Framer Motion React libraries
+          </p>
+        </div>
+        <div className="info-container">
+          <p>
+            Characters and presets are stored in the browser's localstorage for
+            user convenience
+          </p>
+          <img src={Preset} />
+        </div>
       </div>
     </motion.div>
   );

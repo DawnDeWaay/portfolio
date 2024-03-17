@@ -37,23 +37,23 @@ const Passions = () => {
           </div>
         </AnimatePresence>
       </div>
-      <div className="info-container">
-        <img src={Cake} />
-        <p>Tres leches cake! My favorite dessert</p>
-      </div>
-      <div className="info-container">
-        <p>
-          I've lost over 60lbs over the course of 2023, and now I'm working on
-          building muscle 💪
-        </p>
-      </div>
-      <div className="info-container">
-        <p>
-          I play multiple fighting games, including Smash Ultimate, Tekken 8,
-          and Guilty Gear Strive
-        </p>
-      </div>
-      <div className="spot-contain">
+      <div className="content-contain">
+        <div className="info-container">
+          <img src={Cake} />
+          <p>Tres leches cake! My favorite dessert</p>
+        </div>
+        <div className="info-container">
+          <p>
+            I've lost over 60lbs over the course of 2023, and now I'm working on
+            building muscle 💪
+          </p>
+        </div>
+        <div className="info-container">
+          <p>
+            I play multiple fighting games, including Smash Ultimate, Tekken 8,
+            and Guilty Gear Strive
+          </p>
+        </div>
         <iframe
           src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
           height="352"

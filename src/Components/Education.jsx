@@ -43,7 +43,7 @@ const Education = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div>
+      <div className="content-contain">
         <div className="info-container">
           <div>
             <p>

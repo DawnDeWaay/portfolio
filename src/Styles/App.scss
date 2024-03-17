@@ -98,14 +98,23 @@
   }
 }
 
-.info-container {
+.content-contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 75vw;
-  margin: 40px 0 40px 3vw;
+  gap: 40px;
+  margin-left: 50px;
+}
+
+.info-container {
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 20px;
+
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.25);
   position: relative;
@@ -275,11 +284,6 @@ a {
   padding: 0;
 }
 
-.spot-contain {
-  padding-right: 19.3vw;
-  margin-left: 3vw;
-}
-
 .dropdown {
   width: 100vw;
   height: 100vh;
@@ -413,6 +417,10 @@ a {
   }
   .scroll {
     padding-bottom: 10vh;
+  }
+  .content-contain {
+    display: block;
+    width: 100%;
   }
 }
 
