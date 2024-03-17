@@ -1,1 +1,1 @@
-Need to make mobile friendly, maybe a plus or hamburger menu in the top right to bring up navigation
+Make plus turn 45deg on click
