@@ -118,7 +118,6 @@
     width: 35vw;
     margin: 24px;
     font-size: 28px;
-    padding-top: 30px;
   }
   img {
     width: 50%;
@@ -284,7 +283,6 @@ a {
   background-color: rgba(120, 120, 120, 0.464);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  border-bottom: 4px solid white;
   .drop-container {
     width: 90vw;
     height: 60vw;
@@ -297,6 +295,15 @@ a {
       color: white;
     }
   }
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 @media (max-width: 768px) {
@@ -324,11 +331,15 @@ a {
   }
   .page {
     .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       h2 {
-        font-size: 36px;
+        font-size: 40px;
         white-space: wrap;
         left: 0;
         width: 90vw;
+        height: auto;
         text-align: center;
         margin: 5vw;
       }
@@ -349,14 +360,14 @@ a {
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.25);
     padding: 20px;
-
+    gap: 20px;
     p {
       white-space: wrap;
       font-size: 24px;
       width: 100%;
       text-align: center;
       margin: 0;
-      padding: 16px;
+      box-sizing: border-box;
     }
     img {
       margin: 0;

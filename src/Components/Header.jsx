@@ -23,7 +23,7 @@ const Header = ({
 
   return (
     <div className="header">
-      <div className="inner-header">
+      <div className="inner-header noselect">
         <MediaQuery maxWidth={767}>
           <motion.h1
             key="ddewaay"

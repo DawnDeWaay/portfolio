@@ -13,6 +13,7 @@ const Nav = ({ sec, setSection, journal }) => {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -100, opacity: 0 }}
           transition={{ type: "Spring", delay: 1.1, duration: 0.5 }}
+          className="noselect"
         >
           Welcome
           {sec == 0 ? (
@@ -34,6 +35,7 @@ const Nav = ({ sec, setSection, journal }) => {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -100, opacity: 0 }}
           transition={{ type: "Spring", delay: 1.15, duration: 0.5 }}
+          className="noselect"
         >
           Projects
           {sec == 1 ? (
@@ -55,6 +57,7 @@ const Nav = ({ sec, setSection, journal }) => {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -100, opacity: 0 }}
           transition={{ type: "Spring", delay: 1.2, duration: 0.5 }}
+          className="noselect"
         >
           Education
           {sec == 2 ? (
@@ -76,6 +79,7 @@ const Nav = ({ sec, setSection, journal }) => {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -100, opacity: 0 }}
           transition={{ type: "Spring", delay: 1.25, duration: 0.5 }}
+          className="noselect"
         >
           Passions
           {sec == 3 ? (
@@ -98,6 +102,7 @@ const Nav = ({ sec, setSection, journal }) => {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -100, opacity: 0 }}
           transition={{ type: "Spring", delay: 1.3, duration: 0.5 }}
+          className="noselect"
         >
           Daily Sketch
           {sec == 4 ? (
