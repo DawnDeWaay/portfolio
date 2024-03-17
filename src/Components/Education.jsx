@@ -61,7 +61,8 @@ const Education = () => {
                 style={{
                   fontSize: "20px",
                   listStyleType: "none",
-                  padding: "10px",
+                  margin: "36px",
+                  marginTop: "20px",
                 }}
               >
                 <li>JavaScript</li>
@@ -75,7 +76,8 @@ const Education = () => {
                 style={{
                   fontSize: "20px",
                   listStyleType: "none",
-                  padding: "10px",
+                  margin: "36px",
+                  marginTop: "20px",
                 }}
               >
                 <li>React</li>

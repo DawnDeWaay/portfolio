@@ -1,1 +1,1 @@
-Make plus turn 45deg on click, maybe make a container for all the info-containers
+Make plus turn 45deg on click
