@@ -68,12 +68,14 @@
       font-size: 22px;
     }
     .scroll {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       position: absolute;
       bottom: 30px;
-      left: 30px;
       font-size: 26px;
-      display: inline-flex;
-      flex-direction: row;
     }
   }
 }
