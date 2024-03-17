@@ -45,7 +45,6 @@ const Education = () => {
       </div>
       <div>
         <div className="info-container">
-          <div className="num-label">No. 1</div>
           <div>
             <p>
               I have extensive experience in many popular programming languages
@@ -58,7 +57,13 @@ const Education = () => {
                 justifyContent: "space-between",
               }}
             >
-              <ul>
+              <ul
+                style={{
+                  fontSize: "20px",
+                  listStyleType: "none",
+                  padding: "10px",
+                }}
+              >
                 <li>JavaScript</li>
                 <li>HTML/CSS</li>
                 <li>Python</li>
@@ -66,7 +71,13 @@ const Education = () => {
                 <li>C</li>
                 <li>Haskell</li>
               </ul>
-              <ul>
+              <ul
+                style={{
+                  fontSize: "20px",
+                  listStyleType: "none",
+                  padding: "10px",
+                }}
+              >
                 <li>React</li>
                 <li>Node.JS</li>
                 <li>Three.JS</li>
@@ -82,10 +93,10 @@ const Education = () => {
             Center, Badminton Club, Campus Symphony Orchestra, as well as
             competing in events at the Esports Arcade
           </p>
-          <img src={Uiowa} className="edu" />
+          <img src={Uiowa} />
         </div>
         <div className="info-container">
-          <img src={Workin} className="edu" />
+          <img src={Workin} />
           <p>
             While I wasn't studying for Algorithms at the Main Library, you
             could find me working late into the night patrolling campus for DPS
@@ -94,10 +105,10 @@ const Education = () => {
         </div>
         <div className="info-container">
           <p>Hangin out by the Iowa River</p>
-          <img src={River} className="edu" />
+          <img src={River} />
         </div>
         <div className="info-container">
-          <img src={Don} className="edu" />
+          <img src={Don} />
         </div>
       </div>
     </motion.div>
