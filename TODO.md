@@ -1,1 +1,1 @@
-Make plus turn 45deg on click
+Make plus turn 45deg on click, add content to sections
