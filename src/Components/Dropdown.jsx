@@ -4,8 +4,8 @@ const Dropdown = ({ sec, setSection, journal, setInContact, setDropdown }) => {
   return (
     <motion.div
       className="dropdown"
-      initial={{ height: 0 }}
-      animate={{ height: "100vh" }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ type: "Linear", duration: 0.3 }}
     >
