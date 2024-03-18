@@ -57,7 +57,7 @@ const Passions = () => {
         </div>
         <iframe
           src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
-          height="352"
+          height="400"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           className="spotify"
         ></iframe>
