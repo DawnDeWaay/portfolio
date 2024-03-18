@@ -1,5 +1,6 @@
 import Cake from "/img/cake.jpeg";
 import Joker from "/img/joker.jpeg";
+import Mirror from "/img/mirror.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Passions = () => {
@@ -48,6 +49,7 @@ const Passions = () => {
           <img src={Joker} />
         </div>
         <div className="info-container">
+          <img src={Mirror} />
           <p>
             I've lost over 60lbs over the course of 2023, and now I'm working on
             building muscle 💪
