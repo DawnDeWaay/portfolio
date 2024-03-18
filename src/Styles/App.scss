@@ -124,10 +124,35 @@
     left: 10px;
   }
   p {
+    box-sizing: border-box;
     white-space: wrap;
-    width: 35vw;
-    margin: 36px;
+    width: 50%;
+    margin: 20px;
     font-size: 28px;
+    padding: 20px;
+  }
+  .edu-items {
+    padding: 20px;
+    p {
+      box-sizing: border-box;
+      white-space: wrap;
+      width: 100%;
+      font-size: 28px;
+      margin: 0;
+      padding: 0;
+    }
+    .ul-contain {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      ul {
+        font-size: 20px;
+        margin: 20px;
+        li {
+          list-style-type: none;
+        }
+      }
+    }
   }
   img {
     width: 50%;
@@ -326,6 +351,7 @@ a {
       }
     }
   }
+
   .daily {
     .top {
       h1 {
@@ -378,6 +404,16 @@ a {
       width: 100%;
       text-align: center;
       margin: 0;
+      padding: 0;
+    }
+    .edu-items {
+      padding: 0;
+      p {
+        white-space: wrap;
+        width: 100%;
+        font-size: 28px;
+        margin: 0;
+      }
     }
     img {
       margin: 0;

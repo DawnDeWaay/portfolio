@@ -2,6 +2,7 @@ import Don from "/img/don.jpeg";
 import Workin from "/img/workin.jpeg";
 import Uiowa from "/img/uiowa.jpeg";
 import River from "/img/hanginout.jpeg";
+import Stadium from "/img/stadium.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Education = () => {
@@ -45,26 +46,14 @@ const Education = () => {
       </div>
       <div className="content-contain">
         <div className="info-container">
-          <div>
+          <img src={Uiowa} />
+          <div className="edu-items">
             <p>
               I have extensive experience in many popular programming languages
               and libraries for both frontend and backend development:
             </p>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <ul
-                style={{
-                  fontSize: "20px",
-                  listStyleType: "none",
-                  margin: "36px",
-                  marginTop: "20px",
-                }}
-              >
+            <div className="ul-contain">
+              <ul>
                 <li>JavaScript</li>
                 <li>HTML/CSS</li>
                 <li>Python</li>
@@ -72,18 +61,15 @@ const Education = () => {
                 <li>C</li>
                 <li>Haskell</li>
               </ul>
-              <ul
-                style={{
-                  fontSize: "20px",
-                  listStyleType: "none",
-                  margin: "36px",
-                  marginTop: "20px",
-                }}
-              >
+              <ul>
                 <li>React</li>
                 <li>Node.JS</li>
                 <li>Three.JS</li>
-                <li>Framer Motion</li>
+                <li>
+                  Framer
+                  <br />
+                  Motion
+                </li>
               </ul>
             </div>
           </div>
@@ -95,7 +81,7 @@ const Education = () => {
             Center, Badminton Club, Campus Symphony Orchestra, as well as
             competing in events at the Esports Arcade
           </p>
-          <img src={Uiowa} />
+          <img src={Stadium} />
         </div>
         <div className="info-container">
           <img src={Workin} />
@@ -111,6 +97,7 @@ const Education = () => {
         </div>
         <div className="info-container">
           <img src={Don} />
+          <p>Me 💅✨</p>
         </div>
       </div>
     </motion.div>

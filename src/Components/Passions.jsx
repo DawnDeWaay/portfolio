@@ -1,5 +1,5 @@
 import Cake from "/img/cake.jpeg";
-
+import Joker from "/img/joker.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Passions = () => {
@@ -15,11 +15,9 @@ const Passions = () => {
         <h2>
           Don Loves Fashion,
           <br />
-          Fitness, Design,
+          Fitness, Fighting Games,
           <br />
-          Fighting Games, Jazz,
-          <br />
-          and Food
+          Jazz, and Food
         </h2>
         <AnimatePresence>
           <div className="scroll">
@@ -44,14 +42,15 @@ const Passions = () => {
         </div>
         <div className="info-container">
           <p>
-            I've lost over 60lbs over the course of 2023, and now I'm working on
-            building muscle 💪
+            I play multiple fighting games, including Smash Bros. Ultimate,
+            Tekken 8, and Guilty Gear Strive
           </p>
+          <img src={Joker} />
         </div>
         <div className="info-container">
           <p>
-            I play multiple fighting games, including Smash Ultimate, Tekken 8,
-            and Guilty Gear Strive
+            I've lost over 60lbs over the course of 2023, and now I'm working on
+            building muscle 💪
           </p>
         </div>
         <iframe
