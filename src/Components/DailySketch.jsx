@@ -7,6 +7,7 @@ import four from "/sketches/4.png";
 import five from "/sketches/5.png";
 import six from "/sketches/6.png";
 import seven from "/sketches/7.png";
+import eight from "/sketches/8.png";
 
 const DailySketch = () => {
   const sketches = [
@@ -51,6 +52,12 @@ const DailySketch = () => {
       id: 7,
       date: "3/16/2024",
       img: seven,
+    },
+    {
+      name: "November Rain",
+      id: 8,
+      date: "3/17/2024",
+      img: eight,
     },
   ];
 
