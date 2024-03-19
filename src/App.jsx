@@ -54,16 +54,18 @@ function App() {
         <AnimatePresence>
           (
           {!journalOpen ? (
-            <MediaQuery minWidth={0}>
-              <motion.img
-                className="background"
-                key="graphic"
-                src={BackgroundMobile}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.1, duration: 1 }}
-                exit={{ opacity: 0 }}
-              />
+            <>
+              <MediaQuery maxWidth={767}>
+                <motion.img
+                  className="background"
+                  key="graphic"
+                  src={BackgroundMobile}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.1, duration: 1 }}
+                  exit={{ opacity: 0 }}
+                />
+              </MediaQuery>
               <MediaQuery minWidth={768}>
                 <motion.img
                   className="background"
@@ -75,7 +77,7 @@ function App() {
                   exit={{ opacity: 0 }}
                 />
               </MediaQuery>
-            </MediaQuery>
+            </>
           ) : (
             ""
           )}
@@ -96,19 +98,17 @@ function App() {
             <Welcome key="0" />
           )}
         </AnimatePresence>
-        <MediaQuery minWidth={0}>
-          <MediaQuery minWidth={768}>
-            {!journalOpen ? (
-              <Nav
-                key="nav"
-                sec={section}
-                setSection={setSection}
-                journal={setJournalOpen}
-              />
-            ) : (
-              ""
-            )}
-          </MediaQuery>
+        <MediaQuery minWidth={768}>
+          {!journalOpen ? (
+            <Nav
+              key="nav"
+              sec={section}
+              setSection={setSection}
+              journal={setJournalOpen}
+            />
+          ) : (
+            ""
+          )}
         </MediaQuery>
       </div>
       {journalOpen && (
