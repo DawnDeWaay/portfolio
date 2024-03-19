@@ -1,5 +1,5 @@
 import Cake from "/img/cake.jpeg";
-import Joker from "/img/joker.jpeg";
+import Joker from "/img/joker.png";
 import Mirror from "/img/mirror.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -39,7 +39,9 @@ const Passions = () => {
       <div className="content-contain">
         <div className="info-container">
           <img src={Cake} />
-          <p>Tres leches cake! My favorite dessert</p>
+          <p>
+            Tres leches cake! My favorite dessert to bake for friends and family
+          </p>
         </div>
         <div className="info-container">
           <p>
@@ -51,8 +53,8 @@ const Passions = () => {
         <div className="info-container">
           <img src={Mirror} />
           <p>
-            I've lost over 60lbs over the course of 2023, and now I'm working on
-            building muscle 💪
+            I've lost over 60lbs over the course of 2023, and now I'm putting my
+            calories towards building muscle 💪
           </p>
         </div>
         <iframe

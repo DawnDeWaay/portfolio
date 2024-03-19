@@ -81,7 +81,7 @@ const Education = () => {
             Center, Badminton Club, Campus Symphony Orchestra, as well as
             competing in events at the Esports Arcade
           </p>
-          <img src={Stadium} />
+          <img src={Don} />
         </div>
         <div className="info-container">
           <img src={Workin} />
@@ -90,10 +90,6 @@ const Education = () => {
             could find me working late into the night patrolling campus for DPS
             Student Security
           </p>
-        </div>
-        <div className="info-container">
-          <img src={Don} />
-          <p>Me 💅✨</p>
         </div>
       </div>
     </motion.div>
