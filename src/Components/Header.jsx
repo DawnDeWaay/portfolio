@@ -21,6 +21,11 @@ const Header = ({
     }
   }, [dropdown, controls]);
 
+  const rotateVariants = {
+    closed: { rotate: 0 },
+    open: { rotate: 45, color: "white" },
+  };
+
   return (
     <div className="header">
       <div className="inner-header noselect">
@@ -63,10 +68,8 @@ const Header = ({
             <motion.h1
               className="right-item"
               initial="closed"
-              variants={{
-                closed: { rotate: 0 },
-                open: { rotate: 45, color: "white" },
-              }}
+              variants={rotateVariants}
+              animate={dropdown ? "open" : "closed"}
               style={{
                 color: journalOpen || dropdown ? "white" : "black",
                 fontSize: "70px",

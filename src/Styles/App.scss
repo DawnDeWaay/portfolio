@@ -374,13 +374,17 @@ a {
       align-items: center;
       justify-content: center;
       h2 {
-        font-size: 40px;
+        font-size: 38px;
         white-space: wrap;
         left: 0;
-        width: 90vw;
+        width: 92vw;
         height: auto;
         text-align: center;
-        margin: 5vw;
+        margin: 4vw;
+        p {
+          padding-top: 10px;
+          font-size: 18px;
+        }
       }
     }
   }

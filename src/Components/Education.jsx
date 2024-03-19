@@ -92,10 +92,6 @@ const Education = () => {
           </p>
         </div>
         <div className="info-container">
-          <p>Hangin out by the Iowa River</p>
-          <img src={River} />
-        </div>
-        <div className="info-container">
           <img src={Don} />
           <p>Me 💅✨</p>
         </div>
