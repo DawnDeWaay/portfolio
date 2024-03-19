@@ -56,7 +56,7 @@ const DailySketch = () => {
       img: seven,
     },
     {
-      name: "November Rain",
+      name: "Roses",
       id: 8,
       date: "3/17/2024",
       img: eight,
