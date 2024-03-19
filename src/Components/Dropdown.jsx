@@ -9,7 +9,7 @@ const Dropdown = ({ sec, setSection, journal, setInContact, setDropdown }) => {
       exit={{ opacity: 0 }}
       transition={{ type: "Linear", duration: 0.3 }}
     >
-      <div className="drop-container">
+      <div className="drop-container" style={{ marginBottom: "150px" }}>
         <motion.h2
           key={"zero"}
           onClick={() => {
@@ -19,7 +19,7 @@ const Dropdown = ({ sec, setSection, journal, setInContact, setDropdown }) => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 50, opacity: 0 }}
-          transition={{ type: "Spring", delay: 0.5, duration: 0.5 }}
+          transition={{ type: "Spring", delay: 0.5, duration: 0.3 }}
           style={{ color: "white" }}
         >
           Welcome
@@ -42,7 +42,7 @@ const Dropdown = ({ sec, setSection, journal, setInContact, setDropdown }) => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 50, opacity: 0 }}
-          transition={{ type: "Spring", delay: 0.55, duration: 0.5 }}
+          transition={{ type: "Spring", delay: 0.55, duration: 0.3 }}
           style={{ color: "white" }}
         >
           Projects
@@ -65,7 +65,7 @@ const Dropdown = ({ sec, setSection, journal, setInContact, setDropdown }) => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 50, opacity: 0 }}
-          transition={{ type: "Spring", delay: 0.6, duration: 0.5 }}
+          transition={{ type: "Spring", delay: 0.6, duration: 0.3 }}
           style={{ color: "white" }}
         >
           Education
@@ -88,7 +88,7 @@ const Dropdown = ({ sec, setSection, journal, setInContact, setDropdown }) => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 50, opacity: 0 }}
-          transition={{ type: "Spring", delay: 0.65, duration: 0.5 }}
+          transition={{ type: "Spring", delay: 0.65, duration: 0.3 }}
           style={{ color: "white" }}
         >
           Passions
@@ -112,7 +112,7 @@ const Dropdown = ({ sec, setSection, journal, setInContact, setDropdown }) => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 50, opacity: 0 }}
-          transition={{ type: "Spring", delay: 0.7, duration: 0.5 }}
+          transition={{ type: "Spring", delay: 0.7, duration: 0.3 }}
           style={{ color: "white" }}
         >
           Daily Sketch
@@ -136,7 +136,7 @@ const Dropdown = ({ sec, setSection, journal, setInContact, setDropdown }) => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 50, opacity: 0 }}
-          transition={{ type: "Spring", delay: 0.75, duration: 0.5 }}
+          transition={{ type: "Spring", delay: 0.75, duration: 0.3 }}
           style={{ color: "white" }}
         >
           Contact
