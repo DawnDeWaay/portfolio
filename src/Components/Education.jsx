@@ -1,8 +1,6 @@
 import Don from "/img/don.jpeg";
 import Workin from "/img/workin.jpeg";
 import Uiowa from "/img/uiowa.jpeg";
-import River from "/img/hanginout.jpeg";
-import Stadium from "/img/stadium.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Education = () => {
