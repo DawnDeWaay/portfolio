@@ -53,6 +53,7 @@ const Education = () => {
             <div className="ul-contain">
               <ul>
                 <li>JavaScript</li>
+                <li>TypeScript</li>
                 <li>HTML/CSS</li>
                 <li>Python</li>
                 <li>Java</li>
