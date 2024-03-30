@@ -46,10 +46,7 @@ const Education = () => {
         <div className="info-container">
           <img src={Uiowa} />
           <div className="edu-items">
-            <p>
-              I have extensive experience in many popular programming languages
-              and libraries for both frontend and backend development:
-            </p>
+            <p>I have experience in many popular development technologies:</p>
             <div className="ul-contain">
               <ul>
                 <li>JavaScript</li>
@@ -62,13 +59,11 @@ const Education = () => {
               </ul>
               <ul>
                 <li>React</li>
-                <li>Node.JS</li>
-                <li>Three.JS</li>
-                <li>
-                  Framer
-                  <br />
-                  Motion
-                </li>
+                <li>RESTful APIs</li>
+                <li>Spring Boot</li>
+                <li>Node.js</li>
+                <li>Three.js</li>
+                <li>Framer Motion</li>
               </ul>
             </div>
           </div>
@@ -76,9 +71,8 @@ const Education = () => {
         <div className="info-container">
           <p>
             I participated in several extracirricular activities while keeping
-            up with schoolwork, such as the Hawkeye Sunset Club, Uiowa Alliance
-            Center, Badminton Club, Campus Symphony Orchestra, as well as
-            competing in events at the Esports Arcade
+            up with class, such as Campus Symphony Orchestra, Uiowa Alliance
+            Center, Badminton Club, and Hawkeye Sunset Club
           </p>
           <img src={Don} />
         </div>

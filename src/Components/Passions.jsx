@@ -38,23 +38,23 @@ const Passions = () => {
       </div>
       <div className="content-contain">
         <div className="info-container">
-          <img src={Cake} />
+          <img src={Mirror} />
+          <p>
+            I lost over 60lbs over the course of 2023, and now I'm putting my
+            calories towards building muscle! 💪
+          </p>
+        </div>
+        <div className="info-container">
           <p>
             Tres leches cake! My favorite dessert to bake for friends and family
           </p>
+          <img src={Cake} />
         </div>
         <div className="info-container">
-          <p>
-            I play multiple fighting games, including Smash Bros. Ultimate,
-            Tekken 8, and Guilty Gear Strive
-          </p>
           <img src={Joker} />
-        </div>
-        <div className="info-container">
-          <img src={Mirror} />
           <p>
-            I've lost over 60lbs over the course of 2023, and now I'm putting my
-            calories towards building muscle 💪
+            I compete in multiple fighting games, including Tekken 8, Smash
+            Bros. Ultimate, and Guilty Gear Strive
           </p>
         </div>
         <iframe

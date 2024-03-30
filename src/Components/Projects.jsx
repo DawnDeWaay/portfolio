@@ -50,9 +50,9 @@ const Projects = () => {
         <div className="info-container">
           <img src={Character} />
           <p>
-            Features include a character creator with dynamic personalization
-            options, a quick roller for non-combat scenarios, and motion
-            graphics utilizing Three.js and Framer Motion React libraries
+            Features include a character creator with dynamic theming options,
+            quick roller for non-combat scenarios, and 3D elements utilizing
+            Three.js
           </p>
         </div>
         <div className="info-container">
