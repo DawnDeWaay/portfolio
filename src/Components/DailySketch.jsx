@@ -11,6 +11,14 @@ import eight from "/sketches/8.png";
 import nine from "/sketches/9.png";
 import ten from "/sketches/10.png";
 import eleven from "/sketches/11.png";
+import twelve from "/sketches/12.png";
+import thirteen from "/sketches/13.png";
+import fourteen from "/sketches/14.png";
+import fifteen from "/sketches/15.png";
+import sixteen from "/sketches/16.png";
+import seventeen from "/sketches/17.png";
+import eighteen from "/sketches/18.png";
+import nineteen from "/sketches/19.png";
 
 const DailySketch = () => {
   const sketches = [
@@ -79,6 +87,54 @@ const DailySketch = () => {
       id: 11,
       date: "3/20/2024",
       img: eleven,
+    },
+    {
+      name: "Spin",
+      id: 12,
+      date: "3/21/2024",
+      img: twelve,
+    },
+    {
+      name: "TIME",
+      id: 13,
+      date: "3/22/2024",
+      img: thirteen,
+    },
+    {
+      name: "Feather",
+      id: 14,
+      date: "3/23/2024",
+      img: fourteen,
+    },
+    {
+      name: "Grow 3",
+      id: 15,
+      date: "3/24/2024",
+      img: fifteen,
+    },
+    {
+      name: "Glare",
+      id: 16,
+      date: "3/25/2024",
+      img: sixteen,
+    },
+    {
+      name: "Little Guy",
+      id: 17,
+      date: "3/26/2024",
+      img: seventeen,
+    },
+    {
+      name: "Family",
+      id: 18,
+      date: "3/27/2024",
+      img: eighteen,
+    },
+    {
+      name: "Escape",
+      id: 19,
+      date: "3/28/2024",
+      img: nineteen,
     },
   ];
 
