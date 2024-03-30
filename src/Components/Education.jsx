@@ -30,7 +30,7 @@ const Education = () => {
           >
             <p>Scroll for Memories&nbsp;</p>
             <motion.p
-              animate={{ y: [0, 0, -5, 5, 0, 0] }}
+              animate={{ y: [0, -5, 5, 0, 0, 0] }}
               transition={{
                 repeat: Infinity,
                 type: "Spring",

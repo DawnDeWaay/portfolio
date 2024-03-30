@@ -149,7 +149,7 @@ const DailySketch = () => {
         <h1>Welcome to my Daily Journal, a place to collect my thoughts</h1>
         <h2 style={{ fontSize: "32px" }}>Explore</h2>
         <motion.h3
-          animate={{ y: [0, 0, -5, 5, 0, 0] }}
+          animate={{ y: [0, -5, 5, 0, 0, 0] }}
           transition={{
             repeat: Infinity,
             type: "Spring",

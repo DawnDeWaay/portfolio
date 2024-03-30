@@ -24,7 +24,7 @@ const Passions = () => {
           <div className="scroll">
             <p>Rate my Style&nbsp;</p>
             <motion.p
-              animate={{ y: [0, 0, -5, 5, 0, 0] }}
+              animate={{ y: [0, -5, 5, 0, 0, 0] }}
               transition={{
                 repeat: Infinity,
                 type: "Spring",
