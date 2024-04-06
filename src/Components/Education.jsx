@@ -1,6 +1,7 @@
 import Don from "/img/don.jpeg";
 import Workin from "/img/workin.jpeg";
 import Uiowa from "/img/uiowa.jpeg";
+import HanginOut from "/img/hanginout.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Education = () => {
@@ -33,7 +34,6 @@ const Education = () => {
               animate={{ y: [0, -5, 5, 0, 0, 0] }}
               transition={{
                 repeat: Infinity,
-                type: "Spring",
                 duration: 1.5,
               }}
             >
@@ -43,47 +43,50 @@ const Education = () => {
         </AnimatePresence>
       </div>
       <div className="content-contain">
-        <div className="info-container">
-          <img src={Uiowa} />
-          <div className="edu-items">
-            <p>I have experience in many popular development technologies:</p>
-            <div className="ul-contain">
-              <ul>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>HTML/CSS</li>
-                <li>Python</li>
-                <li>Java</li>
-                <li>C</li>
-                <li>Haskell</li>
-              </ul>
-              <ul>
-                <li>React</li>
-                <li>RESTful APIs</li>
-                <li>Spring Boot</li>
-                <li>Node.js</li>
-                <li>Three.js</li>
-                <li>Framer Motion</li>
-              </ul>
-            </div>
+        <div className="info-container"><img src={Uiowa}/><p>I graduated from the University of Iowa in December 2023 and have worked tirelessly to expand my knowledge and scope in the development field</p></div>
+          <div className="info-container">
+              <div className="edu-items">
+                  <p>I have experience in many popular development technologies:</p>
+                  <div className="ul-contain">
+                      <ul>
+                          <li>JavaScript</li>
+                          <li>TypeScript</li>
+                          <li>HTML/CSS</li>
+                          <li>Python</li>
+                          <li>Java</li>
+                          <li>C</li>
+                          <li>Haskell</li>
+                      </ul>
+                      <ul>
+                          <li>Spring Boot</li>
+                          <li>SQL</li>
+                          <li>React.js</li>
+                          <li>RESTful APIs</li>
+                          <li>Node.js</li>
+                          <li>Three.js</li>
+                          <li>Framer Motion</li>
+                      </ul>
+                  </div>
+              </div>
+              <img src={HanginOut}/>
           </div>
-        </div>
-        <div className="info-container">
-          <p>
-            I participated in several extracirricular activities while keeping
-            up with class, such as Campus Symphony Orchestra, Uiowa Alliance
-            Center, Badminton Club, and Hawkeye Sunset Club
-          </p>
-          <img src={Don} />
-        </div>
-        <div className="info-container">
-          <img src={Workin} />
-          <p>
-            While I wasn't studying for Algorithms at the Main Library, you
-            could find me working late into the night patrolling campus for DPS
-            Student Security
-          </p>
-        </div>
+          <div className="info-container">
+              <img src={Don}/>
+              <p>
+                  I participated in several extracirricular activities while keeping
+                  up with class, such as Campus Symphony Orchestra, Uiowa Alliance
+                  Center, Badminton Club, and Hawkeye Sunset Club
+              </p>
+
+          </div>
+          <div className="info-container">
+              <p>
+                  While I wasn't studying for Algorithms at the Main Library, you
+                  could find me working late into the night patrolling campus for DPS
+                  Student Security
+              </p>
+              <img src={Workin}/>
+          </div>
       </div>
     </motion.div>
   );

@@ -9,10 +9,10 @@ const Nav = ({ sec, setSection, journal }) => {
           onClick={() => {
             setSection(0);
           }}
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ x: -90, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ type: "Spring", delay: 1.1, duration: 0.5 }}
+          transition={{ type: "spring", delay: 1.1, duration: 1 }}
           className="noselect"
         >
           Welcome
@@ -31,13 +31,13 @@ const Nav = ({ sec, setSection, journal }) => {
           onClick={() => {
             setSection(1);
           }}
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ x: -90, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ type: "Spring", delay: 1.15, duration: 0.5 }}
+          transition={{ type: "spring", delay: 1.15, duration: 1 }}
           className="noselect"
         >
-          Projects
+          Education
           {sec == 1 ? (
             <motion.span
               key="star1"
@@ -53,13 +53,13 @@ const Nav = ({ sec, setSection, journal }) => {
           onClick={() => {
             setSection(2);
           }}
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ x: -90, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ type: "Spring", delay: 1.2, duration: 0.5 }}
+          transition={{ type: "spring", delay: 1.2, duration: 1 }}
           className="noselect"
         >
-          Education
+            Projects
           {sec == 2 ? (
             <motion.span
               key="star2"
@@ -75,10 +75,10 @@ const Nav = ({ sec, setSection, journal }) => {
           onClick={() => {
             setSection(3);
           }}
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ x: -90, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ type: "Spring", delay: 1.25, duration: 0.5 }}
+          transition={{ type: "spring", delay: 1.25, duration: 1 }}
           className="noselect"
         >
           Passions
@@ -98,10 +98,10 @@ const Nav = ({ sec, setSection, journal }) => {
             setSection(4);
             journal(true);
           }}
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ x: -90, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ type: "Spring", delay: 1.3, duration: 0.5 }}
+          transition={{ type: "spring", delay: 1.3, duration: 1 }}
           className="noselect"
         >
           Daily Sketch

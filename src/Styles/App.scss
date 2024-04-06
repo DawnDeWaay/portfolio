@@ -58,7 +58,7 @@
     position: relative;
     h2 {
       white-space: nowrap;
-      font-size: 82px;
+      font-size: 6vw;
       z-index: 0;
       width: 70vw;
       top: 27vh;
@@ -132,7 +132,7 @@
     white-space: wrap;
     width: 50%;
     margin: 20px;
-    font-size: 28px;
+    font-size: 2.1vw;
     padding: 20px;
   }
   .edu-items {
@@ -142,7 +142,7 @@
       white-space: wrap;
       width: 100%;
       font-size: 28px;
-      margin: 0;
+      margin: 20px;
       padding: 0;
     }
     .ul-contain {
@@ -150,7 +150,7 @@
       flex-direction: row;
       justify-content: space-around;
       ul {
-        font-size: 20px;
+        font-size: 1.4vw;
         margin: 20px;
         li {
           list-style-type: none;
@@ -377,7 +377,7 @@ a {
       align-items: center;
       justify-content: center;
       h2 {
-        font-size: 38px;
+        font-size: 10vw;
         white-space: wrap;
         left: 0;
         width: 92vw;
@@ -386,7 +386,7 @@ a {
         margin: 4vw;
         p {
           padding-top: 10px;
-          font-size: 18px;
+          font-size: 5vw;
         }
       }
     }

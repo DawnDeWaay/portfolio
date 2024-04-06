@@ -1,6 +1,7 @@
 import Cake from "/img/cake.jpeg";
 import Joker from "/img/joker.png";
 import Mirror from "/img/mirror.jpeg";
+import Bear from "/img/bear.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Passions = () => {
@@ -18,7 +19,7 @@ const Passions = () => {
           <br />
           Fitness, Fighting Games,
           <br />
-          Jazz, and Food
+          Jazz, and Cooking
         </h2>
         <AnimatePresence>
           <div className="scroll">
@@ -27,7 +28,6 @@ const Passions = () => {
               animate={{ y: [0, -5, 5, 0, 0, 0] }}
               transition={{
                 repeat: Infinity,
-                type: "Spring",
                 duration: 1.5,
               }}
             >
@@ -57,8 +57,12 @@ const Passions = () => {
             Bros. Ultimate, and Guilty Gear Strive
           </p>
         </div>
+        <div className="info-container">
+          <p></p>
+          <img src={Bear}/>
+        </div>
         <iframe
-          src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
+            src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
           height="400"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           className="spotify"

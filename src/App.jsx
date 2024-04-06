@@ -85,9 +85,9 @@ function App() {
         </AnimatePresence>
         <AnimatePresence mode="wait">
           {section == 1 ? (
-            <Projects key="1" />
+            <Education key="1" />
           ) : section == 2 ? (
-            <Education key="2" />
+            <Projects key="2" />
           ) : section == 3 ? (
             <Passions key="3" />
           ) : section == 4 ? (

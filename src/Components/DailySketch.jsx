@@ -152,7 +152,6 @@ const DailySketch = () => {
           animate={{ y: [0, -5, 5, 0, 0, 0] }}
           transition={{
             repeat: Infinity,
-            type: "Spring",
             duration: 1.5,
           }}
         >

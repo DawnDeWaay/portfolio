@@ -51,7 +51,7 @@ const Header = ({
               className="left-item"
               initial={{ y: -100 }}
               animate={{ y: 0 }}
-              transition={{ type: "Spring", delay: 0.5, duration: 0.5 }}
+              transition={{ type: "spring", delay: 0.5, duration: 0.8 }}
               style={{ color: journalOpen ? "white" : "black" }}
               onClick={() => {
                 setSection(0);
@@ -89,7 +89,7 @@ const Header = ({
                 className="right-item"
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
-                transition={{ type: "Spring", delay: 0.7, duration: 0.5 }}
+                transition={{ type: "spring", delay: 0.7, duration: 0.8 }}
                 style={{ color: journalOpen ? "white" : "black" }}
                 onClick={() => {
                   setSection(5);
