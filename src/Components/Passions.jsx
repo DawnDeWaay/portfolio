@@ -60,8 +60,8 @@ const Passions = () => {
         </div>
         <div className="info-container">
           <p>
-            I'm passionate about the people around me and I love helping others
-            reach their goals
+            I find personal fulfillment in supporting others on their journey
+            towards success, whether that be in fitness, life, or professionally
           </p>
           <img src={Bear} />
         </div>
