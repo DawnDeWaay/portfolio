@@ -42,7 +42,7 @@ const Passions = () => {
           <img src={Mirror} />
           <p>
             I lost over 60lbs over the course of 2023, and now I'm putting my
-            calories towards building muscle! 💪
+            calories towards building muscle 💪
           </p>
         </div>
         <div className="info-container">
