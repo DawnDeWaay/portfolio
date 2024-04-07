@@ -58,7 +58,7 @@ const Passions = () => {
           </p>
         </div>
         <div className="info-container">
-          <p></p>
+          <p>I'm passionate about the people around me and I love helping others reach their goals</p>
           <img src={Bear}/>
         </div>
         <iframe
