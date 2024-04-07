@@ -25,8 +25,9 @@ const Projects = () => {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <p>Check it Out&nbsp;</p>
+            <p className="checkit">Check it Out&nbsp;</p>
             <motion.p
+              className="checkit"
               animate={{ y: [0, -5, 5, 0, 0, 0] }}
               transition={{
                 repeat: Infinity,

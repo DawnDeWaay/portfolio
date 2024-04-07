@@ -23,8 +23,9 @@ const Passions = () => {
         </h2>
         <AnimatePresence>
           <div className="scroll">
-            <p>Rate my Style&nbsp;</p>
+            <p className="checkit">Rate my Style&nbsp;</p>
             <motion.p
+              className="checkit"
               animate={{ y: [0, -5, 5, 0, 0, 0] }}
               transition={{
                 repeat: Infinity,
@@ -58,12 +59,15 @@ const Passions = () => {
           </p>
         </div>
         <div className="info-container">
-          <p>I'm passionate about the people around me and I love helping others reach their goals</p>
-          <img src={Bear}/>
+          <p>
+            I'm passionate about the people around me and I love helping others
+            reach their goals
+          </p>
+          <img src={Bear} />
         </div>
         <iframe
-            src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
-          height="400"
+          src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
+          height="700"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           className="spotify"
         ></iframe>
