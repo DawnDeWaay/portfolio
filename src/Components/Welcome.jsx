@@ -15,7 +15,7 @@ const Welcome = () => {
           <span style={{ color: "#308ef1" }}>Fullstack Developer</span>
           <br />
           With a Knack for Design
-          <p>- Based in Des Moines, Iowa -</p>
+          <p>Based in Des Moines, Iowa</p>
         </h2>
       </div>
     </motion.div>
