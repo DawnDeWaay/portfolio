@@ -1,24 +1,29 @@
 import SketchItem from "./SketchItem";
 import { motion, AnimatePresence } from "framer-motion";
-import one from "/sketches/1.png";
-import two from "/sketches/2.png";
-import three from "/sketches/3.png";
-import four from "/sketches/4.png";
-import five from "/sketches/5.png";
-import six from "/sketches/6.png";
-import seven from "/sketches/7.png";
-import eight from "/sketches/8.png";
-import nine from "/sketches/9.png";
-import ten from "/sketches/10.png";
-import eleven from "/sketches/11.png";
-import twelve from "/sketches/12.png";
-import thirteen from "/sketches/13.png";
-import fourteen from "/sketches/14.png";
-import fifteen from "/sketches/15.png";
-import sixteen from "/sketches/16.png";
-import seventeen from "/sketches/17.png";
-import eighteen from "/sketches/18.png";
-import nineteen from "/sketches/19.png";
+import one from "/sketches/1.jpeg";
+import two from "/sketches/2.jpeg";
+import three from "/sketches/3.jpeg";
+import four from "/sketches/4.jpeg";
+import five from "/sketches/5.jpeg";
+import six from "/sketches/6.jpeg";
+import seven from "/sketches/7.jpeg";
+import eight from "/sketches/8.jpeg";
+import nine from "/sketches/9.jpeg";
+import ten from "/sketches/10.jpeg";
+import eleven from "/sketches/11.jpeg";
+import twelve from "/sketches/12.jpeg";
+import thirteen from "/sketches/13.jpeg";
+import fourteen from "/sketches/14.jpeg";
+import fifteen from "/sketches/15.jpeg";
+import sixteen from "/sketches/16.jpeg";
+import seventeen from "/sketches/17.jpeg";
+import eighteen from "/sketches/18.jpeg";
+import nineteen from "/sketches/19.jpeg";
+import twenty from "/sketches/20.jpeg";
+import twentyone from "/sketches/21.jpeg";
+import twentytwo from "/sketches/22.jpeg";
+import twentythree from "/sketches/23.jpeg";
+import twentyfour from "/sketches/24.jpeg";
 
 const DailySketch = () => {
   const sketches = [
@@ -135,6 +140,36 @@ const DailySketch = () => {
       id: 19,
       date: "3/28/2024",
       img: nineteen,
+    },
+    {
+      name: "Up There",
+      id: 20,
+      date: "3/29/2024",
+      img: twenty,
+    },
+    {
+      name: "Rough",
+      id: 21,
+      date: "3/30/2024",
+      img: twentyone,
+    },
+    {
+      name: "Slow Down",
+      id: 22,
+      date: "3/31/2024",
+      img: twentytwo,
+    },
+    {
+      name: "In the Future",
+      id: 23,
+      date: "4/1/2024",
+      img: twentythree,
+    },
+    {
+      name: "From the Past",
+      id: 24,
+      date: "4/2/2024",
+      img: twentyfour,
     },
   ];
 

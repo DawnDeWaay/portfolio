@@ -48,13 +48,13 @@ const Education = () => {
           <img src={Uiowa} />
           <p>
             I graduated from the University of Iowa in December 2023 and have
-            worked tirelessly to expand my knowledge and scope in the
-            development field
+            worked tirelessly since to expand my knowledge and scope in the
+            field of software development
           </p>
         </div>
         <div className="info-container">
           <div className="edu-items">
-            <p>I have experience in many popular development technologies:</p>
+            <p>I have experience with many popular development technologies:</p>
             <div className="ul-contain">
               <ul>
                 <li>JavaScript</li>
@@ -81,8 +81,8 @@ const Education = () => {
         <div className="info-container">
           <img src={Don} />
           <p>
-            I participated in several extracirricular activities while keeping
-            up with class, such as Campus Symphony Orchestra, Uiowa Alliance
+            I participated in several extracirricular activities during my time
+            at Iowa, such as the Campus Symphony Orchestra, Uiowa Alliance
             Center, Badminton Club, and Hawkeye Sunset Club
           </p>
         </div>
