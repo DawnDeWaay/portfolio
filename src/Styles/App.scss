@@ -187,9 +187,9 @@
     }
   }
   .grid {
-    padding-left: 10vw;
-    padding-right: 10vw;
-    width: 80vw;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    width: 70vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
@@ -269,9 +269,9 @@ a {
     }
   }
   .grid {
-    padding-left: 15vw;
-    padding-right: 15vw;
-    width: 70vw;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    width: 60vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-items: center;
@@ -368,6 +368,9 @@ a {
     }
     .grid {
       grid-template-columns: repeat(1, 1fr);
+      padding-left: 10vw;
+      padding-right: 10vw;
+      width: 80vw;
     }
   }
   .backrgound {
@@ -453,6 +456,9 @@ a {
     }
     .grid {
       grid-template-columns: repeat(2, 1fr);
+      padding-left: 15vw;
+      padding-right: 15vw;
+      width: 70vw;
     }
   }
   .spotify {
