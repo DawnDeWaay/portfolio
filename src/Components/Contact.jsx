@@ -22,7 +22,7 @@ const Contact = () => {
           service="Email"
           color="lightblue"
           img={email}
-          url="mailto:dondewaay@gmail.com"
+          url="mailto:dawndewaay@gmail.com"
           delay="0"
         />
         <ContactItem
@@ -44,14 +44,14 @@ const Contact = () => {
           service="Twitter"
           color="#1DA1F2"
           img={twitter}
-          url="https://twitter.com/DonaldDeWaay"
+          url="https://twitter.com/DawnDeWaay"
           delay="0.3"
         />
         <ContactItem
           service="Instagram"
           color="#dd2a7b"
           img={iglogo}
-          url="https://www.instagram.com/dondewaay/"
+          url="https://www.instagram.com/dawn_dewaay_iii/"
           delay="0.4"
         />
       </div>

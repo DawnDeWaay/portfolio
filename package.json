@@ -13,11 +13,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "framer-motion": "^11.0.8",
+    "@react-three/fiber": "^8.17.7",
+    "framer-motion": "^11.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-responsive": "^9.0.2",
-    "sass": "^1.71.1"
+    "sass": "^1.71.1",
+    "shadergradient": "^1.2.14",
+    "three": "^0.168.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

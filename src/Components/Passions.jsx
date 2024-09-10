@@ -15,7 +15,7 @@ const Passions = () => {
     >
       <div className="hero">
         <h2>
-          Don Loves Fashion,
+          Dawn Loves Fashion,
           <br />
           Fitness, Fighting Games,
           <br />

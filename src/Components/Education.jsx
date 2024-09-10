@@ -15,7 +15,7 @@ const Education = () => {
     >
       <div className="hero">
         <h2>
-          Don Studied
+          Dawn Studied
           <br />
           Computer Science
           <br />
