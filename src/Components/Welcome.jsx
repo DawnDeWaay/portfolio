@@ -11,7 +11,7 @@ const Welcome = () => {
     >
       <div className="hero">
         <h2>
-          Don DeWaay is a <br />
+          Dawn DeWaay is a <br />
           <span style={{ color: "#308ef1" }}>Fullstack Developer</span>
           <br />
           With a Knack for Design

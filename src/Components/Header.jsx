@@ -59,7 +59,7 @@ const Header = ({
                 setInContact(false);
               }}
             >
-              Don DeWaay III
+              Dawn DeWaay III
             </motion.h1>
           </AnimatePresence>
         </MediaQuery>
