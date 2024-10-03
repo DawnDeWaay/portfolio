@@ -41,7 +41,7 @@ const Header = ({
               setDropdown(false);
             }}
           >
-            Don DeWaay III
+            Dawn DeWaay III
           </motion.h1>
         </MediaQuery>
         <MediaQuery minWidth={768}>
