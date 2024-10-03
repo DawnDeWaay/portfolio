@@ -29,14 +29,14 @@ const Contact = () => {
           service="LinkedIn"
           color="#0077b5"
           img={li}
-          url="https://linkedin.com/in/don-dewaay"
+          url="www.linkedin.com/in/dawndewaay"
           delay="0.1"
         />
         <ContactItem
           service="GitHub"
           color="#2b3137"
           img={github}
-          url="https://github.com/dondewaay"
+          url="https://github.com/dawndewaay"
           delay="0.2"
         />
 
