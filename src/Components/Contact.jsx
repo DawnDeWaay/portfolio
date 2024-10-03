@@ -29,7 +29,7 @@ const Contact = () => {
           service="LinkedIn"
           color="#0077b5"
           img={li}
-          url="www.linkedin.com/in/dawndewaay"
+          url="https://www.linkedin.com/in/dawndewaay"
           delay="0.1"
         />
         <ContactItem
