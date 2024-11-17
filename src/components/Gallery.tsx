@@ -21,7 +21,7 @@ const GalleryImage = ({ src, alt }: props) => {
   return (
     <motion.div
       ref={ref}
-      className="absolute w-64 h-64 bg-white p-4 p-12 shadow-xl"
+      className="absolute w-64 h-64 bg-white p-4 pb-12 shadow-xl"
       style={{
         left: `${randomX}%`,
         top: `${randomY}%`,
@@ -29,7 +29,7 @@ const GalleryImage = ({ src, alt }: props) => {
       }}
       initial={{
         opacity: 0,
-        y: 4p
+        y: 40,
         rotate: randomRotate,
       }}
       animate={
