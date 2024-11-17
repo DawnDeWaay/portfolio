@@ -49,12 +49,12 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
 
   return (
     <>
-      <div onClick={() => scrollToSection("Biography")}>
+      <div onClick={() => scrollToSection("Main")}>
         <motion.h1
           variants={variants}
           animate={scrolled ? "shown" : "hidden"}
           layout
-          className="flex fixed h-8 md:top-0 left-12 text-[2.2rem] pt-8 pb-16 pr-0 z-40 justify-end gap-6 flex-col md:flex-row"
+          className="flex fixed h-8 top-0 left-12 text-[2.2rem] pt-7 pb-16 pr-0 z-40 justify-end gap-6 flex-row cursor-pointer"
         >
           Dawn DeWaay III
         </motion.h1>
@@ -63,30 +63,30 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
         variants={variants}
         animate={scrolled ? "shown" : "hidden"}
         layout
-        className="flex fixed bottom-0 h-8 md:top-0 right-12 pt-8 pb-16 pr-0 z-40 justify-end gap-6 flex-col md:flex-row"
+        className="flex fixed h-8 top-0 right-12 pt-8 pb-16 pr-0 z-40 justify-end gap-6 flex-row"
       >
         <div onClick={() => scrollToSection("Biography")}>
-          <motion.div whileHover={hoverEffect}>
+          <motion.div whileHover={hoverEffect} className="cursor-pointer">
             <IconFingerprint {...iconProps} />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Work")}>
-          <motion.div whileHover={hoverEffect}>
+          <motion.div whileHover={hoverEffect} className="cursor-pointer">
             <IconCodeAsterisk {...iconProps} />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Education")}>
-          <motion.div whileHover={hoverEffect}>
+          <motion.div whileHover={hoverEffect} className="cursor-pointer">
             <IconBallpen {...iconProps} />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Passions")}>
-          <motion.div whileHover={hoverEffect}>
+          <motion.div whileHover={hoverEffect} className="cursor-pointer">
             <IconBolt {...iconProps} />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Gallery")}>
-          <motion.div whileHover={hoverEffect}>
+          <motion.div whileHover={hoverEffect} className="cursor-pointer">
             <IconAperture {...iconProps} />
           </motion.div>
         </div>

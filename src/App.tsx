@@ -10,7 +10,9 @@ export default function App() {
 
   const handleScroll = () => {
     const isScrolled = window.scrollY > 0;
-    setScrolled(isScrolled);
+    if (isScrolled) {
+      setScrolled(isScrolled);
+    }
   };
 
   useEffect(() => {
@@ -21,7 +23,7 @@ export default function App() {
   }, []);
 
   return (
-    <main>
+    <main id="Main">
       <div className="grain" />
       <div className="grain" />
       <Header scrolled={scrolled} />
@@ -47,7 +49,7 @@ export default function App() {
       <div className="max-w-full mx-auto px-8 z-8">
         <div>
           <BigText text={"Biography"} />
-          <motion.div className="content" initial={{ zIndex: 4, y: 70 }}>
+          <motion.div className="content">
             <div>
               <h3>
                 Hey, I'm Dawn! Ever since I built my first computer all the way
@@ -64,7 +66,7 @@ export default function App() {
         </div>
         <div>
           <BigText text={"Work"} />
-          <motion.div className="content" initial={{ zIndex: 4, y: 70 }}>
+          <motion.div className="content">
             <h2 className="sub-head">Knight Moves</h2>
             <div className="section">
               <h3>
@@ -90,7 +92,7 @@ export default function App() {
         </div>
         <div>
           <BigText text={"Education"} />
-          <motion.div className="content" initial={{ zIndex: 4, y: 70 }}>
+          <motion.div className="content">
             <div className="section">
               <h3>
                 I graduated from the University of Iowa with a Bachelor's in
@@ -107,8 +109,8 @@ export default function App() {
         </div>
         <div>
           <BigText text={"Passions"} />
-          <motion.div className="content" initial={{ zIndex: 4, y: 70 }}>
-            <div className="section">
+          <motion.div className="content">
+            <div className="h-screen w-screen">
               <iframe
                 className="spotify"
                 height={500}
@@ -123,7 +125,7 @@ export default function App() {
         </div>
         <div>
           <BigText text={"Gallery"} />
-          <motion.div className="content" initial={{ zIndex: 4, y: 70 }}>
+          <motion.div className="content">
             <div className="flex flex-wrap gap-4 justify-left max-w-[1000px] mx-auto px-4"></div>
           </motion.div>
           <div className="h-screen w-screen"></div>
