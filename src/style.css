@@ -10,6 +10,63 @@
   color: #1b1a19;
 }
 
+html {
+  background-color: #f2f1ec;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.main {
+  padding: none
+}
+
+h1 {
+  font-family: "Redaction 50";
+  font-style: italic;
+  text-align: left;
+}
+
+h2 {
+  font-family: "Redaction 35";
+  font-size: 3rem;
+}
+
+h3 {
+  font-family: "Redaction 10";
+  font-size: 2rem;
+}
+
+.img {
+  z-index: 100;
+}
+
+.content {}
+
+.section {
+  display: flex;
+  flex-direction: row;
+}
+
+p {
+  font-size: 2rem;
+}
+
+.sub-head {
+  padding-left: 1rem;
+}
+
+.ReactGridGallery_tile-viewport {
+  background: none;
+}
+
+span {
+  font-family: "Redaction 35";
+}
+
+.big-text {
+  z-index: -1;
+}
+
 .redaction {
   font-family: "Redaction";
 }
@@ -32,59 +89,6 @@
 
 .redaction100 {
   font-family: "Redaction 100";
-}
-
-html {
-  background-color: #f2f1ec;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-h1 {
-  font-family: "Redaction 50";
-  font-style: italic;
-  text-align: left;
-}
-
-h2 {
-  font-family: "Redaction 35";
-  font-size: 3rem;
-}
-
-h3 {
-  font-family: "Redaction 10";
-  font-size: 2rem;
-}
-
-.spotify {
-  margin-bottom: 2rem;
-  z-index: -1;
-}
-
-.content {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.section {
-  display: flex;
-  flex-direction: row;
-}
-
-p {
-  font-size: 2rem;
-}
-
-.sub-head {
-  padding-left: 1rem;
-}
-
-.ReactGridGallery_tile-viewport {
-  background: none;
-}
-
-span {
-  font-family: "Redaction 35";
 }
 
 .grain {

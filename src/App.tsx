@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import BigText from "./components/BigText";
 import { IconRosette } from "@tabler/icons-react";
+import Gallery from "./components/Gallery";
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -46,7 +47,7 @@ export default function App() {
           DeWaay III
         </h1>
       </div>
-      <div className="max-w-full mx-auto px-8 [z-index: 8]">
+      <div className="max-w-full mx-auto">
         <div>
           <BigText text={"Biography"} />
           <motion.div className="content">
@@ -110,7 +111,7 @@ export default function App() {
         <div>
           <BigText text={"Passions"} />
           <motion.div className="content">
-            <div className="h-screen w-screen">
+            <div className="h-screen w-screen flex center justify-center">
               <iframe
                 className="spotify"
                 height={500}
@@ -123,13 +124,7 @@ export default function App() {
             <h3>Tekken, fashion, cello, music, umm</h3>
           </motion.div>
         </div>
-        <div>
-          <BigText text={"Gallery"} />
-          <motion.div className="content">
-            <div className="flex flex-wrap gap-4 justify-left max-w-[1000px] mx-auto px-4"></div>
-          </motion.div>
-          <div className="h-screen w-screen"></div>
-        </div>
+        <Gallery />
         <Footer />
       </div>
     </main>
