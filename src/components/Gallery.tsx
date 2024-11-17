@@ -21,7 +21,7 @@ const GalleryImage = ({ src, alt }: props) => {
   return (
     <motion.div
       ref={ref}
-      className="absolute w-64 h-80 bg-white p-2 pb-10 shadow-xl"
+      className="absolute w-64 [aspect-ration: 1] bg-white p-4 pb-12 shadow-xl"
       style={{
         left: `${randomX}%`,
         top: `${randomY}%`,
