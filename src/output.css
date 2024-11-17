@@ -659,6 +659,14 @@ video {
   height: 100vh;
 }
 
+.h-\[200px\] {
+  height: 200px;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
 .w-60 {
   width: 15rem;
 }
@@ -677,6 +685,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[200px\] {
+  width: 200px;
 }
 
 .max-w-full {
@@ -731,6 +743,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .object-fill {

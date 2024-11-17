@@ -53,14 +53,14 @@ const GalleryImage = ({ src, alt }: props) => {
       <img
         src={src}
         alt={alt}
-        className=" w-64 h-64 rounded-lg m-4 mb-12 object-fill"
+        className="w-[200px] h-[200px] rounded-lg m-4 mb-12 object-cover max-w-full max-h-full"
       />
     </motion.div>
   );
 };
 
 const Gallery = () => {
-  const totalImages = 20;
+  const totalImages = 39;
   const images = Array.from({ length: totalImages }, (_, index) => ({
     src: `./img/${index + 1}.jpg`,
     alt: "GalleryImg",
