@@ -627,6 +627,10 @@ video {
   height: 6rem;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -726,12 +730,12 @@ video {
      object-fit: fill;
 }
 
-.p-4 {
-  padding: 1rem;
+.p-12 {
+  padding: 3rem;
 }
 
-.pb-12 {
-  padding-bottom: 3rem;
+.p-4 {
+  padding: 1rem;
 }
 
 .pb-16 {
