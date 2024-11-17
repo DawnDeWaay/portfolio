@@ -13,8 +13,8 @@ const GalleryImage = ({ src, alt }: props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const randomLeft = `${Math.random() * 90}vw`;
-  const randomTop = `${Math.random() * 90}vh`;
+  const randomX = Math.random() * 100;
+  const randomY = Math.random() * 100;
   const randomRotate = Math.random() * 50 - 25;
   const randomZIndex = Math.floor(Math.random() * 10);
 
@@ -23,21 +23,20 @@ const GalleryImage = ({ src, alt }: props) => {
       ref={ref}
       className="absolute w-64 h-80 bg-white p-2 pb-10 shadow-xl"
       style={{
-        left: randomLeft,
-        top: randomTop,
+        left: `${randomX}%`,
+        top: `${randomY}%`,
         zIndex: randomZIndex,
-        transform: "translate(-50%, -50%)",
       }}
       initial={{
         opacity: 0,
-        scale: 0.8,
+        y: 40,
         rotate: randomRotate,
       }}
       animate={
         isInView
           ? {
+              y: 0,
               opacity: 1,
-              scale: 1,
             }
           : {}
       }
@@ -57,15 +56,11 @@ const GalleryImage = ({ src, alt }: props) => {
 };
 
 const Gallery = () => {
-  const images = [
-    { src: "./img/1.jpg", alt: "Description 1" },
-    { src: "./img/2.jpg", alt: "Description 2" },
-    { src: "./img/3.jpg", alt: "Description 3" },
-    { src: "./img/4.jpg", alt: "Description 4" },
-    { src: "./img/5.jpg", alt: "Description 5" },
-    { src: "./img/6.jpg", alt: "Description 6" },
-    { src: "./img/7.jpg", alt: "Description 7" },
-  ];
+  const totalImages = 20;
+  const images = Array.from({ length: totalImages }, (_, index) => ({
+    src: `./img/${index + 1}.jpg`,
+    alt: "GalleryImg",
+  }));
 
   return (
     <div className="relative w-full">

@@ -23,6 +23,10 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main id="Main">
       <div className="grain" />
