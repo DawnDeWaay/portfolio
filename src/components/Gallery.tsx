@@ -66,7 +66,7 @@ const Gallery = () => {
     <div className="relative w-full">
       <BigText text={"Gallery"} />
       <div className="content">
-        <div className="relative h-[150vh] w-full [z-index: 100] bg-slate-800">
+        <div className="relative h-[150vh] w-full [z-index: 100]">
           {images.map((image, index) => (
             <GalleryImage key={index} src={image.src} alt={image.alt} />
           ))}
