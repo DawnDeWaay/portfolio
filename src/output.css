@@ -806,6 +806,8 @@ video {
   transition-duration: 150ms;
 }
 
+/* npx tailwindcss -i ./src/style.css -o ./src/output.css --watch */
+
 * {
   margin: 0;
   padding: 0;
