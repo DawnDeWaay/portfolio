@@ -90,12 +90,14 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
             <IconAperture {...iconProps} />
           </motion.div>
         </div>
-        <div
+        <motion.div
           className="relative"
           onMouseEnter={() => setShowSocials(true)}
           onMouseLeave={() => setShowSocials(false)}
         >
-          <IconAt {...iconProps} className="cursor-pointer" />
+          <motion.div whileHover={hoverEffect}>
+            <IconAt {...iconProps} className="cursor-pointer" />
+          </motion.div>
           <AnimatePresence>
             {showSocials && (
               <motion.div
@@ -105,25 +107,40 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
                 exit="hidden"
                 variants={socialIconVariants}
               >
-                <a href="https://www.instagram.com/dawndewaayiii/">
+                <motion.a
+                  href="https://www.instagram.com/dawndewaayiii/"
+                  whileHover={hoverEffect}
+                >
                   <IconBrandInstagram {...iconProps} color="#E1306C" />
-                </a>
-                <a href="https://x.com/DawnDeWaay">
+                </motion.a>
+                <motion.a
+                  href="https://x.com/DawnDeWaay"
+                  whileHover={hoverEffect}
+                >
                   <IconBrandTwitter {...iconProps} color="#1da1f2" />
-                </a>
-                <a href="https://github.com/DawnDeWaay">
+                </motion.a>
+                <motion.a
+                  href="https://github.com/DawnDeWaay"
+                  whileHover={hoverEffect}
+                >
                   <IconBrandGithub {...iconProps} color="#2b3137" />
-                </a>
-                <a href="mailto:dawndewaay@gmail.com">
+                </motion.a>
+                <motion.a
+                  href="mailto:dawndewaay@gmail.com"
+                  whileHover={hoverEffect}
+                >
                   <IconMail {...iconProps} color="#0078d4" />
-                </a>
-                <a href="https://open.spotify.com/user/donalddewaay?si=732c04f17d874872">
+                </motion.a>
+                <motion.a
+                  href="https://open.spotify.com/user/donalddewaay?si=732c04f17d874872"
+                  whileHover={hoverEffect}
+                >
                   <IconBrandSpotify {...iconProps} color="#1db954" />
-                </a>
+                </motion.a>
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
+        </motion.div>
       </motion.div>
     </>
   );
