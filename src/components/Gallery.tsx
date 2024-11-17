@@ -13,8 +13,8 @@ const GalleryImage = ({ src, alt }: props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const randomX = Math.random() * 100;
-  const randomY = Math.random() * 100;
+  const randomX = Math.random() * 80;
+  const randomY = Math.random() * 80;
   const randomRotate = Math.random() * 50 - 25;
   const randomZIndex = Math.floor(Math.random() * 10);
 
@@ -66,7 +66,7 @@ const Gallery = () => {
     <div className="relative w-full">
       <BigText text={"Gallery"} />
       <div className="content">
-        <div className="relative h-[100vh] w-full [z-index: 100] bg-slate-800">
+        <div className="relative h-[150vh] w-full [z-index: 100] bg-slate-800">
           {images.map((image, index) => (
             <GalleryImage key={index} src={image.src} alt={image.alt} />
           ))}
