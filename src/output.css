@@ -754,6 +754,10 @@ video {
   font-size: 24vw;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .text-\[\#796C98\] {
   --tw-text-opacity: 1;
   color: rgb(121 108 152 / var(--tw-text-opacity, 1));
@@ -773,6 +777,30 @@ video {
   -webkit-font-smoothing: antialiased;
   font-family: "Redaction";
   color: #1b1a19;
+}
+
+.redaction {
+  font-family: "Redaction";
+}
+
+.redaction10 {
+  font-family: "Redaction 10";
+}
+
+.redaction20 {
+  font-family: "Redaction 20";
+}
+
+.redaction35 {
+  font-family: "Redaction 35";
+}
+
+.redaction50 {
+  font-family: "Redaction 50";
+}
+
+.redaction100 {
+  font-family: "Redaction 100";
 }
 
 html {

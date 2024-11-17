@@ -10,6 +10,30 @@
   color: #1b1a19;
 }
 
+.redaction {
+  font-family: "Redaction";
+}
+
+.redaction10 {
+  font-family: "Redaction 10";
+}
+
+.redaction20 {
+  font-family: "Redaction 20";
+}
+
+.redaction35 {
+  font-family: "Redaction 35";
+}
+
+.redaction50 {
+  font-family: "Redaction 50";
+}
+
+.redaction100 {
+  font-family: "Redaction 100";
+}
+
 html {
   background-color: #f2f1ec;
   scroll-behavior: smooth;
