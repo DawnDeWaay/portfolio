@@ -46,7 +46,7 @@ export default function App() {
           DeWaay III
         </h1>
       </div>
-      <div className="max-w-full mx-auto px-8 z-8">
+      <div className="max-w-full mx-auto px-8 [z-index: 8]">
         <div>
           <BigText text={"Biography"} />
           <motion.div className="content">
