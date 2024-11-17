@@ -21,7 +21,7 @@ const GalleryImage = ({ src, alt }: props) => {
   return (
     <motion.div
       ref={ref}
-      className="absolute w-64 h-64 bg-white p-4 pb-12 shadow-xl"
+      className="absolute bg-white shadow-xl"
       style={{
         left: `${randomX}%`,
         top: `${randomY}%`,
@@ -50,7 +50,11 @@ const GalleryImage = ({ src, alt }: props) => {
         transition: { duration: 0.2 },
       }}
     >
-      <img src={src} alt={alt} className="h-full rounded-lg object-fill" />
+      <img
+        src={src}
+        alt={alt}
+        className=" w-64 h-64 rounded-lg m-4 mb-12 object-fill"
+      />
     </motion.div>
   );
 };
