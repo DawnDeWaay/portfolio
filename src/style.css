@@ -19,7 +19,7 @@ html {
 }
 
 .main {
-  padding: none
+  padding: none;
 }
 
 h1 {
@@ -42,11 +42,20 @@ h3 {
   z-index: 100;
 }
 
-.content {}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem 0 2rem;
+}
 
 .section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
 p {
