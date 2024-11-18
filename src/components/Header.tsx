@@ -63,7 +63,7 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
         variants={variants}
         animate={scrolled ? "shown" : "hidden"}
         layout
-        className="flex fixed h-8 top-0 right-12 pt-8 pr-0 z-40 justify-end gap-6 flex-row"
+        className="flex fixed h-8 top-0 right-12 pt-9 pr-0 z-40 justify-end gap-6 flex-row"
       >
         <div onClick={() => scrollToSection("Biography")}>
           <motion.div whileHover={hoverEffect} className="cursor-pointer">
