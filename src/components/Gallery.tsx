@@ -25,7 +25,6 @@ type GalleryImageProps = {
   priority?: boolean;
 };
 
-// Memoized GalleryImage component to prevent unnecessary re-renders
 const GalleryImage = memo(
   ({ src, alt, onClick, position, priority }: GalleryImageProps) => {
     const ref = useRef(null);
@@ -35,11 +34,12 @@ const GalleryImage = memo(
       <motion.div
         onClick={() => onClick(src)}
         ref={ref}
-        className="absolute bg-white shadow-xl cursor-pointer overflow-hidden [aspect-ratio: 1]"
+        className="absolute bg-white shadow-xl cursor-pointer"
         style={{
           left: `${position.x}%`,
           top: `${position.y}%`,
           zIndex: position.zIndex,
+          width: "min(25vw, 400px)",
         }}
         initial={{
           opacity: 0,
@@ -64,13 +64,17 @@ const GalleryImage = memo(
           transition: { duration: 0.2 },
         }}
       >
-        <img
-          src={src}
-          alt={alt}
-          loading={priority ? "eager" : "lazy"}
-          decoding={priority ? "sync" : "async"}
-          className="w-[200px] h-[200px] rounded-lg m-4 mb-12 object-cover cursor-pointer"
-        />
+        <div className="w-full h-full p-4 pb-16">
+          <div className="w-full h-0 pb-[100%] relative">
+            <img
+              src={src}
+              alt={alt}
+              loading={priority ? "eager" : "lazy"}
+              decoding={priority ? "sync" : "async"}
+              className="absolute inset-0 w-full h-full rounded-lg object-cover"
+            />
+          </div>
+        </div>
       </motion.div>
     );
   }
@@ -133,7 +137,7 @@ const preloadImages = async (srcs: string[], chunkSize = 5) => {
 
 const generateImagePosition = (): ImagePosition => ({
   x: Math.random() * 80,
-  y: Math.random() * 80,
+  y: Math.random() * 85,
   rotate: Math.random() * 50 - 25,
   zIndex: Math.floor(Math.random() * 10),
 });
@@ -191,7 +195,7 @@ const Gallery = () => {
     <div className="relative w-full">
       <BigText text={"Gallery"} />
       <div className="content">
-        <div className="relative h-[150vh] w-full [z-index: 100]">
+        <div className="relative h-[170vh] w-full [z-index: 100]">
           <AnimatePresence>
             {images.map((image, index) => (
               <GalleryImage

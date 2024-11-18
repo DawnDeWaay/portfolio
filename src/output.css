@@ -578,8 +578,16 @@ video {
   position: sticky;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
 .bottom-0 {
   bottom: 0px;
+}
+
+.bottom-12 {
+  bottom: 3rem;
 }
 
 .left-0 {
@@ -610,17 +618,9 @@ video {
   z-index: 50;
 }
 
-.m-4 {
-  margin: 1rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
 }
 
 .mt-16 {
@@ -635,6 +635,14 @@ video {
   display: none;
 }
 
+.h-0 {
+  height: 0px;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
 .h-24 {
   height: 6rem;
 }
@@ -643,12 +651,8 @@ video {
   height: 2rem;
 }
 
-.h-\[100vh\] {
-  height: 100vh;
-}
-
-.h-\[200px\] {
-  height: 200px;
+.h-\[170vh\] {
+  height: 170vh;
 }
 
 .h-\[70vh\] {
@@ -663,24 +667,20 @@ video {
   height: 100vh;
 }
 
-.h-16 {
-  height: 4rem;
-}
-
-.h-\[150vh\] {
-  height: 150vh;
-}
-
 .max-h-\[90vh\] {
   max-height: 90vh;
 }
 
-.w-60 {
-  width: 15rem;
+.w-16 {
+  width: 4rem;
 }
 
-.w-\[200px\] {
-  width: 200px;
+.w-24 {
+  width: 6rem;
+}
+
+.w-60 {
+  width: 15rem;
 }
 
 .w-\[70vh\] {
@@ -693,10 +693,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-16 {
-  width: 4rem;
 }
 
 .max-w-\[90vw\] {
@@ -749,20 +745,16 @@ video {
   gap: 1.5rem;
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
 .text-nowrap {
   text-wrap: nowrap;
 }
 
-.rounded-lg {
-  border-radius: var(--radius);
-}
-
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-lg {
+  border-radius: var(--radius);
 }
 
 .border-b-2 {
@@ -771,6 +763,10 @@ video {
 
 .border-t-2 {
   border-top-width: 2px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .border-gray-900 {
@@ -802,12 +798,24 @@ video {
      object-fit: cover;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
 .p-8 {
   padding: 2rem;
 }
 
-.pb-16 {
-  padding-bottom: 4rem;
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
+.pb-\[100\%\] {
+  padding-bottom: 100%;
 }
 
 .pl-\[5\%\] {
@@ -828,6 +836,10 @@ video {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pb-16 {
+  padding-bottom: 4rem;
 }
 
 .text-2xl {
@@ -930,7 +942,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 0 2rem 0 2rem;
 }
 
 p {
@@ -991,11 +1003,6 @@ span {
   font-family: "Canicule";
 
   src: url("/type/Canicule/ttfs/CaniculeDisplayv0.2-LightItalic.Trial.ttf");
-}
-
-.img {
-  overflow: hidden;
-  border-radius: 12px;
 }
 
 /* Redaction Regular */

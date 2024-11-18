@@ -12,6 +12,7 @@ import {
   IconBolt,
   IconMail,
   IconBrandSpotify,
+  IconRosette,
 } from "@tabler/icons-react";
 import { useState } from "react";
 
@@ -49,21 +50,20 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
 
   return (
     <>
-      <div onClick={() => scrollToSection("Main")}>
-        <motion.h1
-          variants={variants}
-          animate={scrolled ? "shown" : "hidden"}
-          layout
-          className="flex fixed h-8 top-0 left-12 text-[2.2rem] pt-7 pb-16 pr-0 z-40 justify-end gap-6 flex-row cursor-pointer"
-        >
-          Dawn DeWaay III
-        </motion.h1>
-      </div>
+      <motion.h1
+        variants={variants}
+        animate={scrolled ? "shown" : "hidden"}
+        layout
+        className="flex fixed h-8 top-0 left-12 text-[2.2rem] pt-7 pr-0 z-40 justify-end gap-6 flex-row cursor-pointer"
+        onClick={() => scrollToSection("Main")}
+      >
+        Dawn DeWaay III
+      </motion.h1>
       <motion.div
         variants={variants}
         animate={scrolled ? "shown" : "hidden"}
         layout
-        className="flex fixed h-8 top-0 right-12 pt-8 pb-16 pr-0 z-40 justify-end gap-6 flex-row"
+        className="flex fixed h-8 top-0 right-12 pt-8 pr-0 z-40 justify-end gap-6 flex-row"
       >
         <div onClick={() => scrollToSection("Biography")}>
           <motion.div whileHover={hoverEffect} className="cursor-pointer">
@@ -140,6 +140,29 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
               </motion.div>
             )}
           </AnimatePresence>
+        </motion.div>
+      </motion.div>
+      <motion.div
+        variants={variants}
+        animate={scrolled ? "shown" : "hidden"}
+        layout
+      >
+        <motion.div
+          className="fixed bottom-12 right-12 h-24 w-24 z-40"
+          animate={{ rotate: 360 }}
+          transition={{
+            repeat: Infinity,
+            duration: 20,
+            ease: "linear",
+          }}
+          color="black"
+        >
+          <IconRosette
+            stroke={1.5}
+            height="100%"
+            width="100%"
+            color="#796C98"
+          />
         </motion.div>
       </motion.div>
     </>

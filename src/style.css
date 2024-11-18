@@ -56,7 +56,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 0 2rem 0 2rem;
 }
 
 p {
@@ -116,11 +116,6 @@ span {
 @font-face {
   font-family: "Canicule";
   src: url("/type/Canicule/ttfs/CaniculeDisplayv0.2-LightItalic.Trial.ttf");
-}
-
-.img {
-  overflow: hidden;
-  border-radius: 12px;
 }
 
 /* Redaction Regular */

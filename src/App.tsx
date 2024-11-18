@@ -129,8 +129,8 @@ export default function App() {
           </motion.div>
         </div>
         <Gallery />
-        <Footer />
       </div>
+      <Footer />
     </main>
   );
 }
