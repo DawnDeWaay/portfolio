@@ -1,22 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { AnimatePresence, motion, useInView } from "motion/react";
-import { useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useInView } from "framer-motion";
 import BigText from "./BigText";
 
-type Props = {
+type ImagePosition = {
+  x: number;
+  y: number;
+  rotate: number;
+  zIndex: number;
+};
+
+type GalleryImageProps = {
   src: string;
   alt: string;
   onClick: (src: string) => void;
+  position: ImagePosition;
 };
 
-const GalleryImage = ({ src, alt, onClick }: Props) => {
+const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const randomX = Math.random() * 80;
-  const randomY = Math.random() * 80;
-  const randomRotate = Math.random() * 50 - 25;
-  const randomZIndex = Math.floor(Math.random() * 10);
 
   return (
     <motion.div
@@ -24,14 +27,14 @@ const GalleryImage = ({ src, alt, onClick }: Props) => {
       ref={ref}
       className="absolute bg-white shadow-xl cursor-pointer overflow-hidden [aspect-ratio: 1]"
       style={{
-        left: `${randomX}%`,
-        top: `${randomY}%`,
-        zIndex: randomZIndex,
+        left: `${position.x}%`,
+        top: `${position.y}%`,
+        zIndex: position.zIndex,
       }}
       initial={{
         opacity: 0,
         y: 40,
-        rotate: randomRotate,
+        rotate: position.rotate,
       }}
       animate={
         isInView
@@ -65,14 +68,28 @@ const preloadImage = (src: string) => {
   img.src = src;
 };
 
+const generateImagePosition = (): ImagePosition => ({
+  x: Math.random() * 80,
+  y: Math.random() * 80,
+  rotate: Math.random() * 50 - 25,
+  zIndex: Math.floor(Math.random() * 10),
+});
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const imagePositions = useRef<ImagePosition[]>([]);
 
   const totalImages = 42;
   const images = Array.from({ length: totalImages }, (_, index) => ({
     src: `./img/${index + 1}.jpg`,
     alt: "Gallery Image",
   }));
+
+  useEffect(() => {
+    if (imagePositions.current.length === 0) {
+      imagePositions.current = images.map(() => generateImagePosition());
+    }
+  }, []);
 
   const handleImageClick = (src: string) => {
     setSelectedImage(src);
@@ -84,13 +101,13 @@ const Gallery = () => {
 
   useEffect(() => {
     images.forEach((image) => preloadImage(image.src));
-  }, [images]);
+  }, []);
 
   return (
     <div className="relative w-full">
       <BigText text={"Gallery"} />
       <div className="content">
-        <div className="relative h-[150vh] w-full [z-index: 100]">
+        <div className="relative h-[100vh] w-full [z-index: 100]">
           <AnimatePresence>
             {images.map((image, index) => (
               <GalleryImage
@@ -98,6 +115,9 @@ const Gallery = () => {
                 src={image.src}
                 alt={image.alt}
                 onClick={handleImageClick}
+                position={
+                  imagePositions.current[index] || generateImagePosition()
+                }
               />
             ))}
           </AnimatePresence>
