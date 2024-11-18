@@ -643,8 +643,8 @@ video {
   height: 2rem;
 }
 
-.h-\[150vh\] {
-  height: 150vh;
+.h-\[100vh\] {
+  height: 100vh;
 }
 
 .h-\[200px\] {
@@ -660,10 +660,6 @@ video {
 }
 
 .h-screen {
-  height: 100vh;
-}
-
-.h-\[100vh\] {
   height: 100vh;
 }
 
