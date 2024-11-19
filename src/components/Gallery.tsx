@@ -35,6 +35,8 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
         width: "min(30vw, 350px)",
       }}
       initial={{
+        x: "-50%",
+        y: "-50%",
         opacity: 0,
         rotate: position.rotate,
       }}
