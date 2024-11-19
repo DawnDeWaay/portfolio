@@ -31,7 +31,6 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
         left: `${position.x}%`,
         top: `${position.y}%`,
         zIndex: position.zIndex,
-        transform: `translate(-50%, -50%) translate(${position.x}%, ${position.y}%)`,
         width: "min(30vw, 350px)",
       }}
       initial={{
