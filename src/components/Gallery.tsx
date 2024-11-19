@@ -68,8 +68,8 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
 };
 
 const generateImagePosition = (): ImagePosition => ({
-  x: Math.random() * 100,
-  y: Math.random() * 100,
+  x: Math.random() * 80 + 10,
+  y: Math.random() * 90,
   rotate: Math.random() * 50 - 25,
   zIndex: Math.floor(Math.random() * 10),
 });
