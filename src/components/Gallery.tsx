@@ -22,19 +22,19 @@ type GalleryImageProps = {
   alt: string;
   onClick: (src: string) => void;
   position: ImagePosition;
-  priority?: boolean;
 };
 
 const GalleryImage = memo(
-  ({ src, alt, onClick, position, priority }: GalleryImageProps) => {
+  ({ src, alt, onClick, position }: GalleryImageProps) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
       <motion.div
+        id={src}
         onClick={() => onClick(src)}
         ref={ref}
-        className="absolute bg-white shadow-xl cursor-pointer"
+        className="absolute cursor-pointer"
         style={{
           left: `${position.x}%`,
           top: `${position.y}%`,
@@ -43,20 +43,13 @@ const GalleryImage = memo(
         }}
         initial={{
           opacity: 0,
-          y: 40,
           rotate: position.rotate,
         }}
-        animate={
-          isInView
-            ? {
-                y: 0,
-                opacity: 1,
-              }
-            : {}
-        }
+        animate={isInView ? { opacity: 1 } : {}}
         transition={{
-          duration: 1,
+          duration: 0.5,
           ease: "easeOut",
+          delayChildren: 0.2,
         }}
         whileHover={{
           scale: 1.05,
@@ -64,14 +57,14 @@ const GalleryImage = memo(
           transition: { duration: 0.2 },
         }}
       >
-        <div className="w-full h-full p-4 pb-16">
+        <div className="relative w-full p-[5%] pb-[20%] shadow-xl overflow-hidden bg-white">
           <div className="w-full h-0 pb-[100%] relative">
             <img
               src={src}
               alt={alt}
-              loading={priority ? "eager" : "lazy"}
-              decoding={priority ? "sync" : "async"}
-              className="absolute inset-0 w-full h-full rounded-lg object-cover"
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
         </div>
@@ -79,8 +72,6 @@ const GalleryImage = memo(
     );
   }
 );
-
-GalleryImage.displayName = "GalleryImage";
 
 const ImageModal = memo(
   ({ src, onClose }: { src: string; onClose: () => void }) => (
@@ -109,35 +100,9 @@ const ImageModal = memo(
   )
 );
 
-ImageModal.displayName = "ImageModal";
-
-const preloadImages = async (srcs: string[], chunkSize = 5) => {
-  const preloadChunk = async (chunk: string[]) => {
-    const promises = chunk.map(
-      (src) =>
-        new Promise((resolve, reject) => {
-          const img = new Image();
-          img.onload = resolve;
-          img.onerror = reject;
-          img.src = src;
-        })
-    );
-    await Promise.all(promises);
-  };
-
-  const chunks = Array.from(
-    { length: Math.ceil(srcs.length / chunkSize) },
-    (_, i) => srcs.slice(i * chunkSize, (i + 1) * chunkSize)
-  );
-
-  for (const chunk of chunks) {
-    await preloadChunk(chunk);
-  }
-};
-
 const generateImagePosition = (): ImagePosition => ({
   x: Math.random() * 80,
-  y: Math.random() * 85,
+  y: Math.random() * 80,
   rotate: Math.random() * 50 - 25,
   zIndex: Math.floor(Math.random() * 10),
 });
@@ -151,7 +116,7 @@ const Gallery = () => {
   const images = useMemo(
     () =>
       Array.from({ length: totalImages }, (_, index) => ({
-        src: `./img/${index + 1}.jpg`,
+        src: `./img/${index + 100}.jpg`,
         alt: "Gallery Image",
       })),
     [totalImages]
@@ -161,18 +126,6 @@ const Gallery = () => {
     if (imagePositions.current.length === 0) {
       imagePositions.current = images.map(() => generateImagePosition());
     }
-  }, [images]);
-
-  useEffect(() => {
-    const loadImages = async () => {
-      try {
-        setIsLoading(true);
-        await preloadImages(images.map((img) => img.src));
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    loadImages();
   }, [images]);
 
   const handleImageClick = useCallback((src: string) => {
@@ -195,7 +148,7 @@ const Gallery = () => {
     <div className="relative w-full">
       <BigText text={"Gallery"} />
       <div className="content">
-        <div className="relative h-[170vh] w-full [z-index: 100]">
+        <div className="relative h-[150vh] w-full [z-index: 100]">
           <AnimatePresence>
             {images.map((image, index) => (
               <GalleryImage
@@ -206,7 +159,6 @@ const Gallery = () => {
                 position={
                   imagePositions.current[index] || generateImagePosition()
                 }
-                priority={index < 10}
               />
             ))}
           </AnimatePresence>
