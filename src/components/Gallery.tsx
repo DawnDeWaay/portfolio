@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { AnimatePresence, motion, useInView } from "motion/react";
-import axios from "axios";
 import BigText from "./BigText";
 
 type ImagePosition = {
@@ -99,11 +98,10 @@ const generateImagePosition = (): ImagePosition => ({
 });
 
 const Gallery = () => {
-  const [images, setImages] = useState<CloudflareImage[]>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const imagePositions = useRef<ImagePosition[]>([]);
 
-  const totalImages = 10;
+  const totalImages = 42;
   const images = Array.from({ length: totalImages }, (_, index) => ({
     src: `./img/${index + 1}.jpg`,
     alt: "Gallery Image",
@@ -131,9 +129,9 @@ const Gallery = () => {
           <AnimatePresence>
             {images.map((image, index) => (
               <GalleryImage
-                key={image.id}
-                src={image.variants[0]}
-                alt={image.filename}
+                key={index}
+                src={image.src}
+                alt={image.alt}
                 onClick={handleImageClick}
                 position={
                   imagePositions.current[index] || generateImagePosition()
