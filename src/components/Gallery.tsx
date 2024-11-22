@@ -109,37 +109,37 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const imagePositions = useRef<ImagePosition[]>([]);
 
+  const addElement = useCallback((element: CloudflareImage) => {
+    setImages((prevArray) => [...prevArray, element]);
+  }, []);
+
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const accountId = "7fdbd017f1d79701dcdd993f153a78cb";
-        const apiKey = "lZcWGSys4TaMQ1vHfOrc_eR3AVV3EON6hLpzhWC7";
+        const options = {
+          method: "GET",
+          url: "https://api.cloudflare.com/client/v4/accounts/7fdbd017f1d79701dcdd993f153a78cb/images/v2",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer undefined",
+          },
+        };
 
-        const response = await axios.get(
-          `https://api.cloudflare.com/client/v4/accounts/${accountId}/images/v1`,
-          {
-            headers: {
-              Authorization: `Bearer ${apiKey}`,
-            },
-          }
-        );
-
-        if (response.data.success) {
-          const fetchedImages = response.data.result.resources.map(
-            (img: CloudflareImage) =>
-              `https://imagedelivery.net/Z94JQyvce_SCOJjPmvH-EQ/${img.id}/public`
-          );
-          setImages(fetchedImages);
-        } else {
-          console.error("Failed to fetch images:", response.data.errors);
-        }
+        axios
+          .request(options)
+          .then(function (response) {
+            addElement(response.data);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
       } catch (error) {
         console.error("Error fetching images:", error);
       }
     };
 
     fetchImages();
-  }, []);
+  }, [addElement]);
 
   useEffect(() => {
     if (imagePositions.current.length === 0) {

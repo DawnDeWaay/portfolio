@@ -92,7 +92,8 @@ export default function App() {
               <p>AWS Services</p>
               <p>Databases</p>
               <p>C & Assembly</p>
-            </div>``
+            </div>
+            ``
           </motion.div>
         </div>
         <div>
@@ -117,9 +118,7 @@ export default function App() {
           <motion.div className="content">
             <div className="h-screen w-screen flex center justify-center">
               <iframe
-                className="spotify"
-                height={500}
-                width={600}
+                className="spotify w-[100%] max-w-[1000px] h-[40%]"
                 src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
