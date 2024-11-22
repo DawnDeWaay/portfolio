@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "motion/react";
+import axios from "axios";
 import BigText from "./BigText";
 
 type ImagePosition = {
@@ -15,6 +15,12 @@ type GalleryImageProps = {
   alt: string;
   onClick: (src: string) => void;
   position: ImagePosition;
+};
+
+type CloudflareImage = {
+  id: string;
+  filename: string;
+  variants: string[];
 };
 
 const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
@@ -99,14 +105,41 @@ const generateImagePosition = (): ImagePosition => ({
 });
 
 const Gallery = () => {
+  const [images, setImages] = useState<CloudflareImage[]>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const imagePositions = useRef<ImagePosition[]>([]);
 
-  const totalImages = 42;
-  const images = Array.from({ length: totalImages }, (_, index) => ({
-    src: `./img/${index + 1}.jpg`,
-    alt: "Gallery Image",
-  }));
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const accountId = "7fdbd017f1d79701dcdd993f153a78cb";
+        const apiKey = "lZcWGSys4TaMQ1vHfOrc_eR3AVV3EON6hLpzhWC7";
+
+        const response = await axios.get(
+          `https://api.cloudflare.com/client/v4/accounts/${accountId}/images/v1`,
+          {
+            headers: {
+              Authorization: `Bearer ${apiKey}`,
+            },
+          }
+        );
+
+        if (response.data.success) {
+          const fetchedImages = response.data.result.resources.map(
+            (img: CloudflareImage) =>
+              `https://imagedelivery.net/Z94JQyvce_SCOJjPmvH-EQ/${img.id}/public`
+          );
+          setImages(fetchedImages);
+        } else {
+          console.error("Failed to fetch images:", response.data.errors);
+        }
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   useEffect(() => {
     if (imagePositions.current.length === 0) {
@@ -130,9 +163,9 @@ const Gallery = () => {
           <AnimatePresence>
             {images.map((image, index) => (
               <GalleryImage
-                key={image.src}
-                src={image.src}
-                alt={image.alt}
+                key={image.id}
+                src={image.variants[0]}
+                alt={image.filename}
                 onClick={handleImageClick}
                 position={
                   imagePositions.current[index] || generateImagePosition()
