@@ -92,7 +92,7 @@ export default function App() {
               <p>AWS Services</p>
               <p>Databases</p>
               <p>C & Assembly</p>
-            </div>
+            </div>``
           </motion.div>
         </div>
         <div>

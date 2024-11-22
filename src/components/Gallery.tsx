@@ -102,7 +102,7 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const imagePositions = useRef<ImagePosition[]>([]);
 
-  const totalImages = 10;
+  const totalImages = 42;
   const images = Array.from({ length: totalImages }, (_, index) => ({
     src: `./img/${index + 1}.jpg`,
     alt: "Gallery Image",
