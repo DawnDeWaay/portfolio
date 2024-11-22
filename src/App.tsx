@@ -125,7 +125,6 @@ export default function App() {
                 loading="lazy"
               />
             </div>
-            <h3>Tekken, fashion, cello, music, umm</h3>
           </motion.div>
         </div>
         <Gallery />

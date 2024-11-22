@@ -52,6 +52,7 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
     <>
       <motion.h1
         variants={variants}
+        initial={{ opacity: 0 }}
         animate={scrolled ? "shown" : "hidden"}
         layout
         className="flex fixed h-8 top-0 left-12 text-[2.2rem] pt-7 pr-0 z-40 justify-end gap-6 flex-row cursor-pointer"
@@ -61,6 +62,7 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
       </motion.h1>
       <motion.div
         variants={variants}
+        initial={{ opacity: 0 }}
         animate={scrolled ? "shown" : "hidden"}
         layout
         className="flex fixed h-8 top-0 right-12 pt-9 pr-0 z-40 justify-end gap-6 flex-row"
@@ -144,6 +146,7 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
       </motion.div>
       <motion.div
         variants={variants}
+        initial={{ opacity: 0 }}
         animate={scrolled ? "shown" : "hidden"}
         layout
       >

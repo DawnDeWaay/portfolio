@@ -17,6 +17,31 @@ type GalleryImageProps = {
   position: ImagePosition;
 };
 
+const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
+  <motion.div
+    className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50"
+    onClick={onClose}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+  >
+    <motion.div
+      className="relative bg-white"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 30 }}
+      transition={{ duration: 0.3 }}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <img
+        src={src}
+        alt="Enlarged"
+        className="max-w-[90vw] max-h-[90vh] object-contain p-8 rounded-lg shadow-2xl"
+      />
+    </motion.div>
+  </motion.div>
+);
+
 const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -77,7 +102,7 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const imagePositions = useRef<ImagePosition[]>([]);
 
-  const totalImages = 42;
+  const totalImages = 10;
   const images = Array.from({ length: totalImages }, (_, index) => ({
     src: `./img/${index + 1}.jpg`,
     alt: "Gallery Image",
@@ -114,6 +139,11 @@ const Gallery = () => {
                 }
               />
             ))}
+          </AnimatePresence>
+          <AnimatePresence>
+            {selectedImage && (
+              <ImageModal src={selectedImage} onClose={handleCloseModal} />
+            )}
           </AnimatePresence>
         </div>
       </div>
