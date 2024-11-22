@@ -17,12 +17,6 @@ type GalleryImageProps = {
   position: ImagePosition;
 };
 
-type CloudflareImage = {
-  id: string;
-  filename: string;
-  variants: string[];
-};
-
 const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
   <motion.div
     className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50"
@@ -109,37 +103,11 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const imagePositions = useRef<ImagePosition[]>([]);
 
-  const addElement = useCallback((element: CloudflareImage) => {
-    setImages((prevArray) => [...prevArray, element]);
-  }, []);
-
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const options = {
-          method: "GET",
-          url: "https://api.cloudflare.com/client/v4/accounts/7fdbd017f1d79701dcdd993f153a78cb/images/v2",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer undefined",
-          },
-        };
-
-        axios
-          .request(options)
-          .then(function (response) {
-            addElement(response.data);
-          })
-          .catch(function (error) {
-            console.error(error);
-          });
-      } catch (error) {
-        console.error("Error fetching images:", error);
-      }
-    };
-
-    fetchImages();
-  }, [addElement]);
+  const totalImages = 10;
+  const images = Array.from({ length: totalImages }, (_, index) => ({
+    src: `./img/${index + 1}.jpg`,
+    alt: "Gallery Image",
+  }));
 
   useEffect(() => {
     if (imagePositions.current.length === 0) {
