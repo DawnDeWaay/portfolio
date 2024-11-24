@@ -97,8 +97,8 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
           onMouseEnter={() => setShowSocials(true)}
           onMouseLeave={() => setShowSocials(false)}
         >
-          <motion.div whileHover={hoverEffect}>
-            <IconAt {...iconProps} className="cursor-pointer" />
+          <motion.div whileHover={hoverEffect} className="cursor-pointer">
+            <IconAt {...iconProps} />
           </motion.div>
           <AnimatePresence>
             {showSocials && (
