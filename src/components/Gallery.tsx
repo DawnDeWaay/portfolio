@@ -26,7 +26,7 @@ const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
     exit={{ opacity: 0 }}
   >
     <motion.div
-      className="relative bg-white"
+      className="relative bg-white max-w-[90vw] max-h-[90vh] p-8"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 30 }}
@@ -36,7 +36,7 @@ const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
       <img
         src={src}
         alt="Enlarged"
-        className="min-h-[70vh] object-contain p-8 rounded-lg shadow-2xl"
+        className="object-contain shadow-2xl"
         draggable={false}
       />
     </motion.div>
