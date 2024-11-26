@@ -16,7 +16,13 @@ import {
 } from "@tabler/icons-react";
 import { useState } from "react";
 
-const Header = ({ scrolled }: { scrolled: boolean }) => {
+const Header = ({
+  scrolled,
+  scrolledOnce,
+}: {
+  scrolled: boolean;
+  scrolledOnce: boolean;
+}) => {
   const [showSocials, setShowSocials] = useState(false);
 
   const variants = {
@@ -53,9 +59,9 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
       <motion.h1
         variants={variants}
         initial={{ opacity: 0 }}
-        animate={scrolled ? "shown" : "hidden"}
+        animate={scrolledOnce ? "shown" : "hidden"}
         layout
-        className="flex fixed h-8 top-0 left-12 text-[2.2rem] pt-7 pr-0 z-40 justify-end gap-6 flex-row cursor-pointer"
+        className="flex fixed h-8 top-0 left-12 text-[2.2rem] pt-7 pr-0 z-50 justify-end gap-6 flex-row cursor-pointer"
         onClick={() => scrollToSection("Main")}
       >
         Dawn DeWaay III
@@ -63,9 +69,9 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
       <motion.div
         variants={variants}
         initial={{ opacity: 0 }}
-        animate={scrolled ? "shown" : "hidden"}
+        animate={scrolledOnce ? "shown" : "hidden"}
         layout
-        className="flex fixed h-8 top-0 right-12 pt-9 pr-0 z-40 justify-end gap-6 flex-row"
+        className="flex fixed h-8 top-0 right-12 pt-9 pr-0 z-50 justify-end gap-6 flex-row"
       >
         <div onClick={() => scrollToSection("Biography")}>
           <motion.div whileHover={hoverEffect} className="cursor-pointer">
@@ -151,14 +157,13 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
         layout
       >
         <motion.div
-          className="fixed bottom-12 right-12 h-24 w-24 z-40"
+          className="fixed bottom-[2vw] right-[2vw] h-24 w-24 z-50 overflow-hidden"
           animate={{ rotate: 360 }}
           transition={{
             repeat: Infinity,
             duration: 20,
             ease: "linear",
           }}
-          color="black"
         >
           <IconRosette
             stroke={1.5}

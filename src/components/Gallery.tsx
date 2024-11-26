@@ -75,7 +75,7 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
         transition: { duration: 0.2 },
       }}
     >
-      <div className="relative w-full p-[5%] pb-[20%] shadow-xl overflow-hidden bg-white">
+      <div className="relative w-full p-[5%] pb-[20%] shadow-xl bg-white">
         <div className="w-full h-0 pb-[100%] relative">
           <img
             src={src}
@@ -125,7 +125,7 @@ const Gallery = () => {
     <div className="relative w-full">
       <BigText text={"Gallery"} />
       <div className="content">
-        <div className="relative h-[150vh] w-full [z-index: 100]">
+        <div className="relative h-[150vh] w-full">
           <AnimatePresence>
             {images.map((image, index) => (
               <GalleryImage

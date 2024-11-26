@@ -8,10 +8,14 @@ import Gallery from "./components/Gallery";
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [scrolledOnce, setScrolledOnce] = useState(false);
 
   const handleScroll = () => {
     const isScrolled = window.scrollY > 0;
     if (isScrolled) {
+      setScrolledOnce(isScrolled);
+      setScrolled(isScrolled);
+    } else {
       setScrolled(isScrolled);
     }
   };
@@ -31,10 +35,10 @@ export default function App() {
     <main id="Main">
       <div className="grain" />
       <div className="grain" />
-      <Header scrolled={scrolled} />
-      <div className="h-screen w-screen">
+      <Header scrolled={scrolled} scrolledOnce={scrolledOnce} />
+      <div className="h-screen w-screen overflow-x-clip relative">
         <motion.div
-          className="absolute bottom-0 right-[6%] h-[70vh] w-[70vh]"
+          className="absolute bottom-0 right-[6%] overflow-x-clip"
           initial={{ y: 80 }}
           animate={{ rotate: 360 }}
           transition={{
@@ -43,7 +47,7 @@ export default function App() {
             ease: "linear",
           }}
         >
-          <IconRosette stroke={1} size={"100%"} color="#796C98" />
+          <IconRosette stroke={1} size="70vh" color="#796C98" />
         </motion.div>
         <h1 className="absolute bottom-0 left-0 text-[15vw] pl-[5%]">
           Dawn
@@ -83,7 +87,7 @@ export default function App() {
                 crucial front-end designs, and built the project's API.
               </h3>
             </div>
-            <h2 className="sub-head">Languages/Frameworks</h2>
+            <h2 className="sub-head">Languages & Frameworks</h2>
             <div>
               <p>JavaScript/TypeScript</p>
               <p>React.JS, Next.JS</p>
@@ -93,7 +97,6 @@ export default function App() {
               <p>Databases</p>
               <p>C & Assembly</p>
             </div>
-            ``
           </motion.div>
         </div>
         <div>
