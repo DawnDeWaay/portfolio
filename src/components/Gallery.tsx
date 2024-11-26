@@ -36,7 +36,8 @@ const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
       <img
         src={src}
         alt="Enlarged"
-        className="max-w-[90vw] max-h-[90vh] object-contain p-8 rounded-lg shadow-2xl"
+        className="min-h-[70vh] object-contain p-8 rounded-lg shadow-2xl"
+        draggable={false}
       />
     </motion.div>
   </motion.div>
@@ -84,6 +85,7 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
             loading="lazy"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
+            draggable={false}
           />
         </div>
       </div>
