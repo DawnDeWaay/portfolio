@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { AnimatePresence, motion, useInView } from "motion/react";
+
 import BigText from "./BigText";
 
 type ImagePosition = {
@@ -101,9 +102,9 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const imagePositions = useRef<ImagePosition[]>([]);
 
-  const totalImages = 42;
+  const totalImages = 39;
   const images = Array.from({ length: totalImages }, (_, index) => ({
-    src: `./img/${index + 1}.jpg`,
+    src: `./img/${index + 1}.jpeg`,
     alt: "Gallery Image",
   }));
 
