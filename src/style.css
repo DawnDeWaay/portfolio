@@ -17,13 +17,7 @@
 html {
   background-color: #f2f1ec;
   width: 100vw;
-  overflow-x: clip;
   scroll-behavior: smooth;
-}
-
-main {
-  padding: none;
-  overflow-x: hidden;
 }
 
 h1 {
@@ -77,10 +71,6 @@ p {
 
 span {
   font-family: "Redaction 35";
-}
-
-.big-text {
-  z-index: 1;
 }
 
 .redaction {

@@ -32,7 +32,7 @@ export default function App() {
   }, []);
 
   return (
-    <main id="Main">
+    <main id="Main" className="overflow-x-clip">
       <div className="grain" />
       <div className="grain" />
       <Header scrolled={scrolled} scrolledOnce={scrolledOnce} />
