@@ -4,17 +4,17 @@ import {
   IconBrandGithub,
   IconBrandInstagram,
   IconBrandTwitter,
-  IconFingerprint,
-  IconCodeAsterisk,
-  IconBallpen,
-  IconAperture,
-  IconAt,
-  IconBolt,
   IconMail,
   IconBrandSpotify,
   IconRosette,
 } from "@tabler/icons-react";
 import { useState } from "react";
+import SvgSpinner from "./icons/SvgSpinner";
+import SvgStairs from "./icons/SvgStairs";
+import SvgEllipses from "./icons/SvgEllipses";
+import SvgFlower from "./icons/SvgFlower";
+import SvgTulip from "./icons/SvgTulip";
+import SvgOyster from "./icons/SvgOyster";
 
 const Header = ({
   scrolled,
@@ -36,8 +36,8 @@ const Header = ({
   };
 
   const iconProps = {
-    stroke: 1.5,
-    size: "2rem",
+    stroke: 2,
+    size: "1.5rem",
   };
 
   const socialIconVariants = {
@@ -71,31 +71,46 @@ const Header = ({
         initial={{ opacity: 0 }}
         animate={scrolledOnce ? "shown" : "hidden"}
         layout
-        className="flex fixed h-8 top-0 right-12 pt-9 pr-0 z-50 justify-end gap-6 flex-row"
+        className="flex fixed h-8 top-0 right-12 pt-10 pr-0 z-50 justify-end gap-6 flex-row"
       >
         <div onClick={() => scrollToSection("Biography")}>
-          <motion.div whileHover={hoverEffect} className="cursor-pointer">
-            <IconFingerprint {...iconProps} />
+          <motion.div
+            whileHover={hoverEffect}
+            className="cursor-pointer w-6 h-6"
+          >
+            <SvgSpinner />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Work")}>
-          <motion.div whileHover={hoverEffect} className="cursor-pointer">
-            <IconCodeAsterisk {...iconProps} />
+          <motion.div
+            whileHover={hoverEffect}
+            className="cursor-pointer w-6 h-6"
+          >
+            <SvgStairs />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Education")}>
-          <motion.div whileHover={hoverEffect} className="cursor-pointer">
-            <IconBallpen {...iconProps} />
+          <motion.div
+            whileHover={hoverEffect}
+            className="cursor-pointer w-6 h-6"
+          >
+            <SvgEllipses />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Passions")}>
-          <motion.div whileHover={hoverEffect} className="cursor-pointer">
-            <IconBolt {...iconProps} />
+          <motion.div
+            whileHover={hoverEffect}
+            className="cursor-pointer w-6 h-6"
+          >
+            <SvgFlower />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Gallery")}>
-          <motion.div whileHover={hoverEffect} className="cursor-pointer">
-            <IconAperture {...iconProps} />
+          <motion.div
+            whileHover={hoverEffect}
+            className="cursor-pointer w-6 h-6"
+          >
+            <SvgTulip />
           </motion.div>
         </div>
         <motion.div
@@ -103,8 +118,11 @@ const Header = ({
           onMouseEnter={() => setShowSocials(true)}
           onMouseLeave={() => setShowSocials(false)}
         >
-          <motion.div whileHover={hoverEffect} className="cursor-pointer">
-            <IconAt {...iconProps} />
+          <motion.div
+            whileHover={hoverEffect}
+            className="cursor-pointer w-6 h-6"
+          >
+            <SvgOyster />
           </motion.div>
           <AnimatePresence>
             {showSocials && (
