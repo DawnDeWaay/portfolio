@@ -35,11 +35,6 @@ const Header = ({
     },
   };
 
-  const iconProps = {
-    stroke: 2,
-    size: "28px",
-  };
-
   const socialIconVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
