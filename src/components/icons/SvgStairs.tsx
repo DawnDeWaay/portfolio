@@ -4,6 +4,7 @@ const SvgStairs = () => (
     xmlns="http://www.w3.org/2000/svg"
     data-name="Layer 2"
     viewBox="0 0 160.54 160.54"
+    transform="scale(-1,1)"
   >
     <g data-name="Calque 1">
       <path

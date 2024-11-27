@@ -1,20 +1,16 @@
-import { AnimatePresence, motion } from "framer-motion";
-
-import {
-  IconBrandGithub,
-  IconBrandInstagram,
-  IconBrandTwitter,
-  IconMail,
-  IconBrandSpotify,
-  IconRosette,
-} from "@tabler/icons-react";
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
+import { IconMail, IconRosette } from "@tabler/icons-react";
 import SvgSpinner from "./icons/SvgSpinner";
 import SvgStairs from "./icons/SvgStairs";
 import SvgEllipses from "./icons/SvgEllipses";
 import SvgFlower from "./icons/SvgFlower";
 import SvgTulip from "./icons/SvgTulip";
 import SvgOyster from "./icons/SvgOyster";
+import SvgInstagram from "./icons/SvgInstagram";
+import SvgTwitter from "./icons/SvgTwitter";
+import SvgGitHub from "./icons/SvgGitHub";
+import SvgSpotify from "./icons/SvgSpotify";
 
 const Header = ({
   scrolled,
@@ -122,7 +118,7 @@ const Header = ({
           <AnimatePresence>
             {showSocials && (
               <motion.div
-                className="absolute flex flex-col gap-4 pt-4 w-[32px]"
+                className="absolute flex flex-col gap-4 pt-4"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -131,32 +127,37 @@ const Header = ({
                 <motion.a
                   href="https://www.instagram.com/dawndewaayiii/"
                   whileHover={hoverEffect}
+                  className="w-[28px] h-[28px]"
                 >
-                  <IconBrandInstagram size="28px" color="#E1306C" />
+                  <SvgInstagram />
                 </motion.a>
                 <motion.a
                   href="https://x.com/DawnDeWaay"
                   whileHover={hoverEffect}
+                  className="w-[28px] h-[28px]"
                 >
-                  <IconBrandTwitter size="28px" color="#1da1f2" />
+                  <SvgTwitter />
                 </motion.a>
                 <motion.a
                   href="https://github.com/DawnDeWaay"
                   whileHover={hoverEffect}
+                  className="w-[28px] h-[28px]"
                 >
-                  <IconBrandGithub size="28px" color="#2b3137" />
-                </motion.a>
-                <motion.a
-                  href="mailto:dawndewaay@gmail.com"
-                  whileHover={hoverEffect}
-                >
-                  <IconMail size="28px" color="#0078d4" />
+                  <SvgGitHub />
                 </motion.a>
                 <motion.a
                   href="https://open.spotify.com/user/donalddewaay?si=732c04f17d874872"
                   whileHover={hoverEffect}
+                  className="w-[28px] h-[28px]"
                 >
-                  <IconBrandSpotify size="28px" color="#1db954" />
+                  <SvgSpotify />
+                </motion.a>
+                <motion.a
+                  href="mailto:dawndewaay@gmail.com"
+                  whileHover={hoverEffect}
+                  className="w-[28px] h-[28px]"
+                >
+                  <IconMail size="28px" color="#0078d4" />
                 </motion.a>
               </motion.div>
             )}
