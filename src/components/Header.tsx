@@ -1,16 +1,16 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { IconMail, IconRosette } from "@tabler/icons-react";
-import SvgSpinner from "./icons/SvgSpinner";
 import SvgStairs from "./icons/SvgStairs";
 import SvgEllipses from "./icons/SvgEllipses";
-import SvgFlower from "./icons/SvgFlower";
+import SvgSpinner from "./icons/SvgSpinner";
 import SvgTulip from "./icons/SvgTulip";
 import SvgOyster from "./icons/SvgOyster";
 import SvgInstagram from "./icons/SvgInstagram";
 import SvgTwitter from "./icons/SvgTwitter";
 import SvgGitHub from "./icons/SvgGitHub";
 import SvgSpotify from "./icons/SvgSpotify";
+import SvgFlower from "./icons/SvgFlower";
 
 const Header = ({
   scrolled,
