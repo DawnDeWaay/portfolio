@@ -37,7 +37,7 @@ const Header = ({
 
   const iconProps = {
     stroke: 2,
-    size: "1.5rem",
+    size: "28px",
   };
 
   const socialIconVariants = {
@@ -61,7 +61,7 @@ const Header = ({
         initial={{ opacity: 0 }}
         animate={scrolledOnce ? "shown" : "hidden"}
         layout
-        className="flex fixed h-8 top-0 left-12 text-[2.2rem] pt-7 pr-0 z-50 justify-end gap-6 flex-row cursor-pointer"
+        className="flex fixed h-8 top-0 left-0 pl-12 text-[2.2rem] pt-7 pr-0 z-50 justify-end flex-row cursor-pointer"
         onClick={() => scrollToSection("Main")}
       >
         Dawn DeWaay III
@@ -71,12 +71,12 @@ const Header = ({
         initial={{ opacity: 0 }}
         animate={scrolledOnce ? "shown" : "hidden"}
         layout
-        className="flex fixed h-8 top-0 right-12 pt-10 pr-0 z-50 justify-end gap-6 flex-row"
+        className="flex fixed h-8 top-0 right-0 pr-12 pt-10 z-50 justify-end gap-8 flex-row"
       >
         <div onClick={() => scrollToSection("Biography")}>
           <motion.div
             whileHover={hoverEffect}
-            className="cursor-pointer w-6 h-6"
+            className="cursor-pointer w-[28px] h-[28px]"
           >
             <SvgSpinner />
           </motion.div>
@@ -84,7 +84,7 @@ const Header = ({
         <div onClick={() => scrollToSection("Work")}>
           <motion.div
             whileHover={hoverEffect}
-            className="cursor-pointer w-6 h-6"
+            className="cursor-pointer w-[28px] h-[28px]"
           >
             <SvgStairs />
           </motion.div>
@@ -92,7 +92,7 @@ const Header = ({
         <div onClick={() => scrollToSection("Education")}>
           <motion.div
             whileHover={hoverEffect}
-            className="cursor-pointer w-6 h-6"
+            className="cursor-pointer w-[28px] h-[28px]"
           >
             <SvgEllipses />
           </motion.div>
@@ -100,7 +100,7 @@ const Header = ({
         <div onClick={() => scrollToSection("Passions")}>
           <motion.div
             whileHover={hoverEffect}
-            className="cursor-pointer w-6 h-6"
+            className="cursor-pointer w-[28px] h-[28px]"
           >
             <SvgFlower />
           </motion.div>
@@ -108,7 +108,7 @@ const Header = ({
         <div onClick={() => scrollToSection("Gallery")}>
           <motion.div
             whileHover={hoverEffect}
-            className="cursor-pointer w-6 h-6"
+            className="cursor-pointer w-[28px] h-[28px]"
           >
             <SvgTulip />
           </motion.div>
@@ -120,14 +120,14 @@ const Header = ({
         >
           <motion.div
             whileHover={hoverEffect}
-            className="cursor-pointer w-6 h-6"
+            className="cursor-pointer w-[28px] h-[28px]"
           >
             <SvgOyster />
           </motion.div>
           <AnimatePresence>
             {showSocials && (
               <motion.div
-                className="absolute flex flex-col gap-4 pt-4"
+                className="absolute flex flex-col gap-4 pt-4 w-[32px]"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -137,31 +137,31 @@ const Header = ({
                   href="https://www.instagram.com/dawndewaayiii/"
                   whileHover={hoverEffect}
                 >
-                  <IconBrandInstagram {...iconProps} color="#E1306C" />
+                  <IconBrandInstagram size="28px" color="#E1306C" />
                 </motion.a>
                 <motion.a
                   href="https://x.com/DawnDeWaay"
                   whileHover={hoverEffect}
                 >
-                  <IconBrandTwitter {...iconProps} color="#1da1f2" />
+                  <IconBrandTwitter size="28px" color="#1da1f2" />
                 </motion.a>
                 <motion.a
                   href="https://github.com/DawnDeWaay"
                   whileHover={hoverEffect}
                 >
-                  <IconBrandGithub {...iconProps} color="#2b3137" />
+                  <IconBrandGithub size="28px" color="#2b3137" />
                 </motion.a>
                 <motion.a
                   href="mailto:dawndewaay@gmail.com"
                   whileHover={hoverEffect}
                 >
-                  <IconMail {...iconProps} color="#0078d4" />
+                  <IconMail size="28px" color="#0078d4" />
                 </motion.a>
                 <motion.a
                   href="https://open.spotify.com/user/donalddewaay?si=732c04f17d874872"
                   whileHover={hoverEffect}
                 >
-                  <IconBrandSpotify {...iconProps} color="#1db954" />
+                  <IconBrandSpotify size="28px" color="#1db954" />
                 </motion.a>
               </motion.div>
             )}
