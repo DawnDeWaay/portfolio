@@ -125,7 +125,7 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full snap-start">
       <BigText text={"Gallery"} />
       <div className="content">
         <div className="relative h-[150vh] w-full">

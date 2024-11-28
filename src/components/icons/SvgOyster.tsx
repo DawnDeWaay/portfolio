@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 const SvgOyster = () => (
   <motion.svg
-    animate={{ fill: "black" }}
+    initial={{ fill: "black" }}
     whileHover={{ fill: "#796C98" }}
     xmlns="http://www.w3.org/2000/svg"
     data-name="Layer 2"

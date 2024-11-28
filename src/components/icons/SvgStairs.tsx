@@ -1,6 +1,9 @@
+import { motion } from "motion/react";
+
 const SvgStairs = () => (
-  <svg
-    fill="1b1a19"
+  <motion.svg
+    initial={{ fill: "black" }}
+    whileHover={{ fill: "#796C98" }}
     xmlns="http://www.w3.org/2000/svg"
     data-name="Layer 2"
     viewBox="0 0 160.54 160.54"
@@ -12,6 +15,6 @@ const SvgStairs = () => (
         data-name="rounded stairs"
       />
     </g>
-  </svg>
+  </motion.svg>
 );
 export default SvgStairs;
