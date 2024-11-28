@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import BigText from "./components/BigText";
@@ -7,25 +6,12 @@ import { IconRosette } from "@tabler/icons-react";
 import Gallery from "./components/Gallery";
 
 export default function App() {
-  const [scrolled, setScrolled] = useState(false);
-  const [scrolledOnce, setScrolledOnce] = useState(false);
-
-  const handleScroll = () => {
-    const isScrolled = window.scrollY > 0;
-    if (isScrolled) {
-      setScrolledOnce(isScrolled);
-      setScrolled(isScrolled);
-    } else {
-      setScrolled(isScrolled);
-    }
-  };
-
   return (
     <main id="Main">
       <div className="grain" />
       <div className="grain" />
-      <Header scrolled={scrolled} scrolledOnce={scrolledOnce} />
-      <div className="h-screen w-screen overflow-x-clip relative snap-start">
+      <Header />
+      <div className="h-screen w-screen">
         <motion.div
           className="absolute bottom-0 right-[6%] overflow-x-clip"
           initial={{ y: 80 }}
@@ -36,7 +22,7 @@ export default function App() {
             ease: "linear",
           }}
         >
-          <IconRosette stroke={1} size="70vh" color="#796C98" />
+          <IconRosette stroke={1} size="70vh" color="#796C98" z="10" />
         </motion.div>
         <h1 className="absolute bottom-0 left-0 text-[15vw] pl-[5%]">
           Dawn
@@ -85,6 +71,8 @@ export default function App() {
             <p>Databases</p>
             <p>C & Assembly</p>
           </div>
+          <h2 className="sub-head">Personal Projects</h2>
+          <div className="section"></div>
         </motion.div>
       </div>
       <div>
@@ -109,7 +97,7 @@ export default function App() {
         <motion.div className="content">
           <div className="h-screen w-screen p-4 flex center justify-center">
             <iframe
-              className="spotify w-[100%] max-w-[1000px] h-[40%]"
+              className="spotify w-[100%] max-w-[800px] min-h-[40%] max-h-[50vh]"
               src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"

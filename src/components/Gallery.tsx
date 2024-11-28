@@ -7,7 +7,6 @@ type ImagePosition = {
   x: number;
   y: number;
   rotate: number;
-  zIndex: number;
 };
 
 type GalleryImageProps = {
@@ -19,7 +18,7 @@ type GalleryImageProps = {
 
 const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
   <motion.div
-    className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50"
+    className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center"
     onClick={onClose}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -56,7 +55,6 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
       style={{
         left: `${position.x}%`,
         top: `${position.y}%`,
-        zIndex: position.zIndex,
         width: "min(30vw, 350px)",
       }}
       initial={{
@@ -97,7 +95,6 @@ const generateImagePosition = (): ImagePosition => ({
   x: Math.random() * 80 + 10,
   y: Math.random() * 90,
   rotate: Math.random() * 50 - 25,
-  zIndex: Math.floor(Math.random() * 10),
 });
 
 const Gallery = () => {
@@ -125,29 +122,27 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="relative w-full snap-start">
+    <div className="w-full z-40">
       <BigText text={"Gallery"} />
-      <div className="content">
-        <div className="relative h-[150vh] w-full">
-          <AnimatePresence>
-            {images.map((image, index) => (
-              <GalleryImage
-                key={index}
-                src={image.src}
-                alt={image.alt}
-                onClick={handleImageClick}
-                position={
-                  imagePositions.current[index] || generateImagePosition()
-                }
-              />
-            ))}
-          </AnimatePresence>
-          <AnimatePresence>
-            {selectedImage && (
-              <ImageModal src={selectedImage} onClose={handleCloseModal} />
-            )}
-          </AnimatePresence>
-        </div>
+      <div className="content relative z-40">
+        <AnimatePresence>
+          {images.map((image, index) => (
+            <GalleryImage
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              onClick={handleImageClick}
+              position={
+                imagePositions.current[index] || generateImagePosition()
+              }
+            />
+          ))}
+        </AnimatePresence>
+        <AnimatePresence>
+          {selectedImage && (
+            <ImageModal src={selectedImage} onClose={handleCloseModal} />
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
-import { IconMail, IconRosette } from "@tabler/icons-react";
+import { IconMail } from "@tabler/icons-react";
 import SvgStairs from "./icons/SvgStairs";
 import SvgEllipses from "./icons/SvgEllipses";
 import SvgSpinner from "./icons/SvgSpinner";
@@ -12,13 +12,7 @@ import SvgGitHub from "./icons/SvgGitHub";
 import SvgSpotify from "./icons/SvgSpotify";
 import SvgFlower from "./icons/SvgFlower";
 
-const Header = ({
-  scrolled,
-  scrolledOnce,
-}: {
-  scrolled: boolean;
-  scrolledOnce: boolean;
-}) => {
+const Header = () => {
   const [showSocials, setShowSocials] = useState(false);
 
   const variants = {
@@ -46,61 +40,46 @@ const Header = ({
   const hoverEffect = { scale: 1.05 };
 
   return (
-    <>
+    <div className="fixed inset-0 m-[2%] border-2 border-black z-50 pointer-events-none">
       <motion.h1
         variants={variants}
         initial={{ opacity: 0 }}
         animate={"shown"}
         layout
-        className="flex fixed h-8 top-0 left-0 pl-12 text-[2.2rem] pt-7 pr-0 z-50 justify-end flex-row cursor-pointer"
+        className="text-[2.2rem] z-50 flex-row cursor-pointer text-left border-b-2 border-black pointer-events-none w-auto"
         onClick={() => scrollToSection("Main")}
       >
-        Dawn DeWaay III&nbsp;
+        &nbsp;Dawn DeWaay III&nbsp;
       </motion.h1>
       <motion.div
         variants={variants}
         initial={{ opacity: 0 }}
         animate={"shown"}
         layout
-        className="flex fixed h-8 bottom-0 right-0 p-12 pt-10 z-50 justify-end gap-8 flex-col"
+        className="flex absolute bottom-0 right-0 flex-col pointer-events-auto z-[100]"
       >
         <div onClick={() => scrollToSection("Biography")}>
-          <motion.div
-            whileHover={hoverEffect}
-            className="cursor-pointer w-[28px] h-[28px]"
-          >
+          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
             <SvgSpinner />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Work")}>
-          <motion.div
-            whileHover={hoverEffect}
-            className="cursor-pointer w-[28px] h-[28px]"
-          >
+          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
             <SvgStairs />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Education")}>
-          <motion.div
-            whileHover={hoverEffect}
-            className="cursor-pointer w-[28px] h-[28px]"
-          >
+          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
             <SvgEllipses />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Passions")}>
-          <motion.div
-            whileHover={hoverEffect}
-            className="cursor-pointer w-[28px] h-[28px]"
-          >
+          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
             <SvgFlower />
           </motion.div>
         </div>
         <div onClick={() => scrollToSection("Gallery")}>
-          <motion.div
-            whileHover={hoverEffect}
-            className="cursor-pointer w-[28px] h-[28px]"
-          >
+          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
             <SvgTulip />
           </motion.div>
         </div>
@@ -109,16 +88,13 @@ const Header = ({
           onMouseEnter={() => setShowSocials(true)}
           onMouseLeave={() => setShowSocials(false)}
         >
-          <motion.div
-            whileHover={hoverEffect}
-            className="cursor-pointer w-[28px] h-[28px]"
-          >
+          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
             <SvgOyster />
           </motion.div>
           <AnimatePresence>
             {showSocials && (
               <motion.div
-                className="absolute flex flex-row-reverse gap-6 p-6 items-center left-0 top-1/2 transform -translate-x-full -translate-y-1/2"
+                className="absolute flex flex-row-reverse gap-6 p-6 items-center left-0 top-2/2 transform -translate-x-full -translate-y-1/2"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -187,7 +163,7 @@ const Header = ({
           />
         </motion.div>
       </motion.div> */}
-    </>
+    </div>
   );
 };
 
