@@ -119,7 +119,7 @@ export default function App() {
         <div>
           <BigText text={"Passions"} />
           <motion.div className="content">
-            <div className="h-screen w-screen flex center justify-center">
+            <div className="h-screen w-screen p-4 flex center justify-center">
               <iframe
                 className="spotify w-[100%] max-w-[1000px] h-[40%]"
                 src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"

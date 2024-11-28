@@ -50,19 +50,19 @@ const Header = ({
       <motion.h1
         variants={variants}
         initial={{ opacity: 0 }}
-        animate={scrolledOnce ? "shown" : "hidden"}
+        animate={"shown"}
         layout
         className="flex fixed h-8 top-0 left-0 pl-12 text-[2.2rem] pt-7 pr-0 z-50 justify-end flex-row cursor-pointer"
         onClick={() => scrollToSection("Main")}
       >
-        Dawn DeWaay III
+        Dawn DeWaay III&nbsp;
       </motion.h1>
       <motion.div
         variants={variants}
         initial={{ opacity: 0 }}
-        animate={scrolledOnce ? "shown" : "hidden"}
+        animate={"shown"}
         layout
-        className="flex fixed h-8 top-0 right-0 pr-12 pt-10 z-50 justify-end gap-8 flex-row"
+        className="flex fixed h-8 bottom-0 right-0 p-12 pt-10 z-50 justify-end gap-8 flex-col"
       >
         <div onClick={() => scrollToSection("Biography")}>
           <motion.div
@@ -118,7 +118,7 @@ const Header = ({
           <AnimatePresence>
             {showSocials && (
               <motion.div
-                className="absolute flex flex-col gap-4 pt-4"
+                className="absolute flex flex-row-reverse gap-6 p-6 items-center left-0 top-1/2 transform -translate-x-full -translate-y-1/2"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -164,7 +164,7 @@ const Header = ({
           </AnimatePresence>
         </motion.div>
       </motion.div>
-      <motion.div
+      {/* <motion.div
         variants={variants}
         initial={{ opacity: 0 }}
         animate={scrolled ? "shown" : "hidden"}
@@ -186,7 +186,7 @@ const Header = ({
             color="#796C98"
           />
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </>
   );
 };
