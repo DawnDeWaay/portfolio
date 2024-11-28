@@ -21,7 +21,7 @@ export default function App() {
   };
 
   return (
-    <main id="Main" className="snap-y snap-mandatory overflow-y-auto h-screen">
+    <main id="Main">
       <div className="grain" />
       <div className="grain" />
       <Header scrolled={scrolled} scrolledOnce={scrolledOnce} />
@@ -44,7 +44,7 @@ export default function App() {
           DeWaay III
         </h1>
       </div>
-      <div className="snap-start">
+      <div>
         <BigText text={"Biography"} />
         <motion.div className="content">
           <div>
@@ -61,7 +61,7 @@ export default function App() {
           </div>
         </motion.div>
       </div>
-      <div className="snap-start">
+      <div>
         <BigText text={"Work"} />
         <motion.div className="content">
           <h2 className="sub-head">Knight Moves</h2>
@@ -87,7 +87,7 @@ export default function App() {
           </div>
         </motion.div>
       </div>
-      <div className="snap-start">
+      <div>
         <BigText text={"Education"} />
         <motion.div className="content">
           <div className="section">
@@ -104,7 +104,7 @@ export default function App() {
           </div>
         </motion.div>
       </div>
-      <div className="snap-start">
+      <div>
         <BigText text={"Passions"} />
         <motion.div className="content">
           <div className="h-screen w-screen p-4 flex center justify-center">
