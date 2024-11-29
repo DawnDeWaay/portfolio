@@ -40,7 +40,10 @@ const Header = () => {
   const hoverEffect = { scale: 1.05 };
 
   return (
-    <div className="fixed inset-0 m-[2%] border-2 border-black z-50 pointer-events-none">
+    <div
+      className="fixed inset-0 border-2 border-black z-50 pointer-events-none rounded-2xl"
+      style={{ margin: "clamp(12px, 2vw, 38px)" }}
+    >
       <motion.h1
         variants={variants}
         initial={{ opacity: 0 }}
@@ -59,7 +62,7 @@ const Header = () => {
         className="flex absolute bottom-0 right-0 flex-col pointer-events-auto z-[100]"
       >
         <div onClick={() => scrollToSection("Biography")}>
-          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
+          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black rounded-tl-2xl">
             <SvgSpinner />
           </motion.div>
         </div>
@@ -140,7 +143,7 @@ const Header = () => {
           </AnimatePresence>
         </motion.div>
       </motion.div>
-      <div className="text-[1.2rem] absolute left-0 bottom-0 border-t-2 border-r-2 border-black italic redaction35">
+      <div className="redaction35 text-[1.2rem] absolute left-0 bottom-0 border-t-2 border-r-2 border-black italic rounded-tr-2xl">
         &nbsp;&nbsp;© 2024 Dawn DeWaay III {"<3"}&nbsp;&nbsp;
       </div>
       {/* <motion.div
