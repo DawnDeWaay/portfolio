@@ -106,35 +106,35 @@ const Header = () => {
                 <motion.a
                   href="https://www.instagram.com/dawndewaayiii/"
                   whileHover={hoverEffect}
-                  className="w-12 h-12"
+                  className="w-[38px h-[38px]"
                 >
                   <SvgInstagram />
                 </motion.a>
                 <motion.a
                   href="https://x.com/DawnDeWaay"
                   whileHover={hoverEffect}
-                  className="w-12 h-12"
+                  className="w-10 h-10"
                 >
                   <SvgTwitter />
                 </motion.a>
                 <motion.a
                   href="https://github.com/DawnDeWaay"
                   whileHover={hoverEffect}
-                  className="w-12 h-12"
+                  className="w-10 h-10"
                 >
                   <SvgGitHub />
                 </motion.a>
                 <motion.a
                   href="https://open.spotify.com/user/donalddewaay?si=732c04f17d874872"
                   whileHover={hoverEffect}
-                  className="w-12 h-12"
+                  className="w-10 h-10"
                 >
                   <SvgSpotify />
                 </motion.a>
                 <motion.a
                   href="mailto:dawndewaay@gmail.com"
                   whileHover={hoverEffect}
-                  className="w-12 h-12"
+                  className="w-10 h-10 flex items-center justify-center"
                 >
                   <IconMail size="3rem" color="#0078d4" />
                 </motion.a>
@@ -144,7 +144,7 @@ const Header = () => {
         </motion.div>
       </motion.div>
       <div className="redaction35 text-[1.2rem] absolute left-0 bottom-0 border-t-2 border-r-2 border-black italic rounded-tr-2xl">
-        &nbsp;&nbsp;© 2024 Dawn DeWaay III {"<3"}&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;© 2024 Dawn DeWaay III {"<3"}&nbsp;&nbsp;&nbsp;
       </div>
       {/* <motion.div
         variants={variants}
