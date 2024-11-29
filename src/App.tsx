@@ -6,13 +6,13 @@ import Gallery from "./components/Gallery";
 
 export default function App() {
   return (
-    <main id="Main">
+    <main id="Main" className="overflow-x-clip">
       <div className="grain" />
       <div className="grain" />
       <Header />
-      <div className="h-screen w-screen">
+      <div className="relative h-screen w-screen">
         <motion.div
-          className="absolute bottom-0 right-[6%] overflow-x-clip"
+          className="absolute bottom-0 right-[6%] p"
           initial={{ y: 80 }}
           animate={{ rotate: 360 }}
           transition={{

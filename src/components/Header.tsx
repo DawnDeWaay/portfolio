@@ -46,7 +46,7 @@ const Header = () => {
         initial={{ opacity: 0 }}
         animate={"shown"}
         layout
-        className="text-[2.2rem] z-50 flex-row cursor-pointer text-left border-b-2 border-black pointer-events-none w-auto text-center"
+        className="text-[2.2rem] z-50 flex-row cursor-pointer border-b-2 border-black pointer-events-none w-auto text-center"
         onClick={() => scrollToSection("Main")}
       >
         &nbsp;Dawn DeWaay III&nbsp;
