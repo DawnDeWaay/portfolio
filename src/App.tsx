@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import BigText from "./components/BigText";
 import { IconRosette } from "@tabler/icons-react";
 import Gallery from "./components/Gallery";
@@ -106,7 +105,6 @@ export default function App() {
         </motion.div>
       </div>
       <Gallery />
-      <Footer />
     </main>
   );
 }

@@ -46,7 +46,7 @@ const Header = () => {
         initial={{ opacity: 0 }}
         animate={"shown"}
         layout
-        className="text-[2.2rem] z-50 flex-row cursor-pointer text-left border-b-2 border-black pointer-events-none w-auto"
+        className="text-[2.2rem] z-50 flex-row cursor-pointer text-left border-b-2 border-black pointer-events-none w-auto text-center"
         onClick={() => scrollToSection("Main")}
       >
         &nbsp;Dawn DeWaay III&nbsp;
@@ -94,7 +94,7 @@ const Header = () => {
           <AnimatePresence>
             {showSocials && (
               <motion.div
-                className="absolute flex flex-row-reverse gap-6 p-6 items-center left-0 top-2/2 transform -translate-x-full -translate-y-1/2"
+                className="absolute flex flex-row-reverse gap-6 p-6 items-center left-0 top-[2vw] transform -translate-x-full -translate-y-1/2"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -103,43 +103,46 @@ const Header = () => {
                 <motion.a
                   href="https://www.instagram.com/dawndewaayiii/"
                   whileHover={hoverEffect}
-                  className="w-[28px] h-[28px]"
+                  className="w-12 h-12"
                 >
                   <SvgInstagram />
                 </motion.a>
                 <motion.a
                   href="https://x.com/DawnDeWaay"
                   whileHover={hoverEffect}
-                  className="w-[28px] h-[28px]"
+                  className="w-12 h-12"
                 >
                   <SvgTwitter />
                 </motion.a>
                 <motion.a
                   href="https://github.com/DawnDeWaay"
                   whileHover={hoverEffect}
-                  className="w-[28px] h-[28px]"
+                  className="w-12 h-12"
                 >
                   <SvgGitHub />
                 </motion.a>
                 <motion.a
                   href="https://open.spotify.com/user/donalddewaay?si=732c04f17d874872"
                   whileHover={hoverEffect}
-                  className="w-[28px] h-[28px]"
+                  className="w-12 h-12"
                 >
                   <SvgSpotify />
                 </motion.a>
                 <motion.a
                   href="mailto:dawndewaay@gmail.com"
                   whileHover={hoverEffect}
-                  className="w-[28px] h-[28px]"
+                  className="w-12 h-12"
                 >
-                  <IconMail size="28px" color="#0078d4" />
+                  <IconMail size="3rem" color="#0078d4" />
                 </motion.a>
               </motion.div>
             )}
           </AnimatePresence>
         </motion.div>
       </motion.div>
+      <div className="text-[1.2rem] absolute left-0 bottom-0 border-t-2 border-r-2 border-black italic redaction35">
+        &nbsp;&nbsp;© 2024 Dawn DeWaay III {"<3"}&nbsp;&nbsp;
+      </div>
       {/* <motion.div
         variants={variants}
         initial={{ opacity: 0 }}
