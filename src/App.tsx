@@ -19,8 +19,8 @@ export default function App() {
       <Header />
       <motion.div className="relative h-screen w-screen" ref={constraintsRef}>
         <motion.div
-          drag={isMouseDevice ? "x" : false}
-          dragConstraints={{ left: 0, right: 0 }}
+          drag={isMouseDevice ? true : false}
+          dragConstraints={constraintsRef}
           className="absolute bottom-0 right-0 p"
           animate={{ rotate: 360 }}
           transition={{
