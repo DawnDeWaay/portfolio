@@ -3,10 +3,15 @@ import Header from "./components/Header";
 import BigText from "./components/BigText";
 import { IconRosette } from "@tabler/icons-react";
 import Gallery from "./components/Gallery";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function App() {
   const constraintsRef = useRef(null);
+  const [isMouseDevice, setIsMouseDevice] = useState(false);
+
+  useEffect(() => {
+    setIsMouseDevice("ontouchstart" in window === false);
+  }, []);
   return (
     <main id="Main" className="overflow-x-clip">
       <div className="grain" />
@@ -14,6 +19,8 @@ export default function App() {
       <Header />
       <motion.div className="relative h-screen w-screen" ref={constraintsRef}>
         <motion.div
+          drag={isMouseDevice ? "x" : false}
+          dragConstraints={{ left: 0, right: 0 }}
           className="absolute bottom-0 right-0 p"
           animate={{ rotate: 360 }}
           transition={{
@@ -21,8 +28,6 @@ export default function App() {
             duration: 60,
             ease: "linear",
           }}
-          drag
-          dragConstraints={constraintsRef}
         >
           <IconRosette stroke={1} size="70vh" color="#796C98" z="10" />
         </motion.div>
