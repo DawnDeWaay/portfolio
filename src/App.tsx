@@ -63,7 +63,7 @@ export default function App() {
     { char: "a", type: "char", delay: null },
     { char: "w", type: "char", delay: null },
     { char: "n", type: "char", delay: null },
-    { char: "\u00A0", type: "space", delay: null },
+    { char: "br", type: "break", delay: null },
     { char: "D", type: "char", delay: null },
     { char: "e", type: "char", delay: null },
     { char: "W", type: "char", delay: null },
@@ -117,7 +117,7 @@ export default function App() {
         onMouseLeave={resetToInital}
       >
         <motion.div
-          className="absolute bottom-0 right-0"
+          className="absolute bottom-0 right-0 p"
           animate={{ rotate: 360 }}
           transition={{
             repeat: Infinity,
@@ -149,6 +149,7 @@ export default function App() {
             if (item.type === "break") {
               return (
                 <span key={index}>
+                  &nbsp;
                   <br />
                 </span>
               );
