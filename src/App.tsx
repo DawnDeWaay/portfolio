@@ -12,6 +12,7 @@ export default function App() {
   useEffect(() => {
     setIsMouseDevice("ontouchstart" in window === false);
   }, []);
+
   return (
     <main id="Main" className="overflow-x-clip">
       <div className="grain" />
@@ -57,19 +58,22 @@ export default function App() {
       <div>
         <BigText text={"Work"} />
         <motion.div className="content">
-          <h2 className="sub-head">Knight Moves</h2>
-          <div className="section">
-            <h3>
-              Since January 2024, I've been designing & building Knight Moves'
-              full-stack web application "Skillmp", a skills repository
-            </h3>
-            <h3>
-              I designed the company's database schema, put together several
-              crucial front-end designs, and built the project's API.
-            </h3>
+          <h2 className="sub-head">Work</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[1rem] w-full mt-8">
+            <h2 className="sub-head">Knight Moves</h2>
+            <div className="">
+              <h3>
+                Since January 2024, I've been designing & building Knight Moves'
+                full-stack web application "Skillmp", a skills repository
+              </h3>
+              <h3>
+                I designed the company's database schema, put together several
+                crucial front-end designs, and built the project's API.
+              </h3>
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-8">
-            <h2 className="sub-head w-full">
+            <h2 className="sub-head w-full text-nowrap">
               Languages &<br />
               Frameworks
             </h2>

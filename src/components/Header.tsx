@@ -39,7 +39,7 @@ const Header = () => {
       <motion.h1
         initial={{ fontSize: "2.2rem" }}
         whileHover={{ color: "#796C98" }}
-        className="wave z-[100] flex-row cursor-pointer pointer-events-auto w-auto text-center"
+        className="wave z-[100] flex-row cursor-pointer pointer-events-auto w-auto text-center text-black"
         onClick={() => scrollToSection("Main")}
       >
         &nbsp;Dawn DeWaay III&nbsp;
