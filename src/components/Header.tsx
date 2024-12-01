@@ -122,7 +122,7 @@ const Header = () => {
                   whileHover={{ color: "#0078d4", scale: 1.05 }}
                   className="w-10 h-10 flex items-center justify-center"
                 >
-                  <IconMail size="2.2rem" color="black" />
+                  <IconMail size="2.2rem" />
                 </motion.a>
               </motion.div>
             )}

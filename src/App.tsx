@@ -3,8 +3,18 @@ import Header from "./components/Header";
 import BigText from "./components/BigText";
 import { IconRosette } from "@tabler/icons-react";
 import Gallery from "./components/Gallery";
+import { useEffect, useState } from "react";
+
+type TextItem = {
+  char: string | null;
+  type: "char" | "space" | "break";
+  delay: number | null;
+};
 
 export default function App() {
+  const [displayedText, setDisplayedText] = useState<TextItem[]>([]);
+  const [textWithDelays, setTextWithDelays] = useState<TextItem[]>([]);
+
   const x = useSpring(0, { stiffness: 200, damping: 15 });
   const y = useSpring(0, { stiffness: 200, damping: 15 });
 
@@ -27,6 +37,75 @@ export default function App() {
     y.set(200, true);
   }
 
+  const containerVariants = {
+    initial: { opacity: 1 },
+    animate: {
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const cursorVariants = {
+    blinking: {
+      opacity: [0, 0, 1, 1],
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+        repeatDelay: 0,
+        ease: "linear",
+        times: [0, 0.5, 0.5, 1],
+      },
+    },
+  };
+  const text: TextItem[] = [
+    { char: "D", type: "char", delay: null },
+    { char: "a", type: "char", delay: null },
+    { char: "w", type: "char", delay: null },
+    { char: "n", type: "char", delay: null },
+    { char: "\u00A0", type: "space", delay: null },
+    { char: "D", type: "char", delay: null },
+    { char: "e", type: "char", delay: null },
+    { char: "W", type: "char", delay: null },
+    { char: "a", type: "char", delay: null },
+    { char: "a", type: "char", delay: null },
+    { char: "y", type: "char", delay: null },
+    { char: "\u00A0", type: "space", delay: null },
+    { char: "I", type: "char", delay: null },
+    { char: "I", type: "char", delay: null },
+    { char: "I", type: "char", delay: null },
+  ];
+
+  useEffect(() => {
+    const updatedText = text.map((item) => ({
+      ...item,
+      delay: Math.random() * 150 + 50,
+    }));
+    setTextWithDelays(updatedText);
+  }, []);
+
+  useEffect(() => {
+    if (textWithDelays.length > 0) {
+      let timeoutId: NodeJS.Timeout;
+      const displayTextSequentially = (index: number) => {
+        if (index < textWithDelays.length) {
+          const currentItem = textWithDelays[index];
+          if (currentItem.char !== null) {
+            setDisplayedText((prev) => [...prev, currentItem]);
+          }
+          timeoutId = setTimeout(
+            () => displayTextSequentially(index + 1),
+            currentItem.delay!
+          );
+        }
+      };
+
+      displayTextSequentially(0);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [textWithDelays]);
+
   return (
     <main id="Main" className="overflow-x-clip">
       <div className="grain" />
@@ -38,7 +117,7 @@ export default function App() {
         onMouseLeave={resetToInital}
       >
         <motion.div
-          className="absolute bottom-0 right-0 p"
+          className="absolute bottom-0 right-0"
           animate={{ rotate: 360 }}
           transition={{
             repeat: Infinity,
@@ -49,11 +128,45 @@ export default function App() {
         >
           <IconRosette stroke={1} size="70vh" color="#796C98" z="10" />
         </motion.div>
-        <h1 className="absolute bottom-0 left-0 text-[15vw] pl-[5%] pb-8 pointer-events-none w-full">
-          Dawn&nbsp;
-          <br />
-          DeWaay III&nbsp;
-        </h1>
+        <motion.h1
+          className="absolute bottom-0 left-0 text-[15vw] pl-[5%] pb-8 pointer-events-none"
+          variants={containerVariants}
+          initial="initial"
+          animate="animate"
+          style={{ display: "inline-block" }}
+        >
+          {displayedText.map((item, index) => {
+            if (item.type === "char") {
+              return (
+                <span key={index} className="redaction50">
+                  {item.char}
+                </span>
+              );
+            }
+            if (item.type === "space") {
+              return <span key={index}>&nbsp;</span>;
+            }
+            if (item.type === "break") {
+              return (
+                <span key={index}>
+                  <br />
+                </span>
+              );
+            }
+            return null;
+          })}
+          {displayedText.length < text.length && (
+            <motion.span
+              variants={cursorVariants}
+              animate="blinking"
+              className="inline-block h-[15vw] w-[2px] bg-slate-900"
+              style={{
+                position: "relative",
+                marginLeft: "2px",
+              }}
+            />
+          )}
+        </motion.h1>
       </motion.div>
       <div>
         <BigText text={"Biography"} />
