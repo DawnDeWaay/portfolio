@@ -1,27 +1,43 @@
-import { motion } from "motion/react";
+import { motion, useSpring, useTransform } from "motion/react";
 import Header from "./components/Header";
 import BigText from "./components/BigText";
 import { IconRosette } from "@tabler/icons-react";
 import Gallery from "./components/Gallery";
-import { useEffect, useRef, useState } from "react";
 
 export default function App() {
-  const constraintsRef = useRef(null);
-  const [isMouseDevice, setIsMouseDevice] = useState(false);
+  const x = useSpring(0, { stiffness: 200, damping: 15 });
+  const y = useSpring(0, { stiffness: 200, damping: 15 });
 
-  useEffect(() => {
-    setIsMouseDevice("ontouchstart" in window === false);
-  }, []);
+  const rotateX = useTransform(x, [0, 400], [-45, 45]);
+  const rotateY = useTransform(y, [0, 400], [-45, 45]);
+
+  function handleMouse(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    const normalizedX = event.clientX / viewportWidth;
+    const normalizedY = event.clientY / viewportHeight;
+
+    x.set(normalizedX * 200);
+    y.set(normalizedY * 200);
+  }
+
+  function resetToInital() {
+    x.set(200, true);
+    y.set(200, true);
+  }
 
   return (
     <main id="Main" className="overflow-x-clip">
       <div className="grain" />
       <div className="grain" />
       <Header />
-      <motion.div className="relative h-screen w-screen" ref={constraintsRef}>
+      <motion.div
+        className="relative h-screen w-screen"
+        onMouseMove={handleMouse}
+        onMouseLeave={resetToInital}
+      >
         <motion.div
-          drag={isMouseDevice ? true : false}
-          dragConstraints={constraintsRef}
           className="absolute bottom-0 right-0 p"
           animate={{ rotate: 360 }}
           transition={{
@@ -29,6 +45,7 @@ export default function App() {
             duration: 60,
             ease: "linear",
           }}
+          style={{ x: rotateX, y: rotateY }}
         >
           <IconRosette stroke={1} size="70vh" color="#796C98" z="10" />
         </motion.div>
@@ -58,22 +75,17 @@ export default function App() {
       <div>
         <BigText text={"Work"} />
         <motion.div className="content">
-          <h2 className="sub-head">Work</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[1rem] w-full mt-8">
             <h2 className="sub-head">Knight Moves</h2>
-            <div className="">
-              <h3>
-                Since January 2024, I've been designing & building Knight Moves'
-                full-stack web application "Skillmp", a skills repository
-              </h3>
-              <h3>
-                I designed the company's database schema, put together several
-                crucial front-end designs, and built the project's API.
-              </h3>
-            </div>
+            <h3>
+              Since January 2024, I've been building Knight Moves' full-stack
+              web application, the Skills Mastery Platform. I designed the
+              project from front to back, including database, APIs, secrets, and
+              frontend design.
+            </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-8">
-            <h2 className="sub-head w-full text-nowrap">
+            <h2 className="sub-head">
               Languages &<br />
               Frameworks
             </h2>
@@ -87,7 +99,7 @@ export default function App() {
               <p>C & Assembly</p>
             </div>
           </div>
-          <h2 className="sub-head">Personal Projects</h2>
+          <h2 className="head">Personal Projects</h2>
           <div className="section"></div>
         </motion.div>
       </div>

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IconMail } from "@tabler/icons-react";
 import SvgStairs from "./icons/SvgStairs";
 import SvgEllipses from "./icons/SvgEllipses";
@@ -27,8 +27,6 @@ const Header = () => {
     }
   };
 
-  useEffect(() => window.scrollTo(0, 0), []);
-
   const hoverEffect = { scale: 1.05 };
 
   return (
@@ -39,7 +37,7 @@ const Header = () => {
       <motion.h1
         initial={{ fontSize: "2.2rem" }}
         whileHover={{ color: "#796C98" }}
-        className="wave z-[100] flex-row cursor-pointer pointer-events-auto w-auto text-center text-black"
+        className="z-[100] flex justify-center items-center cursor-pointer pointer-events-auto w-auto text-center text-black"
         onClick={() => scrollToSection("Main")}
       >
         &nbsp;Dawn DeWaay III&nbsp;
@@ -120,10 +118,11 @@ const Header = () => {
                 </motion.a>
                 <motion.a
                   href="mailto:dawndewaay@gmail.com"
-                  whileHover={hoverEffect}
+                  initial={{ color: "black" }}
+                  whileHover={{ color: "#0078d4", scale: 1.05 }}
                   className="w-10 h-10 flex items-center justify-center"
                 >
-                  <IconMail size="2.2rem" color="#0078d4" />
+                  <IconMail size="2.2rem" color="black" />
                 </motion.a>
               </motion.div>
             )}
@@ -133,29 +132,6 @@ const Header = () => {
       <div className="redaction35 text-[1.2rem] absolute left-0 bottom-0 border-t-2 border-r-2 border-black italic">
         &nbsp;&nbsp;&nbsp;© 2024 Dawn DeWaay III {"<3"}&nbsp;&nbsp;&nbsp;
       </div>
-      {/* <motion.div
-        variants={variants}
-        initial={{ opacity: 0 }}
-        animate={scrolled ? "shown" : "hidden"}
-        layout
-      >
-        <motion.div
-          className="fixed bottom-[2vw] right-[2vw] h-24 w-24 z-50 overflow-hidden"
-          animate={{ rotate: 360 }}
-          transition={{
-            repeat: Infinity,
-            duration: 20,
-            ease: "linear",
-          }}
-        >
-          <IconRosette
-            stroke={1.5}
-            height="100%"
-            width="100%"
-            color="#796C98"
-          />
-        </motion.div>
-      </motion.div> */}
     </div>
   );
 };

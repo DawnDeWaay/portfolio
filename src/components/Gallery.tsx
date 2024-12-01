@@ -124,7 +124,7 @@ const Gallery = () => {
   return (
     <div className="w-full z-40">
       <BigText text={"Gallery"} />
-      <div className="content relative z-40">
+      <div className="content h-[120vh] relative z-40">
         <AnimatePresence>
           {images.map((image, index) => (
             <GalleryImage
