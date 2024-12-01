@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import { AnimatePresence, motion, useInView } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import Tilt from "react-parallax-tilt";
 
 import BigText from "./BigText";
 
@@ -44,7 +45,6 @@ const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
 
 const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <motion.div
@@ -60,33 +60,42 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
       initial={{
         x: "-50%",
         y: "-50%",
-        opacity: 0,
         rotate: position.rotate,
+        boxShadow:
+          "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
       }}
-      animate={isInView ? { opacity: 1 } : {}}
       transition={{
         duration: 0.5,
         ease: "easeOut",
-        delayChildren: 0.2,
       }}
       whileHover={{
         scale: 1.05,
         zIndex: 20,
         transition: { duration: 0.2 },
+        boxShadow: "0px 40px 86px -14px rgba(0,0,0,0.75)",
       }}
     >
-      <div className="relative w-full p-[5%] pb-[20%] shadow-xl bg-white">
-        <div className="w-full h-0 pb-[100%] relative">
-          <img
-            src={src}
-            alt={alt}
-            loading="lazy"
-            decoding="async"
-            className="absolute inset-0 w-full h-full object-cover"
-            draggable={false}
-          />
+      <Tilt
+        perspective={500}
+        glareEnable={true}
+        glareMaxOpacity={0.5}
+        glarePosition="bottom"
+        tiltMaxAngleX={2}
+        tiltMaxAngleY={3}
+      >
+        <div className="relative w-full p-[5%] pb-[20%] bg-white">
+          <div className="w-full h-0 pb-[100%] relative">
+            <img
+              src={src}
+              alt={alt}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover"
+              draggable={false}
+            />
+          </div>
         </div>
-      </div>
+      </Tilt>
     </motion.div>
   );
 };
