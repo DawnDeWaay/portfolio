@@ -27,9 +27,9 @@ export default function App() {
           <IconRosette stroke={1} size="70vh" color="#796C98" z="10" />
         </motion.div>
         <h1 className="absolute bottom-0 left-0 text-[15vw] pl-[5%] pb-8 pointer-events-none">
-          Dawn
+          Dawn&nbsp;
           <br />
-          DeWaay III
+          DeWaay III&nbsp;
         </h1>
       </motion.div>
       <div>
