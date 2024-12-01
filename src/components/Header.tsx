@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IconMail } from "@tabler/icons-react";
 import SvgStairs from "./icons/SvgStairs";
 import SvgEllipses from "./icons/SvgEllipses";
@@ -11,20 +11,10 @@ import SvgTwitter from "./icons/SvgTwitter";
 import SvgGitHub from "./icons/SvgGitHub";
 import SvgSpotify from "./icons/SvgSpotify";
 import SvgFlower from "./icons/SvgFlower";
+import WavyLine from "./WavyLine";
 
 const Header = () => {
   const [showSocials, setShowSocials] = useState(false);
-
-  const variants = {
-    shown: {
-      opacity: 1,
-    },
-    hidden: {
-      opacity: 0,
-      display: "none",
-    },
-  };
-
   const socialIconVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -37,32 +27,29 @@ const Header = () => {
     }
   };
 
+  useEffect(() => window.scrollTo(0, 0), []);
+
   const hoverEffect = { scale: 1.05 };
 
   return (
     <div
-      className="fixed inset-0 border-2 border-black z-50 pointer-events-none rounded-2xl"
+      className="fixed inset-0 border-2 border-black z-50 pointer-events-none"
       style={{ margin: "clamp(12px, 2vw, 38px)" }}
     >
       <motion.h1
-        variants={variants}
-        initial={{ opacity: 0 }}
-        animate={"shown"}
-        layout
-        className="text-[2.2rem] z-50 flex-row cursor-pointer border-b-2 border-black pointer-events-none w-auto text-center"
+        initial={{ fontSize: "2.2rem" }}
+        whileHover={{ color: "#796C98" }}
+        className="wave z-[100] flex-row cursor-pointer pointer-events-auto w-auto text-center"
         onClick={() => scrollToSection("Main")}
       >
         &nbsp;Dawn DeWaay III&nbsp;
       </motion.h1>
-      <motion.div
-        variants={variants}
-        initial={{ opacity: 0 }}
-        animate={"shown"}
-        layout
-        className="flex absolute bottom-0 right-0 flex-col pointer-events-auto z-[100]"
-      >
+      <motion.div initial={{ y: -10 }}>
+        <WavyLine />
+      </motion.div>
+      <motion.div className="flex absolute bottom-0 right-0 flex-col pointer-events-auto z-[100]">
         <div onClick={() => scrollToSection("Biography")}>
-          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black rounded-tl-2xl">
+          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
             <SvgSpinner />
           </motion.div>
         </div>
@@ -136,14 +123,14 @@ const Header = () => {
                   whileHover={hoverEffect}
                   className="w-10 h-10 flex items-center justify-center"
                 >
-                  <IconMail size="3rem" color="#0078d4" />
+                  <IconMail size="2.2rem" color="#0078d4" />
                 </motion.a>
               </motion.div>
             )}
           </AnimatePresence>
         </motion.div>
       </motion.div>
-      <div className="redaction35 text-[1.2rem] absolute left-0 bottom-0 border-t-2 border-r-2 border-black italic rounded-tr-2xl">
+      <div className="redaction35 text-[1.2rem] absolute left-0 bottom-0 border-t-2 border-r-2 border-black italic">
         &nbsp;&nbsp;&nbsp;© 2024 Dawn DeWaay III {"<3"}&nbsp;&nbsp;&nbsp;
       </div>
       {/* <motion.div

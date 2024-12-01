@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 const SvgStairs = () => (
   <motion.svg
     initial={{ fill: "black", scaleX: -1 }}
-    whileHover={{ fill: "#796C98", scale: 1.05 }}
+    whileHover={{ fill: "#796C98", scale: 1.05, rotate: -90 }}
     xmlns="http://www.w3.org/2000/svg"
     data-name="Layer 2"
     viewBox="0 0 160.54 160.54"

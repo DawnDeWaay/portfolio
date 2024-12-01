@@ -1,5 +1,8 @@
+import { motion } from "motion/react";
+
 const SvgInstagram = () => (
-  <svg
+  <motion.svg
+    whileHover={{ fill: "black", scale: 1.05 }}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 54 54"
     preserveAspectRatio="xMidYMid meet"
@@ -95,6 +98,6 @@ const SvgInstagram = () => (
         transform="matrix(1 0 0 -1 13.067 40.937)"
       />
     </g>
-  </svg>
+  </motion.svg>
 );
 export default SvgInstagram;

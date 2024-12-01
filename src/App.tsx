@@ -3,32 +3,35 @@ import Header from "./components/Header";
 import BigText from "./components/BigText";
 import { IconRosette } from "@tabler/icons-react";
 import Gallery from "./components/Gallery";
+import { useRef } from "react";
 
 export default function App() {
+  const constraintsRef = useRef(null);
   return (
     <main id="Main" className="overflow-x-clip">
       <div className="grain" />
       <div className="grain" />
       <Header />
-      <div className="relative h-screen w-screen">
+      <motion.div className="relative h-screen w-screen" ref={constraintsRef}>
         <motion.div
-          className="absolute bottom-0 right-[6%] p"
-          initial={{ y: 80 }}
+          className="absolute bottom-0 right-0 p"
           animate={{ rotate: 360 }}
           transition={{
             repeat: Infinity,
             duration: 60,
             ease: "linear",
           }}
+          drag
+          dragConstraints={constraintsRef}
         >
           <IconRosette stroke={1} size="70vh" color="#796C98" z="10" />
         </motion.div>
-        <h1 className="absolute bottom-0 left-0 text-[15vw] pl-[5%]">
+        <h1 className="absolute bottom-0 left-0 text-[15vw] pl-[5%] pb-8 pointer-events-none">
           Dawn
           <br />
           DeWaay III
         </h1>
-      </div>
+      </motion.div>
       <div>
         <BigText text={"Biography"} />
         <motion.div className="content">
@@ -60,15 +63,20 @@ export default function App() {
               crucial front-end designs, and built the project's API.
             </h3>
           </div>
-          <h2 className="sub-head">Languages & Frameworks</h2>
-          <div>
-            <p>JavaScript/TypeScript</p>
-            <p>React.JS, Next.JS</p>
-            <p>Python</p>
-            <p>Java</p>
-            <p>AWS Services</p>
-            <p>Databases</p>
-            <p>C & Assembly</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-8">
+            <h2 className="sub-head w-full">
+              Languages &<br />
+              Frameworks
+            </h2>
+            <div className="w-full">
+              <p>JavaScript/TypeScript</p>
+              <p>React.JS, Next.JS</p>
+              <p>Python</p>
+              <p>Java</p>
+              <p>AWS Services</p>
+              <p>Databases</p>
+              <p>C & Assembly</p>
+            </div>
           </div>
           <h2 className="sub-head">Personal Projects</h2>
           <div className="section"></div>
