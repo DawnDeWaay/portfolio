@@ -27,21 +27,30 @@ const Header = () => {
     }
   };
 
-  const hoverEffect = { scale: 1.05 };
-
   return (
     <div
       className="fixed inset-0 border-2 border-black z-50 pointer-events-none"
       style={{ margin: "clamp(12px, 2vw, 38px)" }}
     >
-      <motion.h1
-        initial={{ fontSize: "2.2rem" }}
-        whileHover={{ color: "#796C98" }}
-        className="z-[100] flex justify-center items-center cursor-pointer pointer-events-auto w-auto text-center text-black"
+      <motion.div
+        className="flex items-center justify-center lg:justify-start"
         onClick={() => scrollToSection("Main")}
       >
-        &nbsp;Dawn DeWaay III&nbsp;
-      </motion.h1>
+        <motion.h1
+          initial={{
+            fontSize: "2.2rem",
+            color: "black",
+            fontWeight: "normal",
+          }}
+          whileHover={{
+            fontSize: "3.5rem",
+          }}
+          className="cursor-pointer pointer-events-auto w-auto text-center z-[100] inline-block"
+          layout
+        >
+          &nbsp;&nbsp;Dawn DeWaay III&nbsp;
+        </motion.h1>
+      </motion.div>
       <motion.div initial={{ y: -10 }}>
         <WavyLine />
       </motion.div>
@@ -82,47 +91,43 @@ const Header = () => {
           <AnimatePresence>
             {showSocials && (
               <motion.div
-                className="absolute flex flex-row-reverse gap-6 p-6 items-center left-0 top-[2vw] transform -translate-x-full -translate-y-1/2"
-                initial="hidden"
+                className="absolute flex flex-row-reverse items-center left-0 top-0 transform -translate-x-full"
                 animate="visible"
                 exit="hidden"
                 variants={socialIconVariants}
               >
                 <motion.a
                   href="https://www.instagram.com/dawndewaayiii/"
-                  whileHover={hoverEffect}
-                  className="w-[38px h-[38px]"
+                  className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
                 >
                   <SvgInstagram />
                 </motion.a>
                 <motion.a
                   href="https://x.com/DawnDeWaay"
-                  whileHover={hoverEffect}
-                  className="w-10 h-10"
+                  className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
                 >
                   <SvgTwitter />
                 </motion.a>
                 <motion.a
                   href="https://github.com/DawnDeWaay"
-                  whileHover={hoverEffect}
-                  className="w-10 h-10"
+                  className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
                 >
                   <SvgGitHub />
                 </motion.a>
                 <motion.a
                   href="https://open.spotify.com/user/donalddewaay?si=732c04f17d874872"
-                  whileHover={hoverEffect}
-                  className="w-10 h-10"
+                  className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
                 >
                   <SvgSpotify />
                 </motion.a>
                 <motion.a
                   href="mailto:dawndewaay@gmail.com"
                   initial={{ color: "black" }}
-                  whileHover={{ color: "#0078d4", scale: 1.05 }}
-                  className="w-10 h-10 flex items-center justify-center"
+                  className="w-12 h-12 p-2 flex items-center justify-center border-t-2 border-l-2 border-black"
                 >
-                  <IconMail size="2.2rem" />
+                  <motion.div whileHover={{ color: "#0078d4", scale: 1.05 }}>
+                    <IconMail size="2.2rem" />
+                  </motion.div>
                 </motion.a>
               </motion.div>
             )}

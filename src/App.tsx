@@ -15,8 +15,8 @@ export default function App() {
   const [displayedText, setDisplayedText] = useState<TextItem[]>([]);
   const [textWithDelays, setTextWithDelays] = useState<TextItem[]>([]);
 
-  const x = useSpring(0, { stiffness: 200, damping: 15 });
-  const y = useSpring(0, { stiffness: 200, damping: 15 });
+  const x = useSpring(0, { stiffness: 100, damping: 15 });
+  const y = useSpring(0, { stiffness: 100, damping: 15 });
 
   const rotateX = useTransform(x, [0, 400], [-45, 45]);
   const rotateY = useTransform(y, [0, 400], [-45, 45]);
@@ -32,7 +32,7 @@ export default function App() {
     y.set(normalizedY * 200);
   }
 
-  function resetToInital() {
+  function resetToInitial() {
     x.set(200, true);
     y.set(200, true);
   }
@@ -114,7 +114,7 @@ export default function App() {
       <motion.div
         className="relative h-screen w-screen"
         onMouseMove={handleMouse}
-        onMouseLeave={resetToInital}
+        onMouseLeave={resetToInitial}
       >
         <motion.div
           className="absolute bottom-0 right-0 p"
