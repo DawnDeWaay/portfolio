@@ -172,49 +172,74 @@ export default function App() {
       <div>
         <BigText text={"Biography"} />
         <motion.div className="content">
-          <div>
-            <h3>
+          <div className="section">
+            <h3 className="w-full px-6 md:p-0">
               Hey, I'm Dawn! Ever since I built my first computer all the way
               back in middle school, I've had a passion for gorgeous design and
               technology, and as a React-focused frontend software developer,
-              I've had the privilege of marrying those two concepts together.
-              After graduating from the University of Iowa in December of 2023,
-              I've worked tirelessly to learn both frontend and backend
-              technologies in order to bring my ideas to life, beginning with
-              React + JavaScript.
+              I've had the privilege of marrying those two together. After
+              graduating from the University of Iowa in December of 2023, I've
+              worked tirelessly to learn both frontend and backend technologies
+              in order to bring my ideas to life, beginning with React +
+              JavaScript.
             </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
+              <h2 className="sub-head">
+                Languages &<br />
+                Frameworks
+              </h2>
+              <div className="w-full md:border-l-2 border-black md:pl-4">
+                <p>* JavaScript/TypeScript</p>
+                <p>* React.JS, Next.JS</p>
+                <p>* Python</p>
+                <p>* Java</p>
+                <p>* AWS Services</p>
+                <p className="nowrap">* Databases (SQL, GraphQL, REST APIs)</p>
+                <p>* C & Assembly</p>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
       <div>
         <BigText text={"Work"} />
         <motion.div className="content">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[1rem] w-full mt-8">
-            <h2 className="sub-head">Knight Moves</h2>
-            <h3>
-              Since January 2024, I've been building Knight Moves' full-stack
-              web application, the Skills Mastery Platform. I designed the
-              project from front to back, including database, APIs, secrets, and
-              frontend design.
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-8">
-            <h2 className="sub-head">
-              Languages &<br />
-              Frameworks
-            </h2>
-            <div className="w-full">
-              <p>JavaScript/TypeScript</p>
-              <p>React.JS, Next.JS</p>
-              <p>Python</p>
-              <p>Java</p>
-              <p>AWS Services</p>
-              <p>Databases</p>
-              <p>C & Assembly</p>
+          <div className="section gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
+              <h2 className="sub-head">Knight Moves</h2>
+              <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
+                Since January 2024, I've been building Knight Moves' full-stack
+                web application, the Skills Mastery Platform. I designed the
+                project from front to back, including database, APIs, secrets,
+                and frontend design.
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
+              <h2 className="sub-head">
+                University of Iowa
+                <br />
+                Security
+              </h2>
+              <div className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4"></div>
+            </div>
+            <h2 className="head">Personal Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4 gap-4">
+              <h2 className="sub-head">
+                <span className="italic">no.1~ </span>MultiRoll
+              </h2>
+              <p className="w-full md:border-l-2 border-black md:pl-4">
+                MultiRoll is a Dungeons & Dragons dice roller available on the
+                web, this was my first foray into web development
+              </p>
+              <h2 className="sub-head">
+                <span className="italic">no.2~ </span>To-Do
+              </h2>
+              <p className="w-full md:border-l-2 border-black md:pl-4">
+                To-Do is a web-based reminders app I created to hone my React.JS
+                and design skills
+              </p>
             </div>
           </div>
-          <h2 className="head">Personal Projects</h2>
-          <div className="section"></div>
         </motion.div>
       </div>
       <div>
@@ -237,9 +262,9 @@ export default function App() {
       <div>
         <BigText text={"Passions"} />
         <motion.div className="content">
-          <div className="h-screen w-screen p-4 flex center justify-center">
+          <div className="h-screen p-4 flex center justify-center w-full">
             <iframe
-              className="spotify w-[100%] max-w-[800px] min-h-[40%] max-h-[50vh]"
+              className="w-full max-w-[1000px] min-h-[40%] max-h-[50vh]"
               src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
