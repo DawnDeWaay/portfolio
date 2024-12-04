@@ -26,7 +26,7 @@ const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
     exit={{ opacity: 0 }}
   >
     <motion.div
-      className="relative bg-white max-w-[90vw] max-h-[90vh] p-8"
+      className="relative bg-white max-w-[90vw] max-h-[90vh] p-6"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 30 }}
