@@ -22,7 +22,6 @@ export default function App() {
   const posY = useTransform(y, [0, 400], [-45, 45]);
 
   useEffect(() => {
-    // Ensure springs are initialized to the correct position on mount
     x.set(200);
     y.set(200);
   }, [x, y]);

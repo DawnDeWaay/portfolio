@@ -59,7 +59,7 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
       }}
       initial={{
         x: "-50%",
-        y: "-50%",
+        y: "-25%",
         rotate: position.rotate,
         boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1)",
       }}
