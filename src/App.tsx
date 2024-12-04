@@ -15,11 +15,17 @@ export default function App() {
   const [displayedText, setDisplayedText] = useState<TextItem[]>([]);
   const [textWithDelays, setTextWithDelays] = useState<TextItem[]>([]);
 
-  const x = useSpring(0, { stiffness: 100, damping: 15 });
-  const y = useSpring(0, { stiffness: 100, damping: 15 });
+  const x = useSpring(200, { stiffness: 100, damping: 15 });
+  const y = useSpring(200, { stiffness: 100, damping: 15 });
 
-  const rotateX = useTransform(x, [0, 400], [-45, 45]);
-  const rotateY = useTransform(y, [0, 400], [-45, 45]);
+  const posX = useTransform(x, [0, 400], [-45, 45]);
+  const posY = useTransform(y, [0, 400], [-45, 45]);
+
+  useEffect(() => {
+    // Ensure springs are initialized to the correct position on mount
+    x.set(200);
+    y.set(200);
+  }, [x, y]);
 
   function handleMouse(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const viewportWidth = window.innerWidth;
@@ -33,18 +39,9 @@ export default function App() {
   }
 
   function resetToInitial() {
-    x.set(200, true);
-    y.set(200, true);
+    x.set(200);
+    y.set(200);
   }
-
-  const containerVariants = {
-    initial: { opacity: 1 },
-    animate: {
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
 
   const cursorVariants = {
     blinking: {
@@ -58,6 +55,7 @@ export default function App() {
       },
     },
   };
+
   const text: TextItem[] = [
     { char: "D", type: "char", delay: null },
     { char: "a", type: "char", delay: null },
@@ -117,22 +115,24 @@ export default function App() {
         onMouseLeave={resetToInitial}
       >
         <motion.div
-          className="absolute bottom-0 right-0 p"
+          className="absolute bottom-0 right-0"
           animate={{ rotate: 360 }}
           transition={{
             repeat: Infinity,
             duration: 60,
             ease: "linear",
           }}
-          style={{ x: rotateX, y: rotateY }}
+          style={{ x: posX, y: posY }}
         >
-          <IconRosette stroke={1} size="70vh" color="#796C98" z="10" />
+          <IconRosette stroke={1} size="70vh" color="#796C98" />
         </motion.div>
         <motion.h1
           className="absolute bottom-0 left-0 text-[15vw] pl-[5%] pb-8 pointer-events-none"
-          variants={containerVariants}
-          initial="initial"
-          animate="animate"
+          animate={{
+            transition: {
+              staggerChildren: 0.3,
+            },
+          }}
           style={{ display: "inline-block" }}
         >
           {displayedText.map((item, index) => {
@@ -188,13 +188,13 @@ export default function App() {
                 Languages &<br />
                 Frameworks
               </h2>
-              <div className="w-full md:border-l-2 border-black md:pl-4">
+              <div className="w-full md:border-l-2 border-black md:pl-4 nowrap">
                 <p>* JavaScript/TypeScript</p>
                 <p>* React.JS, Next.JS</p>
                 <p>* Python</p>
                 <p>* Java</p>
                 <p>* AWS Services</p>
-                <p className="nowrap">* Databases (SQL, GraphQL, REST APIs)</p>
+                <p>* Databases (SQL, GraphQL, REST APIs)</p>
                 <p>* C & Assembly</p>
               </div>
             </div>

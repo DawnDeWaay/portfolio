@@ -45,7 +45,7 @@ const Header = () => {
           whileHover={{
             fontSize: "3.5rem",
           }}
-          className="cursor-pointer pointer-events-auto w-auto text-center z-[100] inline-block"
+          className="cursor-pointer pointer-events-auto w-auto text-center z-[100] inline-block redaction35"
           layout
         >
           &nbsp;&nbsp;Dawn DeWaay III&nbsp;
