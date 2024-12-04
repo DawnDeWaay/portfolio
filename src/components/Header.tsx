@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <div
-      className="fixed inset-0 border-2 border-black z-50 pointer-events-none"
+      className="fixed inset-0 border-2 border-black z-[998] pointer-events-none"
       style={{ margin: "clamp(12px, 2vw, 38px)" }}
     >
       <motion.div
@@ -41,7 +41,7 @@ const Header = () => {
           whileHover={{
             fontSize: "3.5rem",
           }}
-          className="cursor-pointer pointer-events-auto w-auto text-center z-[100] inline-block redaction35"
+          className="cursor-pointer pointer-events-auto w-auto text-center z-40 inline-block redaction35"
           layout
         >
           &nbsp;&nbsp;Dawn DeWaay III&nbsp;
@@ -50,7 +50,7 @@ const Header = () => {
       <motion.div initial={{ y: -10 }}>
         <WavyLine />
       </motion.div>
-      <motion.div className="flex absolute bottom-0 right-0 flex-col pointer-events-auto z-[100]">
+      <motion.div className="flex absolute bottom-0 right-0 flex-col pointer-events-auto z-40">
         <div onClick={() => scrollToSection("Biography")}>
           <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
             <SvgSpinner />

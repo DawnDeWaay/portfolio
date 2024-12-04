@@ -96,9 +96,7 @@ export default function App() {
           );
         }
       };
-
       displayTextSequentially(0);
-
       return () => clearTimeout(timeoutId);
     }
   }, [textWithDelays]);
@@ -126,7 +124,7 @@ export default function App() {
           <IconRosette stroke={1} size="70vh" color="#796C98" />
         </motion.div>
         <motion.h1
-          className="absolute bottom-0 left-0 text-[15vw] pl-[5%] pb-8 pointer-events-none"
+          className="absolute bottom-0 left-0 text-[15vw] pl-[5%] pb-12 pointer-events-none"
           animate={{
             transition: {
               staggerChildren: 0.3,

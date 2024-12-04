@@ -19,7 +19,7 @@ type GalleryImageProps = {
 
 const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
   <motion.div
-    className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-[999]"
+    className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-[999] select-auto"
     onClick={onClose}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -78,8 +78,8 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
         glareEnable={true}
         glareMaxOpacity={0.5}
         glarePosition="bottom"
-        tiltMaxAngleX={2}
-        tiltMaxAngleY={3}
+        tiltMaxAngleX={3}
+        tiltMaxAngleY={2}
       >
         <div className="relative w-full p-[5%] pb-[20%] bg-white">
           <div className="w-full h-0 pb-[100%] relative">
