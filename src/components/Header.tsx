@@ -15,10 +15,6 @@ import WavyLine from "./WavyLine";
 
 const Header = () => {
   const [showSocials, setShowSocials] = useState(false);
-  const socialIconVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -92,9 +88,9 @@ const Header = () => {
             {showSocials && (
               <motion.div
                 className="absolute flex flex-row-reverse items-center left-0 top-0 transform -translate-x-full"
-                animate="visible"
-                exit="hidden"
-                variants={socialIconVariants}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
               >
                 <motion.a
                   href="https://www.instagram.com/dawndewaayiii/"

@@ -187,7 +187,7 @@ export default function App() {
                 Languages &<br />
                 Frameworks
               </h2>
-              <div className="w-full md:border-l-2 border-black md:pl-4 nowrap">
+              <div className="w-full md:border-l-2 border-black md:pl-4">
                 <p>* JavaScript/TypeScript</p>
                 <p>* React.JS, Next.JS</p>
                 <p>* Python</p>
@@ -203,7 +203,7 @@ export default function App() {
       <div>
         <BigText text={"Work"} />
         <motion.div className="content">
-          <div className="section gap-4">
+          <div className="section">
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">Knight Moves</h2>
               <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
@@ -219,21 +219,27 @@ export default function App() {
                 <br />
                 Security
               </h2>
-              <div className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4"></div>
+              <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
+                Throughout my time in university I worked as security personnel,
+                keeping campus safe and building my confidence to lead and
+                direct.
+              </h3>
             </div>
             <h2 className="head">Personal Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">
                 <span className="italic">no.1~ </span>MultiRoll
               </h2>
-              <p className="w-full md:border-l-2 border-black md:pl-4">
+              <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
                 MultiRoll is a Dungeons & Dragons dice roller available on the
                 web, this was my first foray into web development
               </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">
                 <span className="italic">no.2~ </span>To-Do
               </h2>
-              <p className="w-full md:border-l-2 border-black md:pl-4">
+              <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
                 To-Do is a web-based reminders app I created to hone my React.JS
                 and design skills
               </p>
@@ -245,7 +251,7 @@ export default function App() {
         <BigText text={"Education"} />
         <motion.div className="content">
           <div className="section">
-            <h3>
+            <h3 className="w-full p-6 md:p-0">
               I graduated from the University of Iowa with a Bachelor's in
               Computer Science and a minor in Psychology in late 2023. I was
               heavily active in the software engineering department and
@@ -261,13 +267,15 @@ export default function App() {
       <div>
         <BigText text={"Passions"} />
         <motion.div className="content">
-          <div className="h-screen p-4 flex center justify-center w-full">
-            <iframe
-              className="w-full max-w-[1000px] min-h-[40%] max-h-[50vh]"
-              src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            />
+          <div className="section">
+            <div className="h-screen p-4 flex center justify-center w-full">
+              <iframe
+                className="w-full max-w-[1000px] min-h-[40%] max-h-[50vh]"
+                src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              />
+            </div>
           </div>
         </motion.div>
       </div>
