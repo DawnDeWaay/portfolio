@@ -185,15 +185,18 @@ export default function App() {
                 Languages &<br />
                 Frameworks
               </h2>
-              <div className="w-full md:border-l-2 border-black md:pl-4">
-                <p>* JavaScript/TypeScript</p>
-                <p>* React.JS, Next.JS</p>
-                <p>* Python</p>
-                <p>* Java</p>
-                <p>* AWS Services</p>
-                <p>* Databases (SQL, GraphQL, REST APIs)</p>
-                <p>* C & Assembly</p>
-              </div>
+              <ul className="w-full md:border-l-2 border-black md:pl-4 gap-2">
+                <li>* JavaScript/TypeScript</li>
+                <li>* React.JS, Next.JS</li>
+                <li>
+                  * AWS Cognito, AppSync, S3, IAM, Cloudwatch, Lambda, Amplify,
+                  etc.
+                </li>
+                <li>* Databases (SQL, GraphQL, REST APIs)</li>
+                <li>* Python</li>
+                <li>* Java</li>
+                <li>* C & Assembly</li>
+              </ul>
             </div>
           </div>
         </motion.div>
@@ -249,16 +252,17 @@ export default function App() {
         <BigText text={"Education"} />
         <motion.div className="content">
           <div className="section">
-            <h3 className="w-full p-6 md:p-0">
-              I graduated from the University of Iowa with a Bachelor's in
-              Computer Science and a minor in Psychology in late 2023. I was
-              heavily active in the software engineering department and
-              participated in several clubs outside of school. These included
-              the campus symphony, where I played in the cello section for two
-              years, the badminton club, which helped me lose 60 pounds over the
-              course of a year, and the Hawks Union, an activist group born
-              inside the university.
-            </h3>
+            <h3 className="w-full p-6 md:p-0"></h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
+              <h2 className="sub-head">The University of Iowa</h2>
+              <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
+                I graduated from the University of Iowa in late 2023 with a
+                Bachelor’s in Computer Science and a minor in Psychology. I was
+                active in the software engineering department and joined various
+                clubs, such as the campus symphony, badminton club, and Hawks
+                Union while keeping active and losing 60lbs in the process.
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>
