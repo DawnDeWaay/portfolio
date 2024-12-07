@@ -171,14 +171,11 @@ export default function App() {
         <motion.div className="content">
           <div className="section">
             <h3 className="w-full px-6 md:p-0 mt-4">
-              Hey, I'm Dawn! Ever since I built my first computer all the way
-              back in middle school, I've had a passion for gorgeous design and
-              technology, and as a React-focused frontend software developer,
-              I've had the privilege of marrying those two together. After
-              graduating from the University of Iowa in December of 2023, I've
-              worked tirelessly to learn both frontend and backend technologies
-              in order to bring my ideas to life, beginning with React +
-              JavaScript.
+              Hey, I’m Dawn! Since I built my first computer in middle school,
+              I’ve always loved beautiful design and technology. As a
+              React-focused full-stack developer, I get to combine these
+              passions. I design charming interfaces and advanced backends for
+              the web.
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">
