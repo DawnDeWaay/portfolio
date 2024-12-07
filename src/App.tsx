@@ -170,7 +170,7 @@ export default function App() {
         <BigText text={"Biography"} />
         <motion.div className="content">
           <div className="section">
-            <h3 className="w-full px-6 md:p-0">
+            <h3 className="w-full px-6 md:p-0 mt-4">
               Hey, I'm Dawn! Ever since I built my first computer all the way
               back in middle school, I've had a passion for gorgeous design and
               technology, and as a React-focused frontend software developer,
@@ -189,8 +189,7 @@ export default function App() {
                 <li>* JavaScript/TypeScript</li>
                 <li>* React.JS, Next.JS</li>
                 <li>
-                  * AWS Cognito, AppSync, S3, IAM, Cloudwatch, Lambda, Amplify,
-                  etc.
+                  * AWS Cognito, AppSync, S3, Cloudwatch, Lambda, Amplify, etc.
                 </li>
                 <li>* Databases (SQL, GraphQL, REST APIs)</li>
                 <li>* Python</li>
@@ -270,13 +269,15 @@ export default function App() {
         <BigText text={"Passions"} />
         <motion.div className="content">
           <div className="section">
-            <div className="h-screen p-4 flex center justify-center w-full">
-              <iframe
-                className="w-full max-w-[1000px] min-h-[40%] max-h-[50vh]"
-                src="https://open.spotify.com/embed/playlist/1G9FItLV9x9ZYH87NJ7qkx?utm_source=generator&theme=0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
+              <h2 className="sub-head">The University of Iowa</h2>
+              <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
+                I graduated from the University of Iowa in late 2023 with a
+                Bachelor’s in Computer Science and a minor in Psychology. I was
+                active in the software engineering department and joined various
+                clubs, such as the campus symphony, badminton club, and Hawks
+                Union while keeping active and losing 60lbs in the process.
+              </p>
             </div>
           </div>
         </motion.div>
