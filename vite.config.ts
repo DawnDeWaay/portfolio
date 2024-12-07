@@ -4,13 +4,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      output: {
-        assetFileNames: `assets/[name].[ext]`
-      }
-    }
-  },
   plugins: [react()],
   base:"/",
   css: {
@@ -19,7 +12,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "~": "/src",
     },
   },
 })
