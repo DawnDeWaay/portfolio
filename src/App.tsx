@@ -265,7 +265,7 @@ export default function App() {
           </div>
         </motion.div>
       </div>
-      <div>
+      {/* <div>
         <BigText text={"Passions"} />
         <motion.div className="content">
           <div className="section">
@@ -275,13 +275,13 @@ export default function App() {
                 I graduated from the University of Iowa in late 2023 with a
                 Bachelor’s in Computer Science and a minor in Psychology. I was
                 active in the software engineering department and joined various
-                clubs, such as the campus symphony, badminton club, and Hawks
-                Union while keeping active and losing 60lbs in the process.
+                clubs, such as the campus symphony and badminton club while
+                keeping active and losing 60lbs in the process.
               </p>
             </div>
           </div>
         </motion.div>
-      </div>
+      </div> */}
       <Gallery />
     </main>
   );
