@@ -107,24 +107,18 @@ const generateImagePosition = (): ImagePosition => ({
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const imagePositions = useRef<ImagePosition[]>([]);
-  const [images, setImages] = useState<{ src: string; alt: string }[]>([]);
+
+  const totalImages = 45;
+  const images = Array.from({ length: totalImages }, (_, index) => ({
+    src: `./img/${index + 1}.jpeg`,
+    alt: "Gallery Image",
+  }));
 
   useEffect(() => {
-    const images = import.meta.glob(
-      "../../public/gallery/*.{png,jpg,jpeg,svg,webp}"
-    );
-
-    const imageArray = Object.keys(images).map((key) => ({
-      src: key,
-      alt: "Gallery Image",
-    }));
-
-    setImages(imageArray);
-
     if (imagePositions.current.length === 0) {
-      imagePositions.current = imageArray.map(() => generateImagePosition());
+      imagePositions.current = images.map(() => generateImagePosition());
     }
-  }, []);
+  }, [images]);
 
   const handleImageClick = useCallback((src: string) => {
     setSelectedImage(src);
