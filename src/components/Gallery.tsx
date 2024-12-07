@@ -110,7 +110,7 @@ const Gallery = () => {
 
   const totalImages = 45;
   const images = Array.from({ length: totalImages }, (_, index) => ({
-    src: `./img/${index + 1}.jpeg`,
+    src: `./gallery/${index + 1}.jpeg`,
     alt: "Gallery Image",
   }));
 
