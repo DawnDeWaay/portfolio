@@ -213,7 +213,6 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">
                 University of Iowa
-                <br />
                 Security
               </h2>
               <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
@@ -255,8 +254,9 @@ export default function App() {
                 I graduated from the University of Iowa in late 2023 with a
                 Bachelor’s in Computer Science and a minor in Psychology. I was
                 active in the software engineering department and joined various
-                clubs, such as the campus symphony, badminton club, and Hawks
-                Union while keeping active and losing 60lbs in the process.
+                clubs, such as the campus symphony, badminton club, Sunset Club,
+                and Pride House, while keeping active and losing 60lbs in the
+                process.
               </p>
             </div>
           </div>

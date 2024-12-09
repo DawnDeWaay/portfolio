@@ -72,15 +72,15 @@ li {
   padding-top: 3rem;
   text-align: center;
   width: 100%;
-  text-wrap: nowrap;
+  text-wrap: balance;
 }
 
 .sub-head {
   padding-bottom: 1rem;
   text-align: center;
   width: 100%;
-  text-wrap: nowrap;
   text-align: center;
+  text-wrap: balance;
 }
 
 .ReactGridGallery_tile-viewport {
