@@ -55,7 +55,7 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
       style={{
         left: `${position.x}%`,
         top: `${position.y}%`,
-        width: "min(30vw, 350px)",
+        width: "min(35vw, 350px)",
       }}
       initial={{
         x: "-50%",
