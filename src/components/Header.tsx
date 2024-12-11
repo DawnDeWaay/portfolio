@@ -66,14 +66,9 @@ const Header = () => {
             <SvgEllipses />
           </motion.div>
         </div>
-        <div onClick={() => scrollToSection("Passions")}>
-          <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
-            <SvgFlower />
-          </motion.div>
-        </div>
         <div onClick={() => scrollToSection("Gallery")}>
           <motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
-            <SvgTulip />
+            <SvgFlower />
           </motion.div>
         </div>
         <motion.div
