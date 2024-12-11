@@ -72,8 +72,8 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
         glareEnable={true}
         glareMaxOpacity={0.5}
         glarePosition="bottom"
-        tiltMaxAngleX={4}
-        tiltMaxAngleY={4}
+        tiltMaxAngleX={3}
+        tiltMaxAngleY={3}
       >
         <motion.div
           className="relative w-full p-[5%] pb-[20%] bg-white"
