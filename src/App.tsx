@@ -103,9 +103,9 @@ export default function App() {
 
   return (
     <main id="Main" className="overflow-x-clip overscroll-contain">
-      <div className="grain" />
-      <div className="grain" />
       <Header />
+      <div className="grain" />
+      <div className="grain" />
       <motion.div
         className="relative h-screen w-screen"
         onMouseMove={handleMouse}
@@ -211,10 +211,7 @@ export default function App() {
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
-              <h2 className="sub-head">
-                University of Iowa
-                Security
-              </h2>
+              <h2 className="sub-head">University of Iowa Security</h2>
               <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
                 Throughout my time in university I worked as security personnel,
                 keeping campus safe and building my confidence to lead and

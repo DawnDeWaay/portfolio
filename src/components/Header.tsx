@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <div
-      className="fixed inset-0 border-2 border-black z-[998] pointer-events-none"
+      className="header fixed inset-0 border-2 border-black pointer-events-none"
       style={{ margin: "clamp(12px, 2vw, 38px)" }}
     >
       <motion.div

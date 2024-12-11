@@ -19,7 +19,7 @@ type GalleryImageProps = {
 
 const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
   <motion.div
-    className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-[999] select-auto"
+    className="image-model fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center select-auto"
     onClick={onClose}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
