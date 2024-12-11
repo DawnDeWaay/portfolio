@@ -61,27 +61,29 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
         x: "-50%",
         y: "-25%",
         rotate: position.rotate,
-        boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1)",
       }}
       transition={{
         duration: 0.5,
         ease: "easeOut",
       }}
-      whileHover={{
-        scale: 1.05,
-        zIndex: 20,
-        transition: { duration: 0.2 },
-        boxShadow: "0px 40px 86px -14px rgba(0,0,0,0.75)",
-      }}
+      whileHover={{ zIndex: 20 }}
     >
       <Tilt
         glareEnable={true}
         glareMaxOpacity={0.5}
         glarePosition="bottom"
-        tiltMaxAngleX={3}
-        tiltMaxAngleY={2}
+        tiltMaxAngleX={4}
+        tiltMaxAngleY={4}
       >
-        <div className="relative w-full p-[5%] pb-[20%] bg-white">
+        <motion.div
+          className="relative w-full p-[5%] pb-[20%] bg-white"
+          initial={{ boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1)" }}
+          whileHover={{
+            scale: 1.08,
+            transition: { duration: 0.2 },
+            boxShadow: "0px 40px 86px -14px rgba(0,0,0,0.75)",
+          }}
+        >
           <div className="w-full h-0 pb-[100%] relative">
             <img
               src={src}
@@ -92,7 +94,7 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
               draggable={false}
             />
           </div>
-        </div>
+        </motion.div>
       </Tilt>
     </motion.div>
   );
