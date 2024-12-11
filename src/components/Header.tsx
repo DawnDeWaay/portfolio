@@ -4,7 +4,6 @@ import { IconMail } from "@tabler/icons-react";
 import SvgStairs from "./icons/SvgStairs";
 import SvgEllipses from "./icons/SvgEllipses";
 import SvgSpinner from "./icons/SvgSpinner";
-import SvgTulip from "./icons/SvgTulip";
 import SvgOyster from "./icons/SvgOyster";
 import SvgInstagram from "./icons/SvgInstagram";
 import SvgTwitter from "./icons/SvgTwitter";
