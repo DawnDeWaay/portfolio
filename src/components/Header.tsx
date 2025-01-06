@@ -87,7 +87,7 @@ const Header = () => {
                 exit={{ opacity: 0 }}
               >
                 <motion.a
-                  href="https://www.instagram.com/dawndewaayiii/"
+                  href="https://www.instagram.com/dawndewaay/"
                   className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
                 >
                   <SvgInstagram />
