@@ -22,6 +22,8 @@ const Header = () => {
     }
   };
 
+  const year = new Date().getFullYear()
+
   return (
     <div
       className="header fixed inset-0 border-2 border-black pointer-events-none"
@@ -125,7 +127,7 @@ const Header = () => {
         </motion.div>
       </motion.div>
       <div className="redaction35 text-[1.2rem] absolute left-0 bottom-0 border-t-2 border-r-2 border-black italic hidden md:block">
-        &nbsp;&nbsp;&nbsp;© 2024 Dawn DeWaay III {"<3"}&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;© {year} Dawn DeWaay III {"<3"}&nbsp;&nbsp;&nbsp;
       </div>
     </div>
   );
