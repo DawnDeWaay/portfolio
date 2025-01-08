@@ -218,7 +218,7 @@ export default function App() {
                 direct.
               </h3>
             </div>
-            <h2 className="head">Personal Projects</h2>
+            <h2 className="mt-4">Personal Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">
                 <span className="italic">no.1~ </span>MultiRoll
