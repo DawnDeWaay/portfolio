@@ -171,10 +171,10 @@ export default function App() {
         <motion.div className="content">
           <div className="section">
             <h3 className="w-full px-6 md:p-0 mt-4">
-              Hey, I’m Dawn! Since I built my first computer in middle school,
-              I’ve always loved beautiful design and technology. As a
-              React-focused full-stack developer, I get to combine these
-              passions. I design charming interfaces and advanced backends for
+              Hey, I’m Dawn! Ever since building my first computer in middle
+              school, I’ve been captivated by the intersection of design and
+              technology. As a React-focused full-stack developer, I combine
+              these passions to craft elegant interfaces and robust backends for
               the web.
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
@@ -204,18 +204,19 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">Knight Moves</h2>
               <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
-                Since January 2024, I've been building Knight Moves' full-stack
-                web application, the Skills Mastery Platform. I designed the
-                project from front to back, including database, APIs, secrets,
-                and frontend design.
+                Since January 2024, I’ve been spearheading the development of
+                Knight Moves’ full-stack web application, the Skills Mastery
+                Platform. From database architecture and API development to
+                authentication and frontend design, I’ve built the project from
+                the ground up.
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">University of Iowa Security</h2>
               <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
-                Throughout my time in university I worked as security personnel,
-                keeping campus safe and building my confidence to lead and
-                direct.
+                During my time at the University of Iowa, I worked as a security
+                officer, ensuring campus safety and honing my leadership and
+                decision-making skills.
               </h3>
             </div>
             <h2 className="mt-4">Personal Projects</h2>
@@ -224,8 +225,9 @@ export default function App() {
                 <span className="italic">no.1~ </span>MultiRoll
               </h2>
               <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
-                MultiRoll is a Dungeons & Dragons dice roller available on the
-                web, this was my first foray into web development
+                MultiRoll is a web-based Dungeons & Dragons dice roller and my
+                first foray into web development. This project sparked my
+                passion for creating interactive and functional web experiences.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
@@ -233,8 +235,10 @@ export default function App() {
                 <span className="italic">no.2~ </span>To-Do
               </h2>
               <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
-                To-Do is a web-based reminders app I created to hone my React.JS
-                and design skills
+                To-Do is a sleek web-based reminders app I built to refine my
+                skills in React.js and frontend design. It was a pivotal project
+                for sharpening my ability to merge usability with aesthetic
+                appeal.
               </p>
             </div>
           </div>
@@ -249,33 +253,18 @@ export default function App() {
               <h2 className="sub-head">The University of Iowa</h2>
               <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
                 I graduated from the University of Iowa in late 2023 with a
-                Bachelor’s in Computer Science and a minor in Psychology. I was
-                active in the software engineering department and joined various
-                clubs, such as the campus symphony, badminton club, Sunset Club,
-                and Pride House, while keeping active and losing 60lbs in the
-                process.
+                Bachelor’s in Computer Science and a minor in Psychology. During
+                my time there, I was actively involved in the software
+                engineering community and participated in a variety of clubs,
+                including the campus symphony, badminton club, Sunset Club, and
+                Pride House. While balancing my academic and extracurricular
+                commitments, I also embraced a fitness journey, achieving a
+                personal milestone of losing 60 pounds.
               </p>
             </div>
           </div>
         </motion.div>
       </div>
-      {/* <div>
-        <BigText text={"Passions"} />
-        <motion.div className="content">
-          <div className="section">
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
-              <h2 className="sub-head">The University of Iowa</h2>
-              <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
-                I graduated from the University of Iowa in late 2023 with a
-                Bachelor’s in Computer Science and a minor in Psychology. I was
-                active in the software engineering department and joined various
-                clubs, such as the campus symphony and badminton club while
-                keeping active and losing 60lbs in the process.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </div> */}
       <Gallery />
     </main>
   );
