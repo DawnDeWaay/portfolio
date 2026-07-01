@@ -92,7 +92,7 @@ export default function App() {
           }
           timeoutId = setTimeout(
             () => displayTextSequentially(index + 1),
-            currentItem.delay!
+            currentItem.delay!,
           );
         }
       };
@@ -189,8 +189,8 @@ export default function App() {
                   * AWS Cognito, AppSync, S3, Cloudwatch, Lambda, Amplify, etc.
                 </li>
                 <li>* Databases (SQL, GraphQL, REST APIs)</li>
+                <li>* Java & JVM Languages</li>
                 <li>* Python</li>
-                <li>* Java</li>
                 <li>* C & Assembly</li>
               </ul>
             </div>
@@ -202,20 +202,30 @@ export default function App() {
         <motion.div className="content">
           <div className="section">
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
-              <h2 className="sub-head">Knight Moves</h2>
+              <h2 className="sub-head">
+                Knight Moves - Lead Software Developer
+              </h2>
               <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
-                Since January 2024, I’ve been spearheading the development of
-                Knight Moves’ full-stack web application, the Skills Mastery
-                Platform. From database architecture and API development to
-                authentication and frontend design, I’ve built the project from
-                the ground up.
+                As the solo Lead Developer at Knight Moves, I architected,
+                engineered, and scaled Skillmp, the company’s flagship B2B SaaS
+                Learning Management System (LMS), from initial concept to a
+                production-ready enterprise solution. Utilizing TypeScript,
+                Next.js, and AWS, I owned the entire development lifecycle,
+                single-handedly designing a secure multi-tenant infrastructure,
+                a robust role-based authentication system, and an optimized
+                relational database layer capable of handling high-concurrency
+                user analytics and seamless profile hydration. By balancing
+                full-stack engineering with intuitive UI/UX design, I built a
+                scalable, production-grade product from scratch that completely
+                eliminated the need for a large development team and minimized
+                ramp-up time for onboarding enterprise clients.
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">University of Iowa Security</h2>
               <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
-                During my time at the University of Iowa, I worked as a security
-                officer, ensuring campus safety and honing my leadership and
+                While at the University of Iowa, I worked as a security officer,
+                ensuring campus safety and honing my leadership and
                 decision-making skills.
               </h3>
             </div>
@@ -253,13 +263,13 @@ export default function App() {
               <h2 className="sub-head">The University of Iowa</h2>
               <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
                 I graduated from the University of Iowa in late 2023 with a
-                Bachelor’s in Computer Science and a minor in Psychology. During
-                my time there, I was actively involved in the software
-                engineering community and participated in a variety of clubs,
-                including the campus symphony, badminton club, Sunset Club, and
-                Pride House. While balancing my academic and extracurricular
-                commitments, I also embraced a fitness journey, achieving a
-                personal milestone of losing 60 pounds.
+                Bachelor’s degree in Computer Science with a minor in
+                Psychology. During my time at Iowa, I was actively involved in
+                the software engineering community and participated in a variety
+                of clubs, including the campus symphony, badminton club, Sunset
+                Club, and Pride House. While balancing my academic and
+                extracurricular commitments, I also embraced a fitness journey,
+                achieving a personal milestone of losing 60 pounds.
               </p>
             </div>
           </div>
