@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Tilt from "react-parallax-tilt";
 
@@ -44,13 +44,19 @@ const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
 );
 
 const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
-  const ref = useRef(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+      setLoaded(true);
+    }
+  }, []);
 
   return (
     <motion.div
       id={src}
       onClick={() => onClick(src)}
-      ref={ref}
       className="absolute cursor-pointer"
       style={{
         left: `${position.x}%`,
@@ -61,11 +67,9 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
         x: "-50%",
         y: "-25%",
         rotate: position.rotate,
+        opacity: 0,
       }}
-      transition={{
-        duration: 0.5,
-        ease: "easeOut",
-      }}
+      animate={{ opacity: loaded ? 1 : 0 }}
       whileHover={{ zIndex: 20 }}
     >
       <Tilt
@@ -86,10 +90,12 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
         >
           <div className="w-full h-0 pb-[100%] relative">
             <img
+              ref={imgRef}
               src={src}
               alt={alt}
               loading="lazy"
               decoding="async"
+              onLoad={() => setLoaded(true)}
               className="absolute inset-0 w-full h-full object-cover"
               draggable={false}
             />
@@ -106,21 +112,23 @@ const generateImagePosition = (): ImagePosition => ({
   rotate: Math.random() * 50 - 25,
 });
 
-const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const imagePositions = useRef<ImagePosition[]>([]);
+const galleryModules = import.meta.glob<string>(
+  "../gallery/*.{jpeg,jpg,png,webp,avif}",
+  { eager: true, import: "default", query: "?url" }
+);
 
-  const totalImages = 44;
-  const images = Array.from({ length: totalImages }, (_, index) => ({
-    src: `./gallery/${index + 1}.jpeg`,
-    alt: "Gallery Image",
+const images = Object.entries(galleryModules)
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([path, src]) => ({
+    src,
+    alt: path.split("/").pop()?.replace(/\.[^.]+$/, "") ?? "Gallery image",
   }));
 
-  useEffect(() => {
-    if (imagePositions.current.length === 0) {
-      imagePositions.current = images.map(() => generateImagePosition());
-    }
-  }, [images]);
+const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const imagePositions = useRef<ImagePosition[]>(
+    images.map(() => generateImagePosition())
+  );
 
   const handleImageClick = useCallback((src: string) => {
     setSelectedImage(src);
@@ -141,9 +149,7 @@ const Gallery = () => {
               src={image.src}
               alt={image.alt}
               onClick={handleImageClick}
-              position={
-                imagePositions.current[index] || generateImagePosition()
-              }
+              position={imagePositions.current[index]}
             />
           ))}
         </AnimatePresence>
