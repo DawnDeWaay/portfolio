@@ -90,30 +90,35 @@ const Header = () => {
               >
                 <motion.a
                   href="https://www.instagram.com/dawndewaay/"
+                  target="_blank"
                   className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
                 >
                   <SvgInstagram />
                 </motion.a>
                 <motion.a
                   href="https://x.com/DawnDeWaay"
+                  target="_blank"
                   className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
                 >
                   <SvgTwitter />
                 </motion.a>
                 <motion.a
                   href="https://github.com/DawnDeWaay"
+                  target="_blank"
                   className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
                 >
                   <SvgGitHub />
                 </motion.a>
                 <motion.a
                   href="https://open.spotify.com/user/donalddewaay?si=732c04f17d874872"
+                  target="_blank"
                   className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
                 >
                   <SvgSpotify />
                 </motion.a>
                 <motion.a
                   href="mailto:dawndewaay@gmail.com"
+                  target="_blank"
                   initial={{ color: "black" }}
                   className="w-12 h-12 p-2 flex items-center justify-center border-t-2 border-l-2 border-black"
                 >
