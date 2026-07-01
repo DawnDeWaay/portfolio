@@ -171,11 +171,15 @@ export default function App() {
         <motion.div className="content">
           <div className="section">
             <h3 className="w-full px-6 md:p-0 mt-4">
-              Hey, I’m Dawn! Ever since building my first computer in middle
-              school, I’ve been captivated by the intersection of design and
-              technology. As a React-focused full-stack developer, I combine
-              these passions to craft elegant interfaces and robust backends for
-              the web.
+              Hey, I’m Dawn. I’m a Full-Stack Engineer who specializes in
+              single-handedly building and launching enterprise B2B SaaS
+              platforms from scratch. I love taking complex product ideas and
+              turning them into production-ready web apps—handling everything
+              from intuitive UI/UX design to robust, multi-tenant cloud
+              architecture. Ultimately, I build clean, high-performance software
+              that scales, delivering the execution of an entire development
+              team wrapped into a single engineer.
+              
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">
