@@ -1,4 +1,4 @@
-import { motion, useSpring, useTransform } from "motion/react";
+import { motion, useSpring, useTransform, type Variants } from "motion/react";
 import Header from "./components/Header";
 import BigText from "./components/BigText";
 import { IconRosette } from "@tabler/icons-react";
@@ -42,7 +42,7 @@ export default function App() {
     y.set(200);
   }
 
-  const cursorVariants = {
+  const cursorVariants: Variants = {
     blinking: {
       opacity: [0, 0, 1, 1],
       transition: {
