@@ -88,7 +88,7 @@ const GalleryImage = ({
     >
       <Tilt
         glareEnable={true}
-        glareMaxOpacity={0.5}
+        glareMaxOpacity={0.4}
         glarePosition='all'
         tiltMaxAngleX={3}
         tiltMaxAngleY={3}
