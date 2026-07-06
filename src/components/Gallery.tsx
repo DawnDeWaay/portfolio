@@ -161,7 +161,7 @@ const generateImagePosition = (): ImagePosition => ({
 
 const generateSlideIn = (): SlideInInfo => ({
   x: Math.random() * 100 - 50,
-  y: 40 + Math.random() * 80,
+  y: 40 + Math.random() * 100,
   rotate: 0
 });
 
