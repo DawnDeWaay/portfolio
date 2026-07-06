@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useInView } from "motion/react";
 import Tilt from "react-parallax-tilt";
 
 import BigText from "./BigText";
@@ -65,7 +65,10 @@ const GalleryImage = ({
   position,
 }: GalleryImageProps) => {
   const imgRef = useRef<HTMLImageElement>(null);
+  const outerRef = useRef<HTMLDivElement>(null);
   const [loaded, setLoaded] = useState(false);
+  const inView = useInView(outerRef, { once: true, amount: 0.2 });
+  const show = loaded && inView;
 
   const slideInInfo = useRef<SlideInInfo>(generateSlideIn());
 
@@ -77,6 +80,7 @@ const GalleryImage = ({
 
   return (
     <motion.div
+      ref={outerRef}
       id={full}
       onClick={() => onClick(full)}
       className="absolute cursor-pointer"
@@ -91,12 +95,12 @@ const GalleryImage = ({
         rotate: position.rotate,
         opacity: 0,
       }}
-      animate={{ opacity: loaded ? 1 : 0 }}
+      animate={{ opacity: show ? 1 : 0 }}
       whileHover={{ zIndex: 20 }}
     >
       <motion.div
         initial={{ x: slideInInfo.current.x, y: slideInInfo.current.y, rotate: slideInInfo.current.rotate }}
-        animate={{ x: loaded ? 0 : slideInInfo.current.x, y: loaded ? 0 : slideInInfo.current.y, rotate: loaded ? 0 : slideInInfo.current.rotate }}
+        animate={{ x: show ? 0 : slideInInfo.current.x, y: show ? 0 : slideInInfo.current.y, rotate: show ? 0 : slideInInfo.current.rotate }}
         transition={{ type: "spring", stiffness: 260, damping: 22, mass: 0.6 }}
       >
         <Tilt
@@ -158,7 +162,7 @@ const generateImagePosition = (): ImagePosition => ({
 const generateSlideIn = (): SlideInInfo => ({
   x: Math.random() * 100 - 50,
   y: 40 + Math.random() * 80,
-  rotate: Math.random() * 20 - 10,
+  rotate: 0
 });
 
 const thumbModules = import.meta.glob<Picture>(
