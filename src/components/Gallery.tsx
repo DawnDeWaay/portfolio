@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useInView } from "motion/react";
 import Tilt from "react-parallax-tilt";
 
@@ -43,9 +44,9 @@ const ImageModal = ({
   const [fullLoaded, setFullLoaded] = useState(false);
   const aspect = thumb.img.w / thumb.img.h;
 
-  return (
+  return createPortal(
     <motion.div
-      className="image-model fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center select-auto"
+      className="image-model fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center select-auto z-50"
       onClick={onClose}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -60,21 +61,27 @@ const ImageModal = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          className="relative"
+          className="relative overflow-hidden"
           style={{
             aspectRatio: aspect,
-            width: `min(calc(100vw - 13rem), calc((100vh - 13rem) * ${aspect}))`,
+            width: `min(calc(100vw - 7rem), calc((100vh - 15rem) * ${aspect}))`,
           }}
         >
           <picture>
             {Object.entries(thumb.sources).map(([type, srcSet]) => (
-              <source key={type} type={`image/${type}`} srcSet={srcSet} />
+              <source
+                key={type}
+                type={`image/${type}`}
+                srcSet={srcSet}
+                sizes="400px"
+              />
             ))}
             <img
               src={thumb.img.src}
               alt=""
               aria-hidden
-              className="absolute inset-0 w-full h-full object-cover"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl"
               draggable={false}
             />
           </picture>
@@ -90,7 +97,8 @@ const ImageModal = ({
           />
         </div>
       </motion.div>
-    </motion.div>
+    </motion.div>,
+    document.body,
   );
 };
 
