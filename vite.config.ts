@@ -6,9 +6,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base:"/",
-  css: {
-    postcss: './postcss.config.js',
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
