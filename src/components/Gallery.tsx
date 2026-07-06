@@ -8,10 +8,18 @@ type ImagePosition = {
   x: number;
   y: number;
   rotate: number;
+  offsetX: number;
+  offsetY: number;
+};
+
+type Picture = {
+  sources: Record<string, string>;
+  img: { src: string; w: number; h: number };
 };
 
 type GalleryImageProps = {
-  src: string;
+  thumb: Picture;
+  full: string;
   alt: string;
   onClick: (src: string) => void;
   position: ImagePosition;
@@ -36,14 +44,20 @@ const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
       <img
         src={src}
         alt="Enlarged"
-        className="object-contain shadow-2xl"
+        className="object-contain shadow-2xl max-w-[calc(90vw-3rem)] max-h-[calc(90vh-3rem)]"
         draggable={false}
       />
     </motion.div>
   </motion.div>
 );
 
-const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
+const GalleryImage = ({
+  thumb,
+  full,
+  alt,
+  onClick,
+  position,
+}: GalleryImageProps) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const [loaded, setLoaded] = useState(false);
 
@@ -55,8 +69,8 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
 
   return (
     <motion.div
-      id={src}
-      onClick={() => onClick(src)}
+      id={full}
+      onClick={() => onClick(full)}
       className="absolute cursor-pointer"
       style={{
         left: `${position.x}%`,
@@ -64,8 +78,8 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
         width: "min(35vw, 350px)",
       }}
       initial={{
-        x: "-50%",
-        y: "-25%",
+        x: `calc(-50% + ${position.offsetX}px)`,
+        y: `calc(-25% + ${position.offsetY}px)`,
         rotate: position.rotate,
         opacity: 0,
       }}
@@ -75,13 +89,14 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
       <Tilt
         glareEnable={true}
         glareMaxOpacity={0.5}
-        glarePosition="bottom"
+        glarePosition='all'
         tiltMaxAngleX={3}
         tiltMaxAngleY={3}
       >
         <motion.div
           className="relative w-full p-[5%] pb-[20%] bg-white"
           initial={{ boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1)" }}
+          animate={{ x: 0, y: 0 }}
           whileHover={{
             scale: 1.08,
             transition: { duration: 0.2 },
@@ -89,16 +104,28 @@ const GalleryImage = ({ src, alt, onClick, position }: GalleryImageProps) => {
           }}
         >
           <div className="w-full h-0 pb-[100%] relative">
-            <img
-              ref={imgRef}
-              src={src}
-              alt={alt}
-              loading="lazy"
-              decoding="async"
-              onLoad={() => setLoaded(true)}
-              className="absolute inset-0 w-full h-full object-cover"
-              draggable={false}
-            />
+            <picture>
+              {Object.entries(thumb.sources).map(([type, srcSet]) => (
+                <source
+                  key={type}
+                  type={`image/${type}`}
+                  srcSet={srcSet}
+                  sizes="(min-width: 1000px) 350px, 35vw"
+                />
+              ))}
+              <img
+                ref={imgRef}
+                src={thumb.img.src}
+                width={thumb.img.w}
+                height={thumb.img.h}
+                alt={alt}
+                loading="lazy"
+                decoding="async"
+                onLoad={() => setLoaded(true)}
+                className="absolute inset-0 w-full h-full object-cover"
+                draggable={false}
+              />
+            </picture>
           </div>
         </motion.div>
       </Tilt>
@@ -110,24 +137,44 @@ const generateImagePosition = (): ImagePosition => ({
   x: Math.random() * 80 + 10,
   y: Math.random() * 90,
   rotate: Math.random() * 50 - 25,
+  offsetX: Math.random() * 40 - 20,
+  offsetY: Math.random() * 30 + 35,
 });
 
-const galleryModules = import.meta.glob<string>(
+const thumbModules = import.meta.glob<Picture>(
   "../gallery/*.{jpeg,jpg,png,webp,avif}",
-  { eager: true, import: "default", query: "?url" }
+  {
+    eager: true,
+    import: "default",
+    query: { w: "400;800", format: "avif;webp;jpeg", as: "picture" },
+  },
 );
 
-const images = Object.entries(galleryModules)
-  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
-  .map(([path, src]) => ({
-    src,
-    alt: path.split("/").pop()?.replace(/\.[^.]+$/, "") ?? "Gallery image",
+const fullModules = import.meta.glob<string>(
+  "../gallery/*.{jpeg,jpg,png,webp,avif}",
+  {
+    eager: true,
+    import: "default",
+    query: { w: "1400", format: "webp" },
+  },
+);
+
+const images = Object.keys(thumbModules)
+  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+  .map((path) => ({
+    thumb: thumbModules[path],
+    full: fullModules[path],
+    alt:
+      path
+        .split("/")
+        .pop()
+        ?.replace(/\.[^.]+$/, "") ?? "Gallery image",
   }));
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const imagePositions = useRef<ImagePosition[]>(
-    images.map(() => generateImagePosition())
+    images.map(() => generateImagePosition()),
   );
 
   const handleImageClick = useCallback((src: string) => {
@@ -141,12 +188,13 @@ const Gallery = () => {
   return (
     <div className="w-full z-40">
       <BigText text={"Gallery"} />
-      <div className="content h-[120vh] relative z-40">
+      <div className="content h-[160vh] relative z-40">
         <AnimatePresence>
           {images.map((image, index) => (
             <GalleryImage
               key={index}
-              src={image.src}
+              thumb={image.thumb}
+              full={image.full}
               alt={image.alt}
               onClick={handleImageClick}
               position={imagePositions.current[index]}
