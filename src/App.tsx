@@ -179,7 +179,7 @@ export default function App() {
               architecture. Ultimately, I build clean, high-performance software
               that scales, delivering the execution of an entire development
               team wrapped into a single engineer.
-              
+
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">
@@ -210,19 +210,16 @@ export default function App() {
                 Knight Moves - Lead Software Developer
               </h2>
               <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
-                As the solo Lead Developer at Knight Moves, I architected,
-                engineered, and scaled Skillmp, the company’s flagship B2B SaaS
-                Learning Management System (LMS), from initial concept to a
-                production-ready enterprise solution. Utilizing TypeScript,
-                Next.js, and AWS, I owned the entire development lifecycle,
-                single-handedly designing a secure multi-tenant infrastructure,
-                a robust role-based authentication system, and an optimized
-                relational database layer capable of handling high-concurrency
-                user analytics and seamless profile hydration. By balancing
-                full-stack engineering with intuitive UI/UX design, I built a
-                scalable, production-grade product from scratch that completely
-                eliminated the need for a large development team and minimized
-                ramp-up time for onboarding enterprise clients.
+                As Lead Developer at Knight Moves, I led a small team building
+                Skillmp, our B2B learning platform, from an empty repo to a
+                live product serving enterprise clients. I owned the full
+                stack—TypeScript, Next.js, and AWS on the backend, plus the
+                UI/UX design on the front—setting up multi-tenant auth, a
+                role-based permission system, and the relational data layer
+                powering user analytics and profile hydration. Balancing hands-on
+                engineering with design and technical direction, I shipped a
+                scalable, production-grade product while guiding the team
+                through the full development lifecycle.
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
