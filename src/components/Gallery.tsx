@@ -79,7 +79,7 @@ const GalleryImage = ({
       }}
       initial={{
         x: `calc(-50% + ${position.offsetX}px)`,
-        y: `calc(-25% + ${position.offsetY}px)`,
+        y: `calc(-40% + ${position.offsetY}px)`,
         rotate: position.rotate,
         opacity: 0,
       }}
@@ -89,7 +89,7 @@ const GalleryImage = ({
       <Tilt
         glareEnable={true}
         glareMaxOpacity={0.4}
-        glarePosition='all'
+        glarePosition='top'
         tiltMaxAngleX={3}
         tiltMaxAngleY={3}
       >
