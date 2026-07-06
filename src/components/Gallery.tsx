@@ -27,35 +27,72 @@ type GalleryImageProps = {
   thumb: Picture;
   full: string;
   alt: string;
-  onClick: (src: string) => void;
+  onClick: (thumb: Picture, full: string) => void;
   position: ImagePosition;
 };
 
-const ImageModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
-  <motion.div
-    className="image-model fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center select-auto"
-    onClick={onClose}
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-  >
+const ImageModal = ({
+  thumb,
+  full,
+  onClose,
+}: {
+  thumb: Picture;
+  full: string;
+  onClose: () => void;
+}) => {
+  const [fullLoaded, setFullLoaded] = useState(false);
+  const aspect = thumb.img.w / thumb.img.h;
+
+  return (
     <motion.div
-      className="relative bg-white max-w-[90vw] max-h-[90vh] p-6"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 30 }}
-      transition={{ duration: 0.3 }}
-      onClick={(e) => e.stopPropagation()}
+      className="image-model fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center select-auto"
+      onClick={onClose}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
-      <img
-        src={src}
-        alt="Enlarged"
-        className="object-contain shadow-2xl max-w-[calc(90vw-3rem)] max-h-[calc(90vh-3rem)]"
-        draggable={false}
-      />
+      <motion.div
+        className="relative bg-white p-6 shadow-2xl"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 30 }}
+        transition={{ duration: 0.3 }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div
+          className="relative"
+          style={{
+            aspectRatio: aspect,
+            width: `min(calc(100vw - 13rem), calc((100vh - 13rem) * ${aspect}))`,
+          }}
+        >
+          <picture>
+            {Object.entries(thumb.sources).map(([type, srcSet]) => (
+              <source key={type} type={`image/${type}`} srcSet={srcSet} />
+            ))}
+            <img
+              src={thumb.img.src}
+              alt=""
+              aria-hidden
+              className="absolute inset-0 w-full h-full object-cover"
+              draggable={false}
+            />
+          </picture>
+          <motion.img
+            src={full}
+            alt="Enlarged"
+            onLoad={() => setFullLoaded(true)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: fullLoaded ? 1 : 0 }}
+            transition={{ duration: 0.25 }}
+            className="absolute inset-0 w-full h-full object-cover"
+            draggable={false}
+          />
+        </div>
+      </motion.div>
     </motion.div>
-  </motion.div>
-);
+  );
+};
 
 const GalleryImage = ({
   thumb,
@@ -82,7 +119,7 @@ const GalleryImage = ({
     <motion.div
       ref={outerRef}
       id={full}
-      onClick={() => onClick(full)}
+      onClick={() => onClick(thumb, full)}
       className="absolute cursor-pointer"
       style={{
         left: `${position.x}%`,
@@ -196,14 +233,20 @@ const images = Object.keys(thumbModules)
   }));
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{
+    thumb: Picture;
+    full: string;
+  } | null>(null);
   const imagePositions = useRef<ImagePosition[]>(
     images.map(() => generateImagePosition()),
   );
 
-  const handleImageClick = useCallback((src: string) => {
-    setSelectedImage(src);
-  }, []);
+  const handleImageClick = useCallback(
+    (thumb: Picture, full: string) => {
+      setSelectedImage({ thumb, full });
+    },
+    [],
+  );
 
   const handleCloseModal = useCallback(() => {
     setSelectedImage(null);
@@ -227,7 +270,11 @@ const Gallery = () => {
         </AnimatePresence>
         <AnimatePresence>
           {selectedImage && (
-            <ImageModal src={selectedImage} onClose={handleCloseModal} />
+            <ImageModal
+              thumb={selectedImage.thumb}
+              full={selectedImage.full}
+              onClose={handleCloseModal}
+            />
           )}
         </AnimatePresence>
       </div>
