@@ -12,6 +12,12 @@ type ImagePosition = {
   offsetY: number;
 };
 
+type SlideInInfo = {
+  x: number;
+  y: number;
+  rotate: number;
+};
+
 type Picture = {
   sources: Record<string, string>;
   img: { src: string; w: number; h: number };
@@ -61,6 +67,8 @@ const GalleryImage = ({
   const imgRef = useRef<HTMLImageElement>(null);
   const [loaded, setLoaded] = useState(false);
 
+  const slideInInfo = useRef<SlideInInfo>(generateSlideIn());
+
   useEffect(() => {
     if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
       setLoaded(true);
@@ -86,49 +94,55 @@ const GalleryImage = ({
       animate={{ opacity: loaded ? 1 : 0 }}
       whileHover={{ zIndex: 20 }}
     >
-      <Tilt
-        glareEnable={true}
-        glareMaxOpacity={0.4}
-        glarePosition='top'
-        tiltMaxAngleX={3}
-        tiltMaxAngleY={3}
+      <motion.div
+        initial={{ x: slideInInfo.current.x, y: slideInInfo.current.y, rotate: slideInInfo.current.rotate }}
+        animate={{ x: loaded ? 0 : slideInInfo.current.x, y: loaded ? 0 : slideInInfo.current.y, rotate: loaded ? 0 : slideInInfo.current.rotate }}
+        transition={{ type: "spring", stiffness: 260, damping: 22, mass: 0.6 }}
       >
-        <motion.div
-          className="relative w-full p-[5%] pb-[20%] bg-white"
-          initial={{ boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1)" }}
-          animate={{ x: 0, y: 0 }}
-          whileHover={{
-            scale: 1.08,
-            transition: { duration: 0.2 },
-            boxShadow: "0px 40px 86px -14px rgba(0,0,0,0.75)",
-          }}
+        <Tilt
+          glareEnable={true}
+          glareMaxOpacity={0.4}
+          glarePosition="top"
+          tiltMaxAngleX={3}
+          tiltMaxAngleY={3}
         >
-          <div className="w-full h-0 pb-[100%] relative">
-            <picture>
-              {Object.entries(thumb.sources).map(([type, srcSet]) => (
-                <source
-                  key={type}
-                  type={`image/${type}`}
-                  srcSet={srcSet}
-                  sizes="(min-width: 1000px) 350px, 35vw"
+          <motion.div
+            className="relative w-full p-[5%] pb-[20%] bg-white"
+            initial={{ boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1)" }}
+            animate={{ x: 0, y: 0 }}
+            whileHover={{
+              scale: 1.08,
+              transition: { duration: 0.2 },
+              boxShadow: "0px 40px 86px -14px rgba(0,0,0,0.75)",
+            }}
+          >
+            <div className="w-full h-0 pb-[100%] relative">
+              <picture>
+                {Object.entries(thumb.sources).map(([type, srcSet]) => (
+                  <source
+                    key={type}
+                    type={`image/${type}`}
+                    srcSet={srcSet}
+                    sizes="(min-width: 1000px) 350px, 35vw"
+                  />
+                ))}
+                <img
+                  ref={imgRef}
+                  src={thumb.img.src}
+                  width={thumb.img.w}
+                  height={thumb.img.h}
+                  alt={alt}
+                  loading="lazy"
+                  decoding="async"
+                  onLoad={() => setLoaded(true)}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  draggable={false}
                 />
-              ))}
-              <img
-                ref={imgRef}
-                src={thumb.img.src}
-                width={thumb.img.w}
-                height={thumb.img.h}
-                alt={alt}
-                loading="lazy"
-                decoding="async"
-                onLoad={() => setLoaded(true)}
-                className="absolute inset-0 w-full h-full object-cover"
-                draggable={false}
-              />
-            </picture>
-          </div>
-        </motion.div>
-      </Tilt>
+              </picture>
+            </div>
+          </motion.div>
+        </Tilt>
+      </motion.div>
     </motion.div>
   );
 };
@@ -139,6 +153,12 @@ const generateImagePosition = (): ImagePosition => ({
   rotate: Math.random() * 50 - 25,
   offsetX: Math.random() * 40 - 20,
   offsetY: Math.random() * 30 + 35,
+});
+
+const generateSlideIn = (): SlideInInfo => ({
+  x: Math.random() * 100 - 50,
+  y: 40 + Math.random() * 80,
+  rotate: Math.random() * 20 - 10,
 });
 
 const thumbModules = import.meta.glob<Picture>(
