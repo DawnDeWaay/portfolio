@@ -246,7 +246,7 @@ export default function App() {
               </h2>
               <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
                 To-Do is a sleek web-based reminders app I built to refine my
-                skills in React.js and frontend design. This project sharpened
+                skills in React.js and frontend design, sharpening
                 my ability to merge usability with aesthetic appeal.
               </p>
             </div>
