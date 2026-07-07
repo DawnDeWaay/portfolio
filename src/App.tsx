@@ -170,8 +170,8 @@ export default function App() {
         <BigText text={"Biography"} />
         <motion.div className="content">
           <div className="section">
-            <h3 className="w-full px-6 md:p-0 mt-4">
-              Hey, I’m Dawn. I’m a Full-Stack Engineer who specializes in
+            <h3 className="w-full px-6 md:p-0 mt-4 mb-2">
+              Hiya I’m Dawn! I’m a Full-Stack Engineer who specializes in
               single-handedly building and launching enterprise B2B SaaS
               platforms from scratch. I love taking complex product ideas and
               turning them into production-ready web apps—handling everything
