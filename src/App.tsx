@@ -179,7 +179,6 @@ export default function App() {
               architecture. Ultimately, I build clean, high-performance software
               that scales, delivering the execution of an entire development
               team wrapped into a single engineer.
-
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
               <h2 className="sub-head">
@@ -211,15 +210,15 @@ export default function App() {
               </h2>
               <h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
                 As Lead Developer at Knight Moves, I led a small team building
-                Skillmp, our B2B learning platform, from an empty repo to a
-                live product serving enterprise clients. I owned the full
+                Skillmp, our B2B learning platform, from an empty repo to a live
+                product serving enterprise clients. I owned the full
                 stack—TypeScript, Next.js, and AWS on the backend, plus the
                 UI/UX design on the front—setting up multi-tenant auth, a
                 role-based permission system, and the relational data layer
-                powering user analytics and profile hydration. Balancing hands-on
-                engineering with design and technical direction, I shipped a
-                scalable, production-grade product while guiding the team
-                through the full development lifecycle.
+                powering user analytics and profile hydration. Balancing
+                hands-on engineering with design and technical direction, I
+                shipped a scalable, production-grade product while guiding the
+                team through the full development lifecycle.
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
@@ -247,9 +246,8 @@ export default function App() {
               </h2>
               <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
                 To-Do is a sleek web-based reminders app I built to refine my
-                skills in React.js and frontend design. It was a pivotal project
-                for sharpening my ability to merge usability with aesthetic
-                appeal.
+                skills in React.js and frontend design. This project sharpened
+                my ability to merge usability with aesthetic appeal.
               </p>
             </div>
           </div>
@@ -264,13 +262,13 @@ export default function App() {
               <h2 className="sub-head">The University of Iowa</h2>
               <p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
                 I graduated from the University of Iowa in late 2023 with a
-                Bachelor’s degree in Computer Science with a minor in
-                Psychology. During my time at Iowa, I was actively involved in
-                the software engineering community and participated in a variety
-                of clubs, including the campus symphony, badminton club, Sunset
-                Club, and Pride House. While balancing my academic and
+                Bachelor’s degree in Computer Science and a minor in Psychology.
+                During my time at Iowa, I was actively involved in the software
+                engineering community and participated in a variety of clubs,
+                including the campus symphony, badminton club, Sunset Club, and
+                the UI Pride House. While balancing my academic and
                 extracurricular commitments, I also embraced a fitness journey,
-                achieving a personal milestone of losing 60 pounds.
+                practicing discipline and maintaining my mental health.
               </p>
             </div>
           </div>
