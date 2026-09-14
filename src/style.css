@@ -69,9 +69,6 @@ li {
 }
 
 .sub-head {
-  position: sticky;
-  top: 4rem;
-  padding-bottom: 1rem;
   text-align: center;
   width: 100%;
   text-wrap: balance;

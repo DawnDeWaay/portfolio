@@ -1,21 +1,19 @@
 /** biome-ignore-all lint/a11y/noStaticElementInteractions: Existing animated navigation wrappers are clickable. */
 /** biome-ignore-all lint/a11y/useKeyWithClickEvents: Existing icon navigation uses pointer interactions. */
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { IconMail } from "@tabler/icons-react";
-import SvgStairs from "./icons/SvgStairs";
 import SvgEllipses from "./icons/SvgEllipses";
-import SvgSpinner from "./icons/SvgSpinner";
-import SvgOyster from "./icons/SvgOyster";
-import SvgInstagram from "./icons/SvgInstagram";
-import SvgTwitter from "./icons/SvgTwitter";
-import SvgGitHub from "./icons/SvgGitHub";
-import SvgSpotify from "./icons/SvgSpotify";
+import SvgEmail from "./icons/SvgEmail";
 import SvgFlower from "./icons/SvgFlower";
+import SvgGitHub from "./icons/SvgGitHub";
+import SvgInstagram from "./icons/SvgInstagram";
+import SvgSpinner from "./icons/SvgSpinner";
+import SvgSpotify from "./icons/SvgSpotify";
+import SvgStairs from "./icons/SvgStairs";
+import SvgTwitter from "./icons/SvgTwitter";
 import WavyLine from "./WavyLine";
 
 const Header = () => {
-	const [showSocials, setShowSocials] = useState(false);
 	const [activeSection, setActiveSection] = useState<string | null>(null);
 
 	useEffect(() => {
@@ -65,23 +63,61 @@ const Header = () => {
 			style={{ margin: "clamp(12px, 2vw, 38px)" }}
 		>
 			<motion.div
-				className="flex items-center justify-center lg:justify-start"
+				className="flex items-center justify-between w-full"
 				onClick={() => scrollToSection("Main")}
 			>
 				<motion.h1
-					initial={{
-						fontSize: "2.2rem",
-						color: "black",
-						fontWeight: "normal",
-					}}
-					whileHover={{
-						fontSize: "3.5rem",
-					}}
-					className="cursor-pointer pointer-events-auto w-auto text-center z-40 inline-block redaction35"
-					layout
+					whileHover={{ color: "#796C98" }}
+					className="cursor-pointer pointer-events-auto w-auto text-center z-40 inline-block text-[1.8rem] md:text-[2.2rem] redaction35"
 				>
 					&nbsp;&nbsp;Dawn DeWaay III&nbsp;
 				</motion.h1>
+				<div className="contact flex items-start justify-center h-full pointer-events-auto mr-2">
+					<motion.a
+						href="mailto:dawndewaay@gmail.com"
+						target="_blank"
+						rel="noopener"
+						initial={{ color: "black" }}
+						className="w-11 h-11 p-2"
+					>
+						<motion.div whileHover={{ color: "#0078d4" }}>
+							<SvgEmail />
+						</motion.div>
+					</motion.a>
+					<motion.a
+						href="https://github.com/DawnDeWaay"
+						target="_blank"
+						rel="noopener"
+						className="hidden w-11 h-11 p-2 md:block"
+					>
+						<SvgGitHub />
+					</motion.a>
+					<motion.a
+						href="https://x.com/DawnDeWaay"
+						target="_blank"
+						rel="noopener"
+						className="hidden w-11 h-11 p-2 md:block"
+					>
+						<SvgTwitter />
+					</motion.a>
+					<motion.a
+						href="https://www.instagram.com/dawndewaay/"
+						target="_blank"
+						rel="noopener"
+						className="hidden w-11 h-11 p-2 md:block"
+					>
+						<SvgInstagram />
+					</motion.a>
+
+					<motion.a
+						href="https://open.spotify.com/user/donalddewaay"
+						target="_blank"
+						rel="noopener"
+						className="hidden w-11 h-11 p-2 md:block"
+					>
+						<SvgSpotify />
+					</motion.a>
+				</div>
 			</motion.div>
 			<motion.div initial={{ y: -10 }}>
 				<WavyLine />
@@ -107,69 +143,6 @@ const Header = () => {
 						<SvgFlower active={activeSection === "Gallery"} />
 					</motion.div>
 				</div>
-				<motion.div
-					className="relative"
-					onMouseEnter={() => setShowSocials(true)}
-					onMouseLeave={() => setShowSocials(false)}
-				>
-					<motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
-						<SvgOyster active={showSocials} />
-					</motion.div>
-					<AnimatePresence>
-						{showSocials && (
-							<motion.div
-								className="absolute flex flex-row-reverse items-center left-0 top-0 transform -translate-x-full"
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								exit={{ opacity: 0 }}
-							>
-								<motion.a
-									href="https://www.instagram.com/dawndewaay/"
-									target="_blank"
-									rel="noopener"
-									className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
-								>
-									<SvgInstagram />
-								</motion.a>
-								<motion.a
-									href="https://x.com/DawnDeWaay"
-									target="_blank"
-									rel="noopener"
-									className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
-								>
-									<SvgTwitter />
-								</motion.a>
-								<motion.a
-									href="https://github.com/DawnDeWaay"
-									target="_blank"
-									rel="noopener"
-									className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
-								>
-									<SvgGitHub />
-								</motion.a>
-								<motion.a
-									href="https://open.spotify.com/user/donalddewaay?si=732c04f17d874872"
-									target="_blank"
-									rel="noopener"
-									className="w-12 h-12 p-2 border-t-2 border-l-2 border-black"
-								>
-									<SvgSpotify />
-								</motion.a>
-								<motion.a
-									href="mailto:dawndewaay@gmail.com"
-									target="_blank"
-									rel="noopener"
-									initial={{ color: "black" }}
-									className="w-12 h-12 p-2 flex items-center justify-center border-t-2 border-l-2 border-black"
-								>
-									<motion.div whileHover={{ color: "#0078d4", scale: 1.05 }}>
-										<IconMail size="2.2rem" />
-									</motion.div>
-								</motion.a>
-							</motion.div>
-						)}
-					</AnimatePresence>
-				</motion.div>
 			</motion.div>
 			<div className="redaction35 text-[1.2rem] absolute left-0 bottom-0 border-t-2 border-r-2 border-black italic hidden md:block">
 				&nbsp;&nbsp;&nbsp;© {year} Dawn DeWaay III {"<3"}&nbsp;&nbsp;&nbsp;

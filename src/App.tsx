@@ -1,10 +1,11 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: Animated text is rendered in a fixed sequence. */
-import { motion, useSpring, useTransform, type Variants } from "motion/react";
-import Header from "./components/Header";
-import BigText from "./components/BigText";
+
 import { IconRosette } from "@tabler/icons-react";
-import Gallery from "./components/Gallery";
+import { motion, useSpring, useTransform, type Variants } from "motion/react";
 import { useEffect, useState } from "react";
+import BigText from "./components/BigText";
+import Gallery from "./components/Gallery";
+import Header from "./components/Header";
 
 type TextItem = {
 	char: string | null;

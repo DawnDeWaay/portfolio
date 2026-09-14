@@ -1,7 +1,8 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
-import { useState, useRef, useCallback, useEffect } from "react";
-import { createPortal } from "react-dom";
+
 import { AnimatePresence, motion, useInView } from "motion/react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Tilt from "react-parallax-tilt";
 
 import BigText from "./BigText";
