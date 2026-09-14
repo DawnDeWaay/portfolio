@@ -185,27 +185,46 @@ export default function App() {
 						</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
 							<h2 className="sub-head">Technical Skills</h2>
-							<ul className="w-full md:border-l-2 border-black md:pl-4 gap-2">
+							<ul className="w-full md:border-l-2 border-black md:pl-4">
 								<li>
-									* Languages & Frameworks: TypeScript, JavaScript, React,
-									Next.js, GraphQL, Node.js, WordPress, PHP, Java, Python, and
-									C#
+									<span className="font-bold">Languages & Frameworks</span>
+									<br />
+									<span className="text-[1.4rem]">
+										TypeScript, JavaScript, React, Next.js, GraphQL, Node.js,
+										WordPress, PHP, Java, Python, and C#
+									</span>
 								</li>
 								<li>
-									* State & Design: TanStack Query, HTML/CSS, Tailwind CSS,
-									Figma, Motion, Material UI, and Statsig
+									<span className="font-bold">State & Design</span>
+									<br />
+									<span className="text-[1.4rem]">
+										TanStack Query, HTML/CSS, Tailwind CSS, Figma, Motion,
+										Material UI, and Statsig
+									</span>
 								</li>
 								<li>
-									* Cloud & Data: AWS Amplify, Cognito, DynamoDB, Lambda, S3,
-									CloudWatch, IAM, AppSync, SQL, and MySQL
+									<span className="font-bold">Cloud & Data</span>
+									<br />
+									<span className="text-[1.4rem]">
+										AWS Amplify, Cognito, DynamoDB, Lambda, S3, CloudWatch, IAM,
+										AppSync, SQL, and MySQL
+									</span>
 								</li>
 								<li>
-									* Testing & Tooling: Cypress, Jest, React Testing Library,
-									Biome, Git, Maven, and npm
+									<span className="font-bold">Testing & Tooling</span>
+									<br />
+									<span className="text-[1.4rem]">
+										Cypress, Jest, React Testing Library, Biome, Git, Maven, and
+										npm
+									</span>
 								</li>
 								<li>
-									* Architecture & Practice: RESTful APIs, CI/CD pipelines,
-									multi-tenancy, Agile/Scrum, and responsive design
+									<span className="font-bold">Architecture & Practice</span>
+									<br />
+									<span className="text-[1.4rem]">
+										RESTful APIs, CI/CD pipelines, multi-tenancy, Agile/Scrum,
+										and responsive design
+									</span>
 								</li>
 							</ul>
 						</div>
