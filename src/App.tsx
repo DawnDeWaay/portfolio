@@ -206,8 +206,8 @@ export default function App() {
 									<span className="font-bold">Cloud & Data</span>
 									<br />
 									<span className="text-[1.4rem]">
-										AWS Amplify, Cognito, DynamoDB, Lambda, S3, CloudWatch, IAM,
-										AppSync, SQL, and MySQL
+										AWS Amplify, Cognito, Linux, DynamoDB, Lambda, S3,
+										CloudWatch, IAM, AppSync, SQL, and MySQL
 									</span>
 								</li>
 								<li>

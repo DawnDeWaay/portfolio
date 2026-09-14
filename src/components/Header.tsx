@@ -1,7 +1,7 @@
-/** biome-ignore-all lint/a11y/noStaticElementInteractions: <explanation> */
-/** biome-ignore-all lint/a11y/useKeyWithClickEvents: <explanation> */
+/** biome-ignore-all lint/a11y/noStaticElementInteractions: Existing animated navigation wrappers are clickable. */
+/** biome-ignore-all lint/a11y/useKeyWithClickEvents: Existing icon navigation uses pointer interactions. */
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IconMail } from "@tabler/icons-react";
 import SvgStairs from "./icons/SvgStairs";
 import SvgEllipses from "./icons/SvgEllipses";
@@ -16,6 +16,39 @@ import WavyLine from "./WavyLine";
 
 const Header = () => {
 	const [showSocials, setShowSocials] = useState(false);
+	const [activeSection, setActiveSection] = useState<string | null>(null);
+
+	useEffect(() => {
+		const sectionIds = ["Biography", "Work", "Education", "Gallery"];
+
+		const updateActiveSection = () => {
+			const header = document.querySelector<HTMLElement>(".header");
+			const markerY = (header?.getBoundingClientRect().top ?? 0) + 72;
+			const currentSection = sectionIds.find((id) => {
+				const heading = document.getElementById(id);
+				const section = heading?.parentElement;
+				if (!section) return false;
+
+				const rect = section.getBoundingClientRect();
+				return rect.top <= markerY && rect.bottom > markerY;
+			});
+
+			setActiveSection((current) =>
+				current === currentSection ? current : (currentSection ?? null),
+			);
+		};
+
+		updateActiveSection();
+		document.body.addEventListener("scroll", updateActiveSection, {
+			passive: true,
+		});
+		window.addEventListener("resize", updateActiveSection);
+
+		return () => {
+			document.body.removeEventListener("scroll", updateActiveSection);
+			window.removeEventListener("resize", updateActiveSection);
+		};
+	}, []);
 
 	const scrollToSection = (id: string) => {
 		const element = document.getElementById(id);
@@ -56,22 +89,22 @@ const Header = () => {
 			<motion.div className="flex absolute bottom-0 right-0 flex-col pointer-events-auto z-40">
 				<div onClick={() => scrollToSection("Biography")}>
 					<motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
-						<SvgSpinner />
+						<SvgSpinner active={activeSection === "Biography"} />
 					</motion.div>
 				</div>
 				<div onClick={() => scrollToSection("Work")}>
 					<motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
-						<SvgStairs />
+						<SvgStairs active={activeSection === "Work"} />
 					</motion.div>
 				</div>
 				<div onClick={() => scrollToSection("Education")}>
 					<motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
-						<SvgEllipses />
+						<SvgEllipses active={activeSection === "Education"} />
 					</motion.div>
 				</div>
 				<div onClick={() => scrollToSection("Gallery")}>
 					<motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
-						<SvgFlower />
+						<SvgFlower active={activeSection === "Gallery"} />
 					</motion.div>
 				</div>
 				<motion.div
@@ -80,7 +113,7 @@ const Header = () => {
 					onMouseLeave={() => setShowSocials(false)}
 				>
 					<motion.div className="cursor-pointer w-12 h-12 p-2 border-t-2 border-l-2 border-black">
-						<SvgOyster />
+						<SvgOyster active={showSocials} />
 					</motion.div>
 					<AnimatePresence>
 						{showSocials && (

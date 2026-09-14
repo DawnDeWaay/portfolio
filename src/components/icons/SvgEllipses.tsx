@@ -1,14 +1,20 @@
 import { motion } from "motion/react";
 
-const SvgEllipses = () => (
-  <motion.svg
-    initial={{ fill: "black" }}
-    whileHover={{ fill: "#796C98", scale: 1.05, rotateX: 180 }}
-    xmlns="http://www.w3.org/2000/svg"
-    data-name="Layer 2"
-    viewBox="0 0 315.14 291.58"
-  >
-    <path d="M315.14 145.79c0-24.41-57.36-44.64-132.44-48.39 75.08-3.74 132.44-23.98 132.44-48.39C315.14 21.94 244.59 0 157.57 0S0 21.94 0 49.01C0 73.42 57.36 93.65 132.44 97.4 57.36 101.14 0 121.38 0 145.79s57.36 44.64 132.44 48.39C57.36 197.92 0 218.16 0 242.56c0 27.07 70.55 49.01 157.57 49.01s157.57-21.94 157.57-49.01c0-24.41-57.36-44.64-132.44-48.39 75.08-3.74 132.44-23.98 132.44-48.39Z" />
-  </motion.svg>
+const SvgEllipses = ({ active = false }: { active?: boolean }) => (
+	<motion.svg
+		initial={{ fill: "black" }}
+		animate={{
+			fill: active ? "#796C98" : "black",
+			scale: active ? 1.05 : 1,
+			rotateX: active ? 180 : 0,
+		}}
+		whileHover={{ fill: "#796C98", scale: 1.05, rotateX: 180 }}
+		transition={{ duration: 0.3 }}
+		xmlns="http://www.w3.org/2000/svg"
+		data-name="Layer 2"
+		viewBox="0 0 315.14 291.58"
+	>
+		<path d="M315.14 145.79c0-24.41-57.36-44.64-132.44-48.39 75.08-3.74 132.44-23.98 132.44-48.39C315.14 21.94 244.59 0 157.57 0S0 21.94 0 49.01C0 73.42 57.36 93.65 132.44 97.4 57.36 101.14 0 121.38 0 145.79s57.36 44.64 132.44 48.39C57.36 197.92 0 218.16 0 242.56c0 27.07 70.55 49.01 157.57 49.01s157.57-21.94 157.57-49.01c0-24.41-57.36-44.64-132.44-48.39 75.08-3.74 132.44-23.98 132.44-48.39Z" />
+	</motion.svg>
 );
 export default SvgEllipses;
