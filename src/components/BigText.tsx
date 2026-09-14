@@ -29,7 +29,7 @@ const BigText = ({ text }: { text: string }) => {
     <>
       <div id={text} ref={ref} />
       <motion.h1
-        className='pointer-events-none flex w-[100%] text-[21vw] leading-[1.1] text-nowrap overflow-x-hidden overflow-y-auto z-[-1]'
+        className='pointer-events-none flex w-[100%] text-[20vw] leading-[1.1] text-nowrap overflow-x-hidden overflow-y-auto z-[-1]'
         initial={{ paddingBottom: "-5vw", y: "-1vw", fontSize: "18rem", top:'4rem', marginLeft:'0rem', height: '20rem'}}
         // animate={{
         //   paddingBottom: "-5vw",
