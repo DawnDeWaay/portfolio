@@ -2,48 +2,49 @@ import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 const BigText = ({ text }: { text: string }) => {
-  const [isSticky, setIsSticky] = useState(false);
-  const ref = useRef(null);
+	const [isTop, setIsTop] = useState(false);
+	const ref = useRef<HTMLDivElement | null>(null);
 
-  // useEffect(() => {
-  //   const cachedRef = ref.current;
-  //   if (!cachedRef) return;
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       setIsSticky(entry.intersectionRatio < 1);
-  //     },
-  //     {
-  //       threshold: [1],
-  //       rootMargin: "200px 0px 0px 0px",
-  //     },
-  //   );
+	useEffect(() => {
+		const TOP_THRESHOLD_PX = 50;
 
-  //   observer.observe(cachedRef);
+		const updateIsTop = () => {
+			if (!ref.current) return;
 
-  //   return () => {
-  //     if (cachedRef) observer.unobserve(cachedRef);
-  //   };
-  // }, []);
+			const { top } = ref.current.getBoundingClientRect();
+			setIsTop(top <= TOP_THRESHOLD_PX);
+		};
 
-  return (
-    <>
-      <div id={text} ref={ref} />
-      <motion.h1
-        className='pointer-events-none flex w-[100%] text-[18vw] leading-[1.1] text-nowrap overflow-x-hidden overflow-y-auto z-[-1]'
-        initial={{ paddingBottom: "-5vw", y: "-1vw", fontSize: "18rem", top:'4rem', marginLeft:'0rem', height: '20rem'}}
-        // animate={{
-        //   paddingBottom: "-5vw",
-        //   y: "-1vw",
-        //   top: isSticky ? "6rem" : "4rem",
-        //   marginLeft: isSticky ? "4rem" : "0rem",
-        //   fontSize: isSticky ? "4rem" : "18rem",
-        // }}
-      >
-        <span className="redaction35 text-[#796C98]">&nbsp;~ </span>
-        {text}
-      </motion.h1>
-    </>
-  );
+		updateIsTop();
+
+		window.addEventListener("scroll", updateIsTop, { passive: true });
+		window.addEventListener("resize", updateIsTop);
+
+		return () => {
+			window.removeEventListener("scroll", updateIsTop);
+			window.removeEventListener("resize", updateIsTop);
+		};
+	}, []);
+
+	return (
+		<>
+			<div id={text} ref={ref} />
+			<motion.h1
+				className="pointer-events-none flex w-[100%] leading-[1.1] text-nowrap overflow-x-hidden overflow-y-auto z-[-1]"
+				initial={{
+					paddingBottom: "-5vw",
+					y: "-1vw",
+					fontSize: "18vw",
+				}}
+				animate={{
+					fontSize: "18vw",
+				}}
+			>
+				<span className="redaction35 text-[#796C98]">&nbsp;~ </span>
+				{text}
+			</motion.h1>
+		</>
+	);
 };
 
 export default BigText;

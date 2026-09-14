@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noUnknownAtRules: <explanation> */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,10 +11,10 @@
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  font-family: "Redaction";
+  font-family: "Redaction", serif;
   color: #1b1a19;
+  user-select: none;
   -moz-user-select: -moz-none;
-  -khtml-user-select: none;
   -webkit-user-select: none;
 }
 
@@ -24,18 +25,18 @@ html {
 }
 
 h1 {
-  font-family: "Redaction 50";
+  font-family: "Redaction 50", serif;
   font-style: italic;
   text-align: left;
 }
 
 h2 {
-  font-family: "Redaction 35";
+  font-family: "Redaction 35", serif;
   font-size: 3rem;
 }
 
 h3 {
-  font-family: "Redaction 10";
+  font-family: "Redaction 10", serif;
   font-size: 2rem;
   padding: 0;
   color: black;
@@ -73,7 +74,6 @@ li {
   padding-bottom: 1rem;
   text-align: center;
   width: 100%;
-  text-align: center;
   text-wrap: balance;
 }
 
@@ -82,27 +82,27 @@ li {
 }
 
 .redaction {
-  font-family: "Redaction";
+  font-family: "Redaction", serif;
 }
 
 .redaction10 {
-  font-family: "Redaction 10";
+  font-family: "Redaction 10", serif;
 }
 
 .redaction20 {
-  font-family: "Redaction 20";
+  font-family: "Redaction 20", serif;
 }
 
 .redaction35 {
-  font-family: "Redaction 35";
+  font-family: "Redaction 35", serif;
 }
 
 .redaction50 {
-  font-family: "Redaction 50";
+  font-family: "Redaction 50", serif;
 }
 
 .redaction100 {
-  font-family: "Redaction 100";
+  font-family: "Redaction 100", serif;
 }
 
 .grain {
@@ -122,6 +122,15 @@ body {
   overflow-x: hidden;
   height: 100%;
   scroll-behavior: smooth;
+}
+
+html.fonts-loading body {
+  opacity: 0;
+}
+
+html.fonts-ready body {
+  opacity: 1;
+  transition: opacity 120ms ease-out;
 }
 
 .header {
