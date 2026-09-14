@@ -172,16 +172,14 @@ export default function App() {
 				<motion.div className="content">
 					<div className="section">
 						<h3 className="w-full px-6 md:p-0 mt-4 mb-2">
-							Hey, I’m Dawn—a Full-Stack Software Engineer and Designer who
-							specializes in building scalable products on AWS. I turn ambitious
-							ideas into polished, production-ready software, working across the
-							entire product lifecycle: system architecture, cloud
-							infrastructure, backend services, responsive interfaces, testing,
-							deployment, and ongoing iteration. I’m especially experienced with
-							enterprise B2B applications, multi-tenant systems, role-based
-							access control, and data-rich analytical experiences. My approach
-							combines rigorous engineering with thoughtful visual design so the
-							products I build are dependable, intuitive, and enjoyable to use.
+							Hey, I’m Dawn. I’m a Full-Stack Software Engineer and Designer who
+							develops web applications with React, Next.js, and AWS. I work
+							across the stack, from interface design and frontend development
+							to backend services, cloud infrastructure, and testing. My
+							experience centers on B2B applications, multi-tenant systems,
+							role-based permissions, and data-intensive tools. I focus on
+							building reliable, well-designed software that is clear and
+							intuitive to use.
 						</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
 							<h2 className="sub-head">Technical Skills</h2>
