@@ -3,47 +3,56 @@ import { useEffect, useRef, useState } from "react";
 
 const BigText = ({ text }: { text: string }) => {
 	const [isTop, setIsTop] = useState(false);
+	const [largeFontSize, setLargeFontSize] = useState(
+		() => window.innerWidth * 0.18,
+	);
 	const ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		const TOP_THRESHOLD_PX = 50;
+		const section = ref.current?.parentElement;
+		if (!section) return;
 
-		const updateIsTop = () => {
-			if (!ref.current) return;
-
-			const { top } = ref.current.getBoundingClientRect();
-			setIsTop(top <= TOP_THRESHOLD_PX);
+		const updatePosition = () => {
+			const rect = section.getBoundingClientRect();
+			setIsTop(rect.top <= 0 && rect.bottom > 0);
+		};
+		const handleResize = () => {
+			setLargeFontSize(window.innerWidth * 0.18);
+			updatePosition();
 		};
 
-		updateIsTop();
-
-		window.addEventListener("scroll", updateIsTop, { passive: true });
-		window.addEventListener("resize", updateIsTop);
-
+		updatePosition();
+		document.body.addEventListener("scroll", updatePosition, { passive: true });
+		window.addEventListener("resize", handleResize);
 		return () => {
-			window.removeEventListener("scroll", updateIsTop);
-			window.removeEventListener("resize", updateIsTop);
+			document.body.removeEventListener("scroll", updatePosition);
+			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
 
 	return (
-		<>
-			<div id={text} ref={ref} />
+		<div id={text} ref={ref} className="h-[19.8vw] w-full">
 			<motion.h1
-				className="pointer-events-none flex w-[100%] leading-[1.1] text-nowrap overflow-x-hidden overflow-y-auto z-[-1]"
+				className={
+					isTop
+						? "pointer-events-none fixed left-0 top-0 z-40 text-nowrap leading-[1.1]"
+						: "pointer-events-none flex w-[100%] leading-[1.1] text-nowrap overflow-x-hidden overflow-y-auto z-[-1]"
+				}
 				initial={{
-					paddingBottom: "-5vw",
-					y: "-1vw",
-					fontSize: "18vw",
+					x: 0,
+					y: largeFontSize / -18,
+					fontSize: largeFontSize,
 				}}
 				animate={{
-					fontSize: "18vw",
+					fontSize: isTop ? 40 : largeFontSize,
+					x: isTop ? 28 : 0,
+					y: isTop ? 86 : largeFontSize / -18,
 				}}
 			>
 				<span className="redaction35 text-[#796C98]">&nbsp;~ </span>
 				{text}
 			</motion.h1>
-		</>
+		</div>
 	);
 };
 
