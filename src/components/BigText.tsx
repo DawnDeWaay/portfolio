@@ -1,108 +1,86 @@
-import { motion, useAnimationControls, useMotionValue } from "motion/react";
-import { useLayoutEffect, useRef } from "react";
+import { motion } from "motion/react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 const LARGE_FONT_SIZE = 200;
 const SMALL_FONT_SIZE = 40;
 const LARGE_HEADING_HEIGHT = 220;
 const LARGE_Y = -11;
-const FIXED_X = 28;
-const FIXED_Y = 86;
-const ANIMATION_DELAY = 64;
+const HEADER_ROW_HEIGHT = 48;
+const FIXED_Y_OFFSET = 16;
+
+type HeadingMode = "large" | "fixed" | "hidden";
 
 const BigText = ({ text }: { text: string }) => {
 	const ref = useRef<HTMLDivElement | null>(null);
-	const controls = useAnimationControls();
-	const headingY = useMotionValue(0);
+	const [mode, setMode] = useState<HeadingMode>("large");
+	const [fixedPosition, setFixedPosition] = useState({ x: 0, y: 0 });
 
 	useLayoutEffect(() => {
 		const section = ref.current?.parentElement;
-		if (!section) return;
-		let wasFixed = false;
-		let initialized = false;
-		let isFadingOutAbove = false;
-		let previousScrollTop = document.body.scrollTop;
+		const header = document.querySelector<HTMLElement>(".header");
+		if (!section || !header) return;
+
+		let fixedX = 0;
+		let fixedY = 0;
+
+		const updateHeaderPosition = () => {
+			const headerRect = header.getBoundingClientRect();
+			fixedX = headerRect.left;
+			fixedY = headerRect.top + HEADER_ROW_HEIGHT + FIXED_Y_OFFSET;
+
+			setFixedPosition((currentPosition) =>
+				currentPosition.x === fixedX && currentPosition.y === fixedY
+					? currentPosition
+					: { x: fixedX, y: fixedY },
+			);
+		};
 
 		const updatePosition = () => {
-			const scrollTop = document.body.scrollTop;
-			const isScrollingUp = scrollTop < previousScrollTop;
 			const rect = section.getBoundingClientRect();
-			const headingTop = rect.top + LARGE_Y;
-			const isPinned = headingTop <= FIXED_Y && rect.bottom > FIXED_Y;
-			const shouldBeFixed =
-				headingTop <= FIXED_Y - ANIMATION_DELAY && rect.bottom > FIXED_Y;
+			const nextMode: HeadingMode =
+				rect.top + LARGE_Y > fixedY
+					? "large"
+					: rect.bottom > fixedY
+						? "fixed"
+						: "hidden";
 
-			if (!initialized) {
-				headingY.set(isPinned ? FIXED_Y : headingTop);
-				controls.set({
-					fontSize: shouldBeFixed ? SMALL_FONT_SIZE : LARGE_FONT_SIZE,
-					opacity: 1,
-					x: shouldBeFixed ? FIXED_X : 0,
-				});
-				wasFixed = shouldBeFixed;
-				initialized = true;
-				previousScrollTop = scrollTop;
-				return;
-			}
-
-			if (shouldBeFixed && !wasFixed) {
-				isFadingOutAbove = false;
-				headingY.set(FIXED_Y);
-				if (isScrollingUp) {
-					controls.stop();
-					controls.set({
-						fontSize: SMALL_FONT_SIZE,
-						opacity: 0,
-						x: FIXED_X,
-					});
-					void controls.start({ opacity: 1 });
-				} else {
-					void controls.start({
-						fontSize: SMALL_FONT_SIZE,
-						opacity: 1,
-						x: FIXED_X,
-					});
-				}
-			} else if (!shouldBeFixed && wasFixed && !isScrollingUp) {
-				isFadingOutAbove = true;
-				headingY.set(FIXED_Y);
-				void controls.start({ opacity: 0 });
-			} else if (!shouldBeFixed && wasFixed) {
-				isFadingOutAbove = false;
-				headingY.set(isPinned ? FIXED_Y : headingTop);
-				void controls.start({
-					fontSize: LARGE_FONT_SIZE,
-					opacity: 1,
-					x: 0,
-				});
-			} else if (!shouldBeFixed && !isFadingOutAbove) {
-				headingY.set(isPinned ? FIXED_Y : headingTop);
-			}
-
-			wasFixed = shouldBeFixed;
-			previousScrollTop = scrollTop;
+			setMode((currentMode) =>
+				currentMode === nextMode ? currentMode : nextMode,
+			);
 		};
 
-		updatePosition();
+		const updateLayout = () => {
+			updateHeaderPosition();
+			updatePosition();
+		};
+
+		updateLayout();
 		document.body.addEventListener("scroll", updatePosition, { passive: true });
-		window.addEventListener("resize", updatePosition);
+		window.addEventListener("resize", updateLayout);
 		return () => {
 			document.body.removeEventListener("scroll", updatePosition);
-			window.removeEventListener("resize", updatePosition);
+			window.removeEventListener("resize", updateLayout);
 		};
-	}, [controls, headingY]);
+	}, []);
+
+	const isLarge = mode === "large";
 
 	return (
 		<div
 			id={text}
 			ref={ref}
-			className="w-full"
+			className="relative w-full"
 			style={{ height: LARGE_HEADING_HEIGHT }}
 		>
 			<motion.h1
-				className="pointer-events-none fixed left-0 top-0 z-40 flex w-full text-nowrap leading-[1.1] overflow-x-hidden"
-				style={{ y: headingY }}
+				className={`pointer-events-none left-0 z-40 flex w-full text-nowrap leading-[1.1] overflow-x-hidden ${isLarge ? "absolute" : "fixed"}`}
+				style={{ top: isLarge ? LARGE_Y : fixedPosition.y }}
 				initial={{ opacity: 0, x: 0, fontSize: LARGE_FONT_SIZE }}
-				animate={controls}
+				animate={{
+					fontSize: isLarge ? LARGE_FONT_SIZE : SMALL_FONT_SIZE,
+					opacity: mode === "hidden" ? 0 : 1,
+					x: isLarge ? 0 : fixedPosition.x,
+				}}
 			>
 				<span className="redaction35 text-[#796C98]">&nbsp;~ </span>
 				{text}
