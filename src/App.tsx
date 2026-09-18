@@ -172,7 +172,7 @@ export default function App() {
 				<BigText text={"Biography"} />
 				<motion.div className="content">
 					<div className="section">
-						<h3 className="w-full px-6 md:p-0 mt-4 mb-2">
+						<h3 className="w-full mt-4 mb-2">
 							Hey, I’m Dawn. I’m a Full-Stack Software Engineer and Designer who
 							develops web applications with React, Next.js, and AWS. I work
 							across the stack, from interface design and frontend development
@@ -238,7 +238,7 @@ export default function App() {
 							<h2 className="sub-head">
 								Knight Moves - Lead Software Developer
 							</h2>
-							<div className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
+							<div className="w-full md:border-l-2 border-black md:pl-4">
 								<h3>
 									Since January 2023, I’ve led the design and development of
 									Skillmp, a scalable B2B Learning Management System built with
@@ -277,7 +277,7 @@ export default function App() {
 						</div>
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
 							<h2 className="sub-head">University of Iowa Student Security</h2>
-							<h3 className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
+							<h3 className="w-full md:border-l-2 border-black md:pl-4">
 								While attending the University of Iowa, I worked as a student
 								security officer helping maintain a safe and welcoming campus.
 								The role strengthened my leadership, situational awareness, and
@@ -289,7 +289,7 @@ export default function App() {
 							<h2 className="sub-head">
 								<span className="italic">no.1~ </span>Canon Music
 							</h2>
-							<p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
+							<p className="w-full md:border-l-2 border-black md:pl-4">
 								Canon Music is a Next.js application that uses OAuth 2.0 and the
 								Web Audio API to provide authenticated playlist management and
 								automated media curation. Its frontend combines dynamic API
@@ -302,7 +302,7 @@ export default function App() {
 							<h2 className="sub-head">
 								<span className="italic">no.2~ </span>MultiRoll
 							</h2>
-							<p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
+							<p className="w-full md:border-l-2 border-black md:pl-4">
 								MultiRoll is a collaborative, multi-tenant application built
 								with AWS Amplify, DynamoDB, React Router, and Three.js. It
 								supports real-time data streaming and synchronized shared state
@@ -321,7 +321,7 @@ export default function App() {
 					<div className="section">
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
 							<h2 className="sub-head">The University of Iowa</h2>
-							<p className="w-full md:border-l-2 border-black p-6 md:p-0 md:pl-4">
+							<p className="w-full md:border-l-2 border-black md:pl-4">
 								I earned my Bachelor’s degree in Computer Science from the
 								University of Iowa in December 2023, graduating with a 3.6 GPA.
 								My studies included a focus in Interdisciplinary Design and a

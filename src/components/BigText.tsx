@@ -69,7 +69,7 @@ const BigText = ({ text }: { text: string }) => {
 		<div
 			id={text}
 			ref={ref}
-			className="relative w-full"
+			className="relative w-full z-[999]"
 			style={{ height: LARGE_HEADING_HEIGHT }}
 		>
 			<motion.h1
