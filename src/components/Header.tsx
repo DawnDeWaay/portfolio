@@ -10,7 +10,7 @@ import SvgInstagram from "./icons/SvgInstagram";
 import SvgSpinner from "./icons/SvgSpinner";
 import SvgSpotify from "./icons/SvgSpotify";
 import SvgStairs from "./icons/SvgStairs";
-import SvgTwitter from "./icons/SvgTwitter";
+import SvgLinkedIn from "./icons/SvgLinkedIn";
 import WavyLine from "./WavyLine";
 import FadeIn from "./FadeIn";
 
@@ -96,12 +96,12 @@ const Header = () => {
 							<SvgGitHub />
 						</motion.a>
 						<motion.a
-							href="https://x.com/DawnDeWaay"
+							href="https://www.linkedin.com/in/dawndewaay/"
 							target="_blank"
 							rel="noopener"
 							className="hidden w-11 h-11 p-2 md:block"
 						>
-							<SvgTwitter />
+							<SvgLinkedIn />
 						</motion.a>
 						<motion.a
 							href="https://www.instagram.com/dawndewaay/"
