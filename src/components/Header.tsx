@@ -2,18 +2,18 @@
 /** biome-ignore-all lint/a11y/useKeyWithClickEvents: Existing icon navigation uses pointer interactions. */
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+import FadeIn from "./FadeIn";
 import SvgEllipses from "./icons/SvgEllipses";
 import SvgEmail from "./icons/SvgEmail";
 import SvgFlower from "./icons/SvgFlower";
 import SvgGitHub from "./icons/SvgGitHub";
 import SvgInstagram from "./icons/SvgInstagram";
+import SvgLinkedIn from "./icons/SvgLinkedIn";
 import SvgSpinner from "./icons/SvgSpinner";
 import SvgSpotify from "./icons/SvgSpotify";
 import SvgStairs from "./icons/SvgStairs";
-import SvgLinkedIn from "./icons/SvgLinkedIn";
-import WavyLine from "./WavyLine";
-import FadeIn from "./FadeIn";
 import SvgTwitter from "./icons/SvgTwitter";
+import WavyLine from "./WavyLine";
 
 const Header = () => {
 	const [activeSection, setActiveSection] = useState<string | null>(null);
