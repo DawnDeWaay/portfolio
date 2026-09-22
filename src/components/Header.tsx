@@ -13,6 +13,7 @@ import SvgStairs from "./icons/SvgStairs";
 import SvgLinkedIn from "./icons/SvgLinkedIn";
 import WavyLine from "./WavyLine";
 import FadeIn from "./FadeIn";
+import SvgTwitter from "./icons/SvgTwitter";
 
 const Header = () => {
 	const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -104,6 +105,14 @@ const Header = () => {
 							<SvgLinkedIn />
 						</motion.a>
 						<motion.a
+							href="https://x.com/dawndewaay"
+							target="_blank"
+							rel="noopener"
+							className="hidden w-11 h-11 p-2 md:block"
+						>
+							<SvgTwitter />
+						</motion.a>
+						<motion.a
 							href="https://www.instagram.com/dawndewaay/"
 							target="_blank"
 							rel="noopener"
@@ -111,7 +120,6 @@ const Header = () => {
 						>
 							<SvgInstagram />
 						</motion.a>
-
 						<motion.a
 							href="https://open.spotify.com/user/donalddewaay"
 							target="_blank"

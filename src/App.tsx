@@ -186,7 +186,9 @@ export default function App() {
 							<h2 className="sub-head">Technical Skills</h2>
 							<ul className="w-full md:border-l-2 border-black md:pl-4">
 								<li>
-									<span className="font-bold">Languages & Frameworks</span>
+									<span className="Redaction10 font-bold">
+										Languages & Frameworks
+									</span>
 									<br />
 									<span className="text-[1.4rem]">
 										TypeScript, JavaScript, React, Next.js, GraphQL, Node.js,
@@ -194,7 +196,7 @@ export default function App() {
 									</span>
 								</li>
 								<li>
-									<span className="font-bold">State & Design</span>
+									<span className="Redaction10 font-bold">State & Design</span>
 									<br />
 									<span className="text-[1.4rem]">
 										TanStack Query, HTML/CSS, Tailwind CSS, Figma, Motion,
@@ -202,7 +204,7 @@ export default function App() {
 									</span>
 								</li>
 								<li>
-									<span className="font-bold">Cloud & Data</span>
+									<span className="Redaction10 font-bold">Cloud & Data</span>
 									<br />
 									<span className="text-[1.4rem]">
 										AWS Amplify, Cognito, Linux, DynamoDB, Lambda, S3,
@@ -210,7 +212,9 @@ export default function App() {
 									</span>
 								</li>
 								<li>
-									<span className="font-bold">Testing & Tooling</span>
+									<span className="Redaction10 font-bold">
+										Testing & Tooling
+									</span>
 									<br />
 									<span className="text-[1.4rem]">
 										Cypress, Jest, React Testing Library, Biome, Git, Maven, and
@@ -218,7 +222,9 @@ export default function App() {
 									</span>
 								</li>
 								<li>
-									<span className="font-bold">Architecture & Practice</span>
+									<span className="Redaction10 font-bold">
+										Architecture & Practice
+									</span>
 									<br />
 									<span className="text-[1.4rem]">
 										RESTful APIs, CI/CD pipelines, multi-tenancy, Agile/Scrum,
@@ -284,7 +290,7 @@ export default function App() {
 								ability to make calm, responsible decisions under pressure.
 							</h3>
 						</div>
-						<h2 className="mt-4">Personal Projects</h2>
+						<h2 className="mt-4 text-center">Personal Projects</h2>
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
 							<h2 className="sub-head">
 								<span className="italic">no.1~ </span>Canon Music

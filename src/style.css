@@ -11,11 +11,8 @@
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  font-family: "Redaction", serif;
+  font-family: serif;
   color: #1b1a19;
-  user-select: none;
-  -moz-user-select: -moz-none;
-  -webkit-user-select: none;
 }
 
 html {
@@ -36,7 +33,6 @@ h2 {
 }
 
 h3 {
-  font-family: "Redaction 10", serif;
   font-size: 1.6rem;
   padding: 0;
   color: black;
