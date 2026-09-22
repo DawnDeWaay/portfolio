@@ -183,7 +183,14 @@ export default function App() {
 							intuitive to use.
 						</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
-							<h2 className="sub-head">Technical Skills</h2>
+							<div>
+								<h2 className="sub-head">Technical Skills</h2>
+								<div className="hidden md:flex h-full w-full gap-2 m-2">
+									<div className="flex-1"></div>
+									<div className="flex-1"></div>
+									<div className="flex-1"></div>
+								</div>
+							</div>
 							<ul className="w-full md:border-l-2 border-black md:pl-4">
 								<li>
 									<span className="Redaction10 font-bold">
@@ -241,9 +248,11 @@ export default function App() {
 				<motion.div className="content">
 					<div className="section">
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
-							<h2 className="sub-head">
-								Knight Moves - Lead Software Developer
-							</h2>
+							<div>
+								<h2 className="sub-head">
+									Knight Moves - Lead Software Developer
+								</h2>
+							</div>
 							<div className="w-full md:border-l-2 border-black md:pl-4">
 								<h3>
 									Since January 2023, I’ve led the design and development of
