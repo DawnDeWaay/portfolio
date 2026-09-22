@@ -69,11 +69,11 @@ const BigText = ({ text }: { text: string }) => {
 		<div
 			id={text}
 			ref={ref}
-			className="relative w-full z-[999]"
+			className="relative w-full z-40"
 			style={{ height: LARGE_HEADING_HEIGHT }}
 		>
 			<motion.h1
-				className={`pointer-events-none left-0 z-40 flex w-full text-nowrap leading-[1.1] overflow-x-hidden ${isLarge ? "absolute" : "fixed"}`}
+				className={`pointer-events-none left-0 flex w-full z-40 text-nowrap leading-[1.1] overflow-x-hidden ${isLarge ? "absolute" : "fixed"}`}
 				style={{ top: isLarge ? LARGE_Y : fixedPosition.y }}
 				initial={{ opacity: 0, x: 0, fontSize: LARGE_FONT_SIZE }}
 				animate={{
