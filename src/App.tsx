@@ -8,6 +8,7 @@ import Gallery from "./components/Gallery";
 import Header from "./components/Header";
 import TechIcon from "./components/TechIcon";
 import ExampleImage from "./components/ExampleImage";
+import MiniText from "./components/MiniText";
 
 type TextItem = {
 	char: string | null;
@@ -263,6 +264,15 @@ export default function App() {
 				<BigText text={"Work"} />
 				<motion.div className="content">
 					<div className="section">
+						<div className="w-full flex flex-row justify-between">
+							<MiniText text="4" miniText="Years of Development Experience" />
+							<MiniText text="4" miniText="Technical Courses Developed" />
+							<MiniText text="200%+" miniText="Client Base Expansion" />
+							<MiniText
+								text="100%"
+								miniText="E2E & Integration Test Coverage"
+							/>
+						</div>
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
 							<div className="flex flex-col">
 								<h2 className="sub-head">

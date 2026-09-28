@@ -73,7 +73,7 @@ const BigText = ({ text }: { text: string }) => {
 			style={{ height: LARGE_HEADING_HEIGHT }}
 		>
 			<motion.h1
-				className={`pointer-events-none left-0 flex w-full z-40 text-nowrap leading-[1.1] overflow-x-hidden`}
+				className="pointer-events-none left-0 flex w-full z-40 text-nowrap leading-[1.1] overflow-x-hidden"
 				style={{ top: isLarge ? LARGE_Y : fixedPosition.y }}
 				initial={{ opacity: 0, x: 0, fontSize: LARGE_FONT_SIZE }}
 				animate={{
