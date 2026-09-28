@@ -19,6 +19,7 @@ const ExampleImage = ({
 			initial={{ rotate: initialRotate }}
 			whileInView={{ rotate: rotate }}
 			whileHover={{ rotate: 0, scale: 1.05 }}
+			viewport={{ once: true }}
 		>
 			<Tilt
 				glareEnable={true}
