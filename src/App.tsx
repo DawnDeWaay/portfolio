@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import BigText from "./components/BigText";
 import Gallery from "./components/Gallery";
 import Header from "./components/Header";
+import TechIcon from "./components/TechIcon";
+import ExampleImage from "./components/ExampleImage";
 
 type TextItem = {
 	char: string | null;
@@ -183,12 +185,26 @@ export default function App() {
 							intuitive to use.
 						</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
-							<div>
+							<div className="flex flex-col">
 								<h2 className="sub-head">Technical Skills</h2>
-								<div className="hidden md:flex h-full w-full gap-2 m-2">
-									<div className="flex-1"></div>
-									<div className="flex-1"></div>
-									<div className="flex-1"></div>
+								<div className="hidden md:flex flex-1 w-full">
+									<div className="relative flex-1 w-full">
+										<TechIcon path="/tech/React.png" x={-5} y={-35} />
+										<TechIcon path="/tech/NodeJS.png" x={15} y={5} size={64} />
+										<TechIcon path="/tech/AWS.png" x={0} y={-15} />
+										<TechIcon
+											path="/tech/TypeScript.png"
+											x={35}
+											y={-20}
+											size={64}
+										/>
+										<TechIcon path="/tech/NextJS.png" x={-30} y={-30} />
+										<TechIcon path="/tech/Tailwind.png" x={-35} y={25} />
+										<TechIcon path="/tech/Python.png" x={15} y={30} size={64} />
+										<TechIcon path="/tech/Figma.png" x={-12} y={15} size={48} />
+										<TechIcon path="/tech/SQL.png" x={35} y={20} size={64} />
+										<TechIcon path="/tech/GraphQL.png" x={-45} y={-5} />
+									</div>
 								</div>
 							</div>
 							<ul className="w-full md:border-l-2 border-black md:pl-4">
@@ -215,7 +231,7 @@ export default function App() {
 									<br />
 									<span className="text-[1.4rem]">
 										AWS Amplify, Cognito, Linux, DynamoDB, Lambda, S3,
-										CloudWatch, IAM, AppSync, SQL, and MySQL
+										CloudWatch, IAM, AppSync, Kubernetes, SQL, and MySQL
 									</span>
 								</li>
 								<li>
@@ -248,10 +264,29 @@ export default function App() {
 				<motion.div className="content">
 					<div className="section">
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
-							<div>
+							<div className="flex flex-col">
 								<h2 className="sub-head">
 									Knight Moves - Lead Software Developer
 								</h2>
+								<div className="hidden md:flex flex-1 w-full p-8 pt-16">
+									<div className="flex flex-col">
+										<ExampleImage path="/example-pics/Home.png" />
+										<ExampleImage
+											path="/example-pics/Org.png"
+											rotate={10}
+											initialRotate={5}
+											initialX={80}
+											initialY={20}
+										/>
+										<ExampleImage
+											path="/example-pics/Courses.png"
+											rotate={-8}
+											initialRotate={-3}
+											initialX={30}
+											initialY={40}
+										/>
+									</div>
+								</div>
 							</div>
 							<div className="w-full md:border-l-2 border-black md:pl-4">
 								<h3>
@@ -301,9 +336,23 @@ export default function App() {
 						</div>
 						<h2 className="mt-4 text-center">Personal Projects</h2>
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full mt-4">
-							<h2 className="sub-head">
-								<span className="italic">no.1~ </span>Canon Music
-							</h2>
+							<div className="flex flex-col">
+								<h2 className="sub-head">
+									<span className="italic">no.1~ </span>Canon Music
+								</h2>
+								<div className="hidden md:flex flex-1 w-full p-8 pt-16">
+									<div className="flex flex-col">
+										<ExampleImage path="/example-pics/DaftPunk.jpg" />
+										<ExampleImage
+											path="/example-pics/SweetTrip.jpg"
+											rotate={10}
+											initialRotate={5}
+											initialX={80}
+											initialY={20}
+										/>
+									</div>
+								</div>
+							</div>
 							<p className="w-full md:border-l-2 border-black md:pl-4">
 								Canon Music is a Next.js application that uses OAuth 2.0 and the
 								Web Audio API to provide authenticated playlist management and
