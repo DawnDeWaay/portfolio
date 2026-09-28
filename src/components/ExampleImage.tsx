@@ -53,6 +53,9 @@ const ExampleImage = ({
 							damping: 22,
 							mass: 0.6,
 						},
+						opacity: {
+							delay: 0.5,
+						},
 					}}
 				>
 					<img src={path} alt="Skillmp" />
